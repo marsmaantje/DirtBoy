@@ -1,0 +1,52 @@
+﻿
+    public static void DoTests()
+    {
+        Console.WriteLine("Testing Vec2 implementation:");
+
+        //length
+        Vec2 x = new Vec2(-3, 4);
+        Console.WriteLine("Length check (expected 5): " + (x.Length() == 5f) + " " + x.Length());
+
+        //normalize
+        x.SetXY(-3, 4);
+        x.Normalize();
+        Console.WriteLine("Normalize check (expected (-0.6, 0.8)): " + x);
+        x *= 3;
+        Console.WriteLine("Normalized check (expected (-0.6, 0.8)): " + x.Normalized());
+
+
+
+        // +
+        Console.WriteLine("+ check (expected(3,2)): " + ((new Vec2(2, 3) + new Vec2(1, -1)) == new Vec2(3, 2)));
+
+        // -
+        Console.WriteLine("- check (expected(3,2)): " + ((new Vec2(2, 3) - new Vec2(-1, 1)) == new Vec2(3, 2)));
+
+        // *
+        Console.WriteLine("* check (expected(3,2)): " + ((new Vec2(-6, 1) * new Vec2(-0.5f, 2)) == new Vec2(3, 2)));
+
+        // /
+        Console.WriteLine("/ check (expected(3,2)): " + ((new Vec2(-6, 1) / new Vec2(-2f, 0.5f)) == new Vec2(3, 2)));
+
+        // test GetUnitVector and Angle degrees
+        Vec2 v1 = Vec2.GetUnitVectorDeg(90);
+        Console.WriteLine("GetUnitVectorDegrees check (expected(0,1))" + v1);
+        Console.WriteLine("GetAngleDegrees check (expected 90) " + v1.GetAngleDegrees());
+        v1.SetAngleDegrees(180);
+        Console.WriteLine("SetAngleDegrees check (expected (-1,0)) " + v1);
+        v1.RotateAroundDegrees(180, new Vec2(1, 0));
+        Console.WriteLine("RotateAroundDegrees check (expected (3,0)) " + v1);
+
+        // test GetUnitVector and Angle radians
+        v1 = Vec2.GetUnitVectorRad(Mathf.PI / 2);
+        Console.WriteLine("GetUnitVectorDegrees check (expected(0,1))" + v1);
+        Console.WriteLine("GetAngleDegrees check (expected " + Mathf.PI / 2 + ") " + v1.GetAngleRadians());
+        v1.SetAngleRadians(Mathf.PI);
+        Console.WriteLine("SetAngleDegrees check (expected (-1,0)) " + v1);
+        v1.RotateAroundRadians(Mathf.PI, new Vec2(1, 0));
+        Console.WriteLine("RotateAroundRadians check (expected (3,0)) " + v1);
+
+        Console.WriteLine("Deg2Rad check (expected " + Mathf.PI + ") " + Vec2.Deg2Rad(180));
+        Console.WriteLine("Deg2Rad check (expected " + 180 + ") " + Vec2.Rad2Deg(Mathf.PI));
+
+    }
