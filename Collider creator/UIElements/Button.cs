@@ -43,7 +43,10 @@ namespace UIElements
             TextSize(1);
             float textWidth = TextWidth(text);
             float desiredWidth = width - borderWidth * 2;
-            TextSize(desiredWidth / textWidth);
+            float textHeight = TextHeight(text);
+            float desiredHeight = height - borderWidth * 2;
+            float scale = Math.Min(desiredWidth / textWidth, desiredHeight / textHeight);
+            TextSize(scale);
             Draw();
         }
 

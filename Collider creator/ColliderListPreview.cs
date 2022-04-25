@@ -9,7 +9,11 @@ using UIElements;
 
 public class ColliderListPreview : Pivot
 {
-    ColliderLoader _colliderLoader;
+    public ColliderLoader _colliderLoader;
+    int _totalWidth;
+    int _itemWidth;
+    int _rowHeight;
+    bool hasVisual = false;
 
     public ColliderListPreview(ColliderLoader loader)
     {
@@ -18,6 +22,12 @@ public class ColliderListPreview : Pivot
 
     public void CreatePreview(int totalWidth, int itemWidth, int rowHeight)
     {
+        hasVisual = true;
+        _totalWidth = totalWidth;
+        _itemWidth = itemWidth;
+        _rowHeight = rowHeight;
+
+
         List<string> colliderNames = _colliderLoader.GetColliderNames();
         int colliderCount = colliderNames.Count;
         int collumns = totalWidth / itemWidth;
@@ -38,9 +48,19 @@ public class ColliderListPreview : Pivot
                     AddChild(colliderPreview);
                     colliderPreview.x = Mathf.Map(j, 0, collumns - 1, 0, totalWidth - itemWidth);
                     colliderPreview.y = i * (rowHeight + 5);
+                    colliderPreview.preview = this;
                     colliderIndex++;
                 }
             }
         }
+    }
+
+    public void RegeneratePreview()
+    {
+        foreach (GameObject child in GetChildren())
+        {
+            child.Destroy();
+        }
+        CreatePreview(_totalWidth, _itemWidth, _rowHeight);
     }
 }

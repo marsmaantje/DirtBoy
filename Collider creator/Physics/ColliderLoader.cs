@@ -109,6 +109,23 @@ namespace Physics
             }
         }
 
+        public bool RemoveCollider(string name)
+        {
+            if (colliders == null)
+            {
+                return false;
+            }
+            if (colliders.HasCollider(name))
+            {
+                colliders.colliders.Remove(colliders.GetCollider(name));
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         /// <summary>
         /// Creates the collider based on the given name and attaches it to the given gameobject
         /// </summary>

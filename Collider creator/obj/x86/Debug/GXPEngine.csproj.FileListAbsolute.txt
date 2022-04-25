@@ -40,3 +40,12 @@ D:\school\saxion\onedrive\OneDrive - Saxion\programming\gxp stuff\Collider creat
 D:\school\saxion\onedrive\OneDrive - Saxion\programming\gxp stuff\Collider creator\obj\x86\Debug\GXPEngine.csproj.CopyComplete
 D:\school\saxion\onedrive\OneDrive - Saxion\programming\gxp stuff\Collider creator\obj\x86\Debug\GXPEngine.exe
 D:\school\saxion\onedrive\OneDrive - Saxion\programming\gxp stuff\Collider creator\obj\x86\Debug\GXPEngine.pdb
+D:\school\saxion\onedrive\OneDrive - Saxion\year1\final approach\Collider creator\bin\Debug\GXPEngine.exe
+D:\school\saxion\onedrive\OneDrive - Saxion\year1\final approach\Collider creator\bin\Debug\GXPEngine.pdb
+D:\school\saxion\onedrive\OneDrive - Saxion\year1\final approach\Collider creator\bin\Debug\Newtonsoft.Json.dll
+D:\school\saxion\onedrive\OneDrive - Saxion\year1\final approach\Collider creator\bin\Debug\Newtonsoft.Json.xml
+D:\school\saxion\onedrive\OneDrive - Saxion\year1\final approach\Collider creator\obj\x86\Debug\GXPEngine.csproj.AssemblyReference.cache
+D:\school\saxion\onedrive\OneDrive - Saxion\year1\final approach\Collider creator\obj\x86\Debug\GXPEngine.csproj.CoreCompileInputs.cache
+D:\school\saxion\onedrive\OneDrive - Saxion\year1\final approach\Collider creator\obj\x86\Debug\GXPEngine.csproj.CopyComplete
+D:\school\saxion\onedrive\OneDrive - Saxion\year1\final approach\Collider creator\obj\x86\Debug\GXPEngine.exe
+D:\school\saxion\onedrive\OneDrive - Saxion\year1\final approach\Collider creator\obj\x86\Debug\GXPEngine.pdb
