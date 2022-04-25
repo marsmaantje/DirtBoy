@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.5" tiledversion="1.7.2" orientation="orthogonal" renderorder="right-down" width="43" height="24" tilewidth="16" tileheight="16" infinite="0" nextlayerid="14" nextobjectid="11">
+ <tileset firstgid="1" name="Buttons" tilewidth="32" tileheight="16" tilecount="4" columns="2">
+  <image source="../sprites/Buttons.png" width="64" height="32"/>
+ </tileset>
+ <tileset firstgid="5" name="empty" tilewidth="16" tileheight="16" tilecount="1" columns="1">
+  <image source="../sprites/empty.png" width="16" height="16"/>
+ </tileset>
+ <tileset firstgid="6" name="slingshot1" tilewidth="76" tileheight="60" tilecount="1" columns="1">
+  <image source="../sprites/slingshot1.png" width="76" height="60"/>
+ </tileset>
+ <tileset firstgid="7" name="start button" tilewidth="128" tileheight="64" tilecount="1" columns="1">
+  <image source="../sprites/start button.png" width="128" height="64"/>
+ </tileset>
+ <tileset firstgid="8" name="UI_Tiles" tilewidth="31" tileheight="31" tilecount="4" columns="2">
+  <image source="../sprites/UI_Tiles.png" width="62" height="62"/>
+ </tileset>
+ <imagelayer id="7" name="5">
+  <image source="../sprites/bg.png" width="683" height="384"/>
+ </imagelayer>
+ <objectgroup id="9" name="Buttons">
+  <object id="2" name="Play button" type="UIElements.PlayButton" gid="7" x="276.875" y="94.125" width="124" height="62">
+   <properties>
+    <property name="mapName" value="maps/Level.tmx"/>
+   </properties>
+  </object>
+  <object id="5" name="Player" type="Player" gid="6" x="341.5" y="192" width="76" height="60"/>
+  <object id="7" name="song" type="Scripts.Music" gid="5" x="95.3333" y="307.333" width="16" height="16">
+   <properties>
+    <property name="songName" value="sounds/IntroductionMusic.wav"/>
+   </properties>
+  </object>
+  <object id="8" name="pillBug" type="UIElements.RechargeIndicator" gid="11" x="648" y="84" width="31" height="31"/>
+  <object id="9" name="special" type="UIElements.RechargeIndicator" gid="10" x="648" y="40" width="31" height="31"/>
+  <object id="10" name="highscore" type="Scripts.HighScoreDisplayCreatorScript" gid="5" x="48.6667" y="219.333" width="16" height="16">
+   <properties>
+    <property name="songName" value="sounds/IntroductionMusic.wav"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <imagelayer id="11" name="Image Layer 2">
+  <image source="../sprites/ui.png" width="683" height="384"/>
+  <properties>
+   <property name="isOnTop" type="bool" value="true"/>
+  </properties>
+ </imagelayer>
+ <imagelayer id="13" name="Copy of Image Layer 2">
+  <image source="../sprites/tutorial overlay.png" width="683" height="384"/>
+  <properties>
+   <property name="isOnTop" type="bool" value="true"/>
+  </properties>
+ </imagelayer>
+</map>

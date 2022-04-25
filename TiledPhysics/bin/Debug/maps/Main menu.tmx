@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.8" tiledversion="1.8.4" orientation="orthogonal" renderorder="right-down" width="43" height="24" tilewidth="16" tileheight="16" infinite="0" nextlayerid="14" nextobjectid="27">
+ <tileset firstgid="1" name="Buttons" tilewidth="32" tileheight="16" tilecount="4" columns="2">
+  <image source="../sprites/Buttons.png" width="64" height="32"/>
+ </tileset>
+ <tileset firstgid="5" name="empty" tilewidth="16" tileheight="16" tilecount="1" columns="1">
+  <image source="../sprites/empty.png" width="16" height="16"/>
+ </tileset>
+ <tileset firstgid="6" name="slingshot1" tilewidth="76" tileheight="60" tilecount="1" columns="1">
+  <image source="../sprites/slingshot1.png" width="76" height="60"/>
+ </tileset>
+ <tileset firstgid="7" name="start button" tilewidth="128" tileheight="64" tilecount="1" columns="1">
+  <image source="../sprites/start button.png" width="128" height="64"/>
+ </tileset>
+ <tileset firstgid="8" name="UI_Tiles" tilewidth="31" tileheight="31" tilecount="4" columns="2">
+  <image source="../sprites/UI_Tiles.png" width="62" height="62"/>
+ </tileset>
+ <imagelayer id="7" name="5">
+  <image source="../sprites/bg.png" width="683" height="384"/>
+ </imagelayer>
+ <objectgroup id="9" name="Buttons">
+  <object id="2" gid="7" x="679.993" y="85.7121" width="124" height="62">
+   <properties>
+    <property name="mapName" value="maps/Level.tmx"/>
+   </properties>
+  </object>
+  <object id="5" type="Objects.ColliderObject" gid="6" x="399.792" y="178.516" width="76" height="60" rotation="37.8272">
+   <properties>
+    <property name="ColliderName" value="slingshot"/>
+   </properties>
+  </object>
+  <object id="15" type="Objects.ColliderObject" gid="6" x="361.233" y="202.353" width="76" height="60" rotation="37.8272">
+   <properties>
+    <property name="ColliderName" value="slingshot"/>
+   </properties>
+  </object>
+  <object id="16" type="Objects.ColliderObject" gid="6" x="320.571" y="225.488" width="76" height="60" rotation="37.8272">
+   <properties>
+    <property name="ColliderName" value="slingshot"/>
+   </properties>
+  </object>
+  <object id="17" type="Objects.ColliderObject" gid="6" x="351.431" y="217.775" width="76" height="60" rotation="190.268">
+   <properties>
+    <property name="ColliderName" value="slingshot"/>
+   </properties>
+  </object>
+  <object id="26" type="Objects.ComplexMover" gid="6" x="356.522" y="127.775" width="76" height="60" rotation="190.268">
+   <properties>
+    <property name="ColliderName" value="slingshot"/>
+   </properties>
+  </object>
+  <object id="12" type="Objects.ColliderObject" gid="6" x="138.934" y="201.671" width="76" height="60" rotation="336.968">
+   <properties>
+    <property name="ColliderName" value="slingshot"/>
+   </properties>
+  </object>
+  <object id="13" type="Objects.ColliderObject" gid="6" x="185.906" y="229.013" width="76" height="60" rotation="336.968">
+   <properties>
+    <property name="ColliderName" value="slingshot"/>
+   </properties>
+  </object>
+  <object id="14" type="Objects.ColliderObject" gid="6" x="232.177" y="256.355" width="76" height="60" rotation="336.968">
+   <properties>
+    <property name="ColliderName" value="slingshot"/>
+   </properties>
+  </object>
+  <object id="23" type="Objects.PhysicsBall" gid="9" x="495.253" y="117.343" width="31" height="31"/>
+ </objectgroup>
+ <imagelayer id="11" name="Image Layer 2">
+  <image source="../sprites/ui.png" width="683" height="384"/>
+  <properties>
+   <property name="isOnTop" type="bool" value="true"/>
+  </properties>
+ </imagelayer>
+</map>

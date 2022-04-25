@@ -1,0 +1,337 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "Facility.tmx",
+    "expandedProjectPaths": [
+        "templates",
+        "."
+    ],
+    "fileStates": {
+        "": {
+            "scaleInDock": 1,
+            "scaleInEditor": 3
+        },
+        "C:/school/saxion/onedrive/OneDrive - Saxion/year1/Game programming/assets/Tiled/Maps/test.tmx": {
+            "scale": 0.125,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 3192,
+                "y": 3188
+            }
+        },
+        "C:/school/saxion/onedrive/OneDrive - Saxion/year1/Game programming/assets/Tiled/Tilesheets/Test.tsx": {
+            "dynamicWrapping": true,
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "C:/school/saxion/onedrive/OneDrive - Saxion/year1/Game programming/sketches/PlayerAnimation/GXPEngine/bin/Debug/industrial.tmx": {
+            "scale": 5.3675,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 80.11178388449,
+                "y": 79.92547741034002
+            }
+        },
+        "C:/school/saxion/onedrive/OneDrive - Saxion/year1/Game programming/sketches/PlayerAnimation/GXPEngine/bin/Debug/industrial.tmx#prop pack": {
+            "scaleInDock": 1
+        },
+        "C:/school/saxion/onedrive/OneDrive - Saxion/year1/Game programming/sketches/PlayerAnimation/GXPEngine/bin/Debug/test.tmx": {
+            "scale": 0.1341875,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 3197.0190964136004,
+                "y": 3193.292966930601
+            }
+        },
+        "C:/school/saxion/onedrive/OneDrive - Saxion/year1/Game programming/sketches/PlayerAnimation/GXPEngine/bin/Debug/test.tmx#Tilesheet": {
+            "dynamicWrapping": false,
+            "scaleInDock": 1
+        },
+        "C:/school/saxion/onedrive/OneDrive - Saxion/year1/Game programming/sketches/PlayerAnimation/GXPEngine/bin/Debug/testSmall.tmx": {
+            "scale": 1.341875,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 289.1476478807639,
+                "y": 320.44713553796
+            }
+        },
+        "C:/school/saxion/onedrive/OneDrive - Saxion/year1/Game programming/sketches/PlayerAnimation/GXPEngine/bin/Debug/testSmall.tmx#tileset": {
+            "scaleInDock": 1
+        },
+        "C:/school/saxion/onedrive/OneDrive - Saxion/year1/Game programming/sketches/PlayerAnimation/GXPEngine/bin/Debug/testSmall.tmx#tilesetttt": {
+            "dynamicWrapping": true,
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "C:/school/saxion/onedrive/OneDrive - Saxion/year1/Game programming/sketches/PlayerAnimation/GXPEngine/bin/Debug/testSmall.tmx#wah": {
+            "dynamicWrapping": false,
+            "scaleInDock": 1
+        },
+        "C:/school/saxion/onedrive/OneDrive - Saxion/year1/Game programming/sketches/robocharge/GXPEngine/bin/test-map.tmx": {
+            "scale": 2,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 251,
+                "y": 77
+            }
+        },
+        "C:/school/saxion/onedrive/OneDrive - Saxion/year1/Game programming/sketches/robocharge/GXPEngine/bin/test-map.tmx#prop pack": {
+            "scaleInDock": 1.5
+        },
+        "D:/school/saxion/onedrive/OneDrive - Saxion/year1/Game programming/sketches/MerlijnVanNieuwenhoven_CLONE/GXPEngine/bin/Debug/menu.tmx": {
+            "scale": 3.7722916666666664,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 318.10901861158675,
+                "y": 380.6704589385322
+            }
+        },
+        "D:/school/saxion/onedrive/OneDrive - Saxion/year1/Game programming/sketches/MerlijnVanNieuwenhoven_CLONE/GXPEngine/bin/Debug/menu.tmx#blocks": {
+            "scaleInDock": 1
+        },
+        "D:/school/saxion/onedrive/OneDrive - Saxion/year1/Game programming/sketches/MerlijnVanNieuwenhoven_CLONE/GXPEngine/bin/Debug/menu.tmx#button": {
+            "scaleInDock": 1
+        },
+        "D:/school/saxion/onedrive/OneDrive - Saxion/year1/Game programming/sketches/MerlijnVanNieuwenhoven_CLONE/GXPEngine/bin/Debug/menu.tmx#char": {
+            "scaleInDock": 1
+        },
+        "D:/school/saxion/onedrive/OneDrive - Saxion/year1/Game programming/sketches/MerlijnVanNieuwenhoven_CLONE/GXPEngine/bin/Debug/menu.tmx#doors": {
+            "scaleInDock": 1
+        },
+        "Facility.tmx": {
+            "scale": 1.5,
+            "selectedLayer": 3,
+            "viewCenter": {
+                "x": 879.3333333333333,
+                "y": 204.66666666666663
+            }
+        },
+        "Facility.tmx#Battery": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Facility.tmx#OrangeRobot_SpriteSheet": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Facility.tmx#Tileset&Items": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Facility.tmx#charger": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Facility.tmx#empty": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Facility.tmx#prop pack": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Facility.tmx#seamless textures": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Facility.tmx#teleporter": {
+            "scaleInDock": 1
+        },
+        "Factory.tmx": {
+            "scale": 1.5,
+            "selectedLayer": 8,
+            "viewCenter": {
+                "x": 898.6666666666667,
+                "y": 193.99999999999994
+            }
+        },
+        "Factory.tmx#Battery": {
+            "scaleInDock": 1
+        },
+        "Factory.tmx#OrangeRobot_SpriteSheet": {
+            "scaleInDock": 1
+        },
+        "Factory.tmx#Tileset&Items": {
+            "scaleInDock": 1
+        },
+        "Factory.tmx#charger": {
+            "scaleInDock": 1
+        },
+        "Factory.tmx#empty": {
+            "scaleInDock": 1
+        },
+        "Factory.tmx#prop pack": {
+            "scaleInDock": 1
+        },
+        "Factory.tmx#seamless textures": {
+            "scaleInDock": 1
+        },
+        "Factory.tmx#teleporter": {
+            "scaleInDock": 1
+        },
+        "Main menu.tmx": {
+            "scale": 10.0878125,
+            "selectedLayer": 3,
+            "viewCenter": {
+                "x": 113.99894674886157,
+                "y": 88.82004894519996
+            }
+        },
+        "Main menu.tmx#Buttons": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Main menu.tmx#Tileset&Items": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Main menu.tmx#empty": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Main menu.tmx#forest": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Main menu.tmx#logo": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Main menu.tmx#prop pack": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Main menu.tmx#seamless textures": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Nature.tmx": {
+            "scale": 8,
+            "selectedLayer": 7,
+            "viewCenter": {
+                "x": 323,
+                "y": 212.625
+            }
+        },
+        "Nature.tmx#Battery": {
+            "scaleInDock": 1
+        },
+        "Nature.tmx#OrangeRobot_SpriteSheet": {
+            "scaleInDock": 1
+        },
+        "Nature.tmx#Tileset&Items": {
+            "scaleInDock": 1
+        },
+        "Nature.tmx#charger": {
+            "scaleInDock": 1
+        },
+        "Nature.tmx#empty": {
+            "scaleInDock": 1
+        },
+        "Nature.tmx#forest": {
+            "scaleInDock": 1
+        },
+        "Nature.tmx#prop pack": {
+            "scaleInDock": 1
+        },
+        "Nature.tmx#seamless textures": {
+            "scaleInDock": 1
+        },
+        "Nature.tmx#teleporter": {
+            "scaleInDock": 1
+        },
+        "myMap.tmx": {
+            "scale": 2,
+            "selectedLayer": 8,
+            "viewCenter": {
+                "x": 392,
+                "y": 125.75
+            }
+        },
+        "myMap.tmx#Battery": {
+            "scaleInDock": 1
+        },
+        "myMap.tmx#Player": {
+            "scaleInDock": 1
+        },
+        "myMap.tmx#Robot": {
+            "scaleInDock": 1
+        },
+        "myMap.tmx#Tileset&Items": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "myMap.tmx#empty": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "myMap.tmx#prop pack": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "test-map.tmx": {
+            "scale": 1,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 400,
+                "y": 240
+            }
+        },
+        "test-map.tmx#Player": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "test-map.tmx#Robot": {
+            "scaleInDock": 1
+        },
+        "test-map.tmx#Tileset&Items": {
+            "scaleInDock": 1.5
+        },
+        "test-map.tmx#empty": {
+            "scaleInDock": 1
+        },
+        "test-map.tmx#prop pack": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        }
+    },
+    "last.exportedFilePath": "C:/school/saxion/onedrive/OneDrive - Saxion/year1/Game programming/sketches/PlayerAnimation/GXPEngine/bin/Debug",
+    "last.imagePath": "C:/school/saxion/onedrive/OneDrive - Saxion/year1/Game programming/sketches/robocharge/GXPEngine/bin/Debug/sprites",
+    "map.height": 10,
+    "map.lastUsedExportFilter": "All Files (*)",
+    "map.lastUsedFormat": "tmx",
+    "map.tileHeight": 16,
+    "map.tileWidth": 16,
+    "map.width": 30,
+    "openFiles": [
+        "Facility.tmx",
+        "Factory.tmx",
+        "Nature.tmx"
+    ],
+    "project": "robocharge.tiled-project",
+    "property.type": "bool",
+    "recentFiles": [
+        "Nature.tmx",
+        "Factory.tmx",
+        "Facility.tmx",
+        "myMap.tmx",
+        "D:/school/saxion/onedrive/OneDrive - Saxion/year1/Game programming/sketches/MerlijnVanNieuwenhoven_CLONE/GXPEngine/bin/Debug/menu.tmx",
+        "Main menu.tmx",
+        "test-map.tmx",
+        "C:/school/saxion/onedrive/OneDrive - Saxion/year1/Game programming/sketches/PlayerAnimation/GXPEngine/bin/Debug/industrial.tmx",
+        "C:/school/saxion/onedrive/OneDrive - Saxion/year1/Game programming/sketches/robocharge/GXPEngine/bin/test-map.tmx",
+        "C:/school/saxion/onedrive/OneDrive - Saxion/year1/Game programming/sketches/PlayerAnimation/GXPEngine/bin/Debug/testSmall.tmx",
+        "C:/school/saxion/onedrive/OneDrive - Saxion/year1/Game programming/sketches/PlayerAnimation/GXPEngine/bin/Debug/test.tmx",
+        "C:/school/saxion/onedrive/OneDrive - Saxion/year1/Game programming/assets/Tiled/Tilesheets/Test.tsx"
+    ],
+    "tileset.embedInMap": true,
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.tileSize": {
+        "height": 32,
+        "width": 16
+    },
+    "tileset.transparentColor": "#003039",
+    "tileset.type": 0
+}
