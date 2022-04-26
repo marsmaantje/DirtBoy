@@ -60,10 +60,11 @@ public class Player : Pivot
 
         _mover = new SingleMover();
         parent.AddChild(_mover);
+        _mover.position = position;
         _mover.AddChild(this);
-        _mover.AddChild(animation);
         SetXY(0, 0);
         _mover.SetCollider(new Ball(_mover, _mover.position, 10));
+        Console.WriteLine(parent);
     }
 
     /// <summary>

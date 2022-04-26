@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.8" tiledversion="1.8.0" orientation="orthogonal" renderorder="right-down" width="43" height="24" tilewidth="16" tileheight="16" infinite="0" nextlayerid="14" nextobjectid="27">
+<map version="1.8" tiledversion="1.8.4" orientation="orthogonal" renderorder="right-down" width="43" height="24" tilewidth="16" tileheight="16" infinite="0" nextlayerid="14" nextobjectid="28">
  <tileset firstgid="1" name="Buttons" tilewidth="32" tileheight="16" tilecount="4" columns="2">
   <image source="../sprites/Buttons.png" width="64" height="32"/>
  </tileset>
@@ -44,7 +44,7 @@
     <property name="ColliderName" value="slingshot"/>
    </properties>
   </object>
-  <object id="26" type="Player" gid="6" x="350.565" y="94.5856" width="76" height="60" rotation="190.268">
+  <object id="26" type="Player" gid="6" x="417.032" y="78.1997" width="76" height="60" rotation="190.268">
    <properties>
     <property name="Sprite" value="sprites/pillbug.png"/>
     <property name="columns" value="1"/>
