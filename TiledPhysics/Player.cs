@@ -1,6 +1,7 @@
 ﻿using System;
 using GXPEngine;
 using TiledMapParser;
+using Physics;
 
 public class Player : Pivot
 {
@@ -11,6 +12,8 @@ public class Player : Pivot
 
     //camera target when following the player
     public Pivot cameraTarget;
+    AnimationSprite animation;
+    SingleMover _mover;
 
     public Player() : base() { ReadVariables(); }
 
@@ -18,6 +21,9 @@ public class Player : Pivot
     {
         this.obj = obj;
         ReadVariables();
+        animation = new AnimationSprite(obj.GetStringProperty("Sprite"), obj.GetIntProperty("columns"), obj.GetIntProperty("rows"));
+        AddChild(animation);
+        animation.SetOrigin(animation.width / 2, animation.height / 2);
     }
 
     public Player(String filename, int cols, int rows, TiledObject obj) : base()
@@ -51,6 +57,13 @@ public class Player : Pivot
         lookTarget.SetScaleXY(1f, 1f);
         parentScene.setLookTarget(lookTarget);
         parentScene.jumpToTarget();
+
+        _mover = new SingleMover();
+        parent.AddChild(_mover);
+        _mover.AddChild(this);
+        _mover.AddChild(animation);
+        SetXY(0, 0);
+        _mover.SetCollider(new Ball(_mover, _mover.position, 10));
     }
 
     /// <summary>
@@ -63,9 +76,11 @@ public class Player : Pivot
 
     public void Update()
     {
+        _mover.Step();
         HandleInput();
         PlayerAnimation();
         UpdateUI();
+        Gizmos.DrawCross(_mover.x, _mover.y, 10, parentScene);
     }
 
     /// <summary>
@@ -73,7 +88,14 @@ public class Player : Pivot
     /// </summary>
     private void HandleInput()
     {
-        
+        if (Input.GetKey(Key.A))
+        {
+            animation.rotation -= 5;
+        }
+        if (Input.GetKey(Key.D))
+        {
+            animation.rotation += 5;
+        }
     }
 
     /// <summary>

@@ -49,3 +49,14 @@ D:\school\saxion\onedrive\OneDrive - Saxion\programming\gxp stuff\TiledPhysics\b
 D:\school\saxion\onedrive\OneDrive - Saxion\programming\gxp stuff\TiledPhysics\bin\Debug\Newtonsoft.Json.dll
 D:\school\saxion\onedrive\OneDrive - Saxion\programming\gxp stuff\TiledPhysics\bin\Debug\Newtonsoft.Json.xml
 D:\school\saxion\onedrive\OneDrive - Saxion\programming\gxp stuff\TiledPhysics\obj\x86\Debug\GXPEngine.csproj.CopyComplete
+C:\Users\Santos\Documents\GitHub\FinalApproach\TiledPhysics\bin\Debug\GXPEngine.exe.config
+C:\Users\Santos\Documents\GitHub\FinalApproach\TiledPhysics\bin\Debug\GXPEngine.exe
+C:\Users\Santos\Documents\GitHub\FinalApproach\TiledPhysics\bin\Debug\GXPEngine.pdb
+C:\Users\Santos\Documents\GitHub\FinalApproach\TiledPhysics\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Santos\Documents\GitHub\FinalApproach\TiledPhysics\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Santos\Documents\GitHub\FinalApproach\TiledPhysics\obj\x86\Debug\GXPEngine.csproj.AssemblyReference.cache
+C:\Users\Santos\Documents\GitHub\FinalApproach\TiledPhysics\obj\x86\Debug\GXPEngine.csproj.SuggestedBindingRedirects.cache
+C:\Users\Santos\Documents\GitHub\FinalApproach\TiledPhysics\obj\x86\Debug\GXPEngine.csproj.CoreCompileInputs.cache
+C:\Users\Santos\Documents\GitHub\FinalApproach\TiledPhysics\obj\x86\Debug\GXPEngine.csproj.CopyComplete
+C:\Users\Santos\Documents\GitHub\FinalApproach\TiledPhysics\obj\x86\Debug\GXPEngine.exe
+C:\Users\Santos\Documents\GitHub\FinalApproach\TiledPhysics\obj\x86\Debug\GXPEngine.pdb
