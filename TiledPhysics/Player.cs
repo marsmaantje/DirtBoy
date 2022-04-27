@@ -95,13 +95,14 @@ public class Player : Pivot
         _mover.SetCollider(new Ball(_mover, _mover.position, radius));
         Console.WriteLine(parent);
         collider = new EasyDraw(10, 10);
+        _mover.Bounciness = 0.5f;
     }
 
 
     public void Update()
     {
-        health -= 0.01f;
-        health -= _mover.Velocity.Length() / maxSpeed;
+        //health -= 0.01f;
+        //health -= _mover.Velocity.Length() / maxSpeed;
         animation.scale = health01;
         if (_mover.collider is Ball ball)
         {
@@ -140,8 +141,10 @@ public class Player : Pivot
         //    animation.rotation += 5;
         //    _mover.Velocity += new Vec2(1f, 0);
         //}
-
-        _mover.Accelaration = (desiredVelocity - _mover.Velocity) * 0.1f * Vec2.GetUnitVectorDeg(0);
+        if (_mover.lastCollision != null)
+            _mover.Accelaration = (desiredVelocity - _mover.Velocity) * 0.1f * _mover.lastCollision.normal.Normal();
+        else
+            _mover.Accelaration = new Vec2();
     }
 
     /// <summary>

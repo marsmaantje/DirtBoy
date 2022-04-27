@@ -10,6 +10,7 @@ namespace Physics
     {
         public static bool drawDebugLine = false;
         public event OnCollision OnCollision;
+        public CollisionInfo lastCollision = null;
 
 
         /// <summary>
