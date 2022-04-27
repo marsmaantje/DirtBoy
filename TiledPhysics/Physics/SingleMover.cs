@@ -71,8 +71,8 @@ namespace Physics
                 if (info.other != null)
                 {
                     Collision(info.other); //call the collission event to perhaps do something with the collission
-                    if (info.other.owner is Mover)
-                        ((Mover)info.other.owner).Collision(collider);
+                    if (info.other.owner is Mover mover)
+                        mover.Collision(collider);
                 }
             }
         }

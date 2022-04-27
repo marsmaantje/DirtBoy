@@ -87,7 +87,7 @@
     <property name="type" type="int" value="1"/>
    </properties>
   </object>
-  <object id="48" type="Objects.Fan" gid="6" x="392.485" y="41.0331" width="76" height="60" rotation="40.2681">
+  <object id="48" type="Objects.Fan" gid="6" x="392.485" y="41.0331" width="76" height="60">
    <properties>
     <property name="ColliderName" value="slingshot"/>
     <property name="Sprite" value="sprites/slingshot1.png"/>

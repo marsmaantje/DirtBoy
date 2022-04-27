@@ -15,7 +15,7 @@ public class Player : Pivot
     AnimationSprite animation;
     SingleMover _mover;
     EasyDraw collider;
-    float health;
+    public float health;
     float maxHealth;
     float maxHealthRadius;
     float minHealthRadius;
@@ -93,14 +93,12 @@ public class Player : Pivot
         _mover.AddChild(this);
         SetXY(0, 0);
         _mover.SetCollider(new Ball(_mover, _mover.position, radius));
-        Console.WriteLine(parent);
         collider = new EasyDraw(10, 10);
         AddChild(collider);
         collider.SetOrigin(5,5);
         collider.SetXY(0, 0);
         _mover.Bounciness = 0.5f;
     }
-
 
     public void Update()
     {
@@ -129,6 +127,8 @@ public class Player : Pivot
         Vec2 desiredVelocity = new Vec2(
             ((Input.GetKey(Key.D) ? 1 : 0) - (Input.GetKey(Key.A) ? 1 : 0)) * maxSpeed,
             0);
+        Console.WriteLine(health);
+        health = Mathf.Clamp(health, 0, maxHealth);
         if (health < 1)
         {
             health = maxHealth;

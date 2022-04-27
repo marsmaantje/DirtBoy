@@ -19,7 +19,20 @@ namespace Objects
                 case 1: health = 0.25f; Console.WriteLine("puddle of dirt was created"); break;
                 case 2: health = -0.25f; Console.WriteLine("puddle of water was created"); break;
                 case 3: health = -10f; Console.WriteLine("a river was created"); break;
+                case 4: health -= 0.05f; Console.WriteLine("concrete (?) was created"); break;
                 default: Console.WriteLine("add " + obj.GetIntProperty("type") +  " to the list in HealthEffect"); break;
+            }
+        }
+
+        void OnCollision(GameObject other)
+        {
+            if (other is EasyDraw easyDraw)
+            {
+                if (easyDraw.parent is Player player)
+                {
+                    player.health += health;
+                    Console.WriteLine("player got hit");
+                }
             }
         }
 
