@@ -8,7 +8,7 @@ namespace Physics
 {
     public class Ball : Collider
     {
-        public readonly float radius;
+        public float radius;
 
         public Ball(GameObject pOwner, Vec2 startPosition, float radius) : base(pOwner, startPosition)
         {

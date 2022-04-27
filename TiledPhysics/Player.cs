@@ -14,6 +14,21 @@ public class Player : Pivot
     public Pivot cameraTarget;
     AnimationSprite animation;
     SingleMover _mover;
+    EasyDraw collider;
+    float health;
+    float maxHealth;
+    float maxHealthRadius;
+    float minHealthRadius;
+
+    float radius
+    {
+        get => Mathf.Map(health, 0, maxHealth, minHealthRadius, maxHealthRadius);
+    }
+
+    float health01
+    {
+        get => health / maxHealth;
+    }
 
     public Player() : base() { ReadVariables(); }
 
@@ -21,9 +36,7 @@ public class Player : Pivot
     {
         this.obj = obj;
         ReadVariables();
-        animation = new AnimationSprite(obj.GetStringProperty("Sprite"), obj.GetIntProperty("columns"), obj.GetIntProperty("rows"));
-        AddChild(animation);
-        animation.SetOrigin(animation.width / 2, animation.height / 2);
+        createAnimation();
     }
 
     public Player(String filename, int cols, int rows, TiledObject obj) : base()
@@ -33,12 +46,25 @@ public class Player : Pivot
     }
 
     /// <summary>
+    /// Try to read the player variables from the tiled object, use the fallback variables if not present
+    /// </summary>
+    void ReadVariables()
+    {
+        maxHealth = obj.GetIntProperty("maxHealth", 10);
+        maxHealthRadius = obj.GetFloatProperty("maxHealthRadius", 10);
+        minHealthRadius = obj.GetFloatProperty("minHealthRadius", 1);
+        health = maxHealth;
+    }
+
+    /// <summary>
     /// setup the visual for the player,
     /// visual is seperate for collision reasons
     /// </summary>
     private void createAnimation()
     {
-        
+        animation = new AnimationSprite(obj.GetStringProperty("Sprite"), obj.GetIntProperty("columns"), obj.GetIntProperty("rows"));
+        AddChild(animation);
+        animation.SetOrigin(animation.width / 2, animation.height / 2);
     }
 
     /// <summary>
@@ -58,30 +84,34 @@ public class Player : Pivot
         parentScene.setLookTarget(lookTarget);
         parentScene.jumpToTarget();
 
+        //setup the physics
         _mover = new SingleMover();
         parent.AddChild(_mover);
         _mover.position = position;
         _mover.AddChild(this);
         SetXY(0, 0);
-        _mover.SetCollider(new Ball(_mover, _mover.position, 10));
+        _mover.SetCollider(new Ball(_mover, _mover.position, radius));
         Console.WriteLine(parent);
+        collider = new EasyDraw(10, 10);
     }
 
-    /// <summary>
-    /// Try to read the player variables from the tiled object, use the fallback variables if not present
-    /// </summary>
-    private void ReadVariables()
-    {
-
-    }
 
     public void Update()
     {
+        health -= 0.01f;
+        animation.scale = health01;
+        if (_mover.collider is Ball ball)
+        {
+            ball.radius = radius;
+            collider.width = (int)radius;
+            collider.height = (int)radius;
+
+        }
         _mover.Step();
         HandleInput();
         PlayerAnimation();
         UpdateUI();
-        Gizmos.DrawCross(_mover.x, _mover.y, 10, parentScene);
+        //Gizmos.DrawCross(_mover.x, _mover.y, 10, parentScene);
     }
 
     /// <summary>
@@ -89,13 +119,22 @@ public class Player : Pivot
     /// </summary>
     private void HandleInput()
     {
+
+        if (health < 1)
+        {
+            health = maxHealth;
+        }
         if (Input.GetKey(Key.A))
         {
             animation.rotation -= 5;
+            _mover.Velocity += new Vec2(-1f,0);
+            health -= 0.04f;
         }
         if (Input.GetKey(Key.D))
         {
             animation.rotation += 5;
+            _mover.Velocity += new Vec2(1f, 0);
+            health -= 0.04f;
         }
     }
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.8" tiledversion="1.8.4" orientation="orthogonal" renderorder="right-down" width="43" height="24" tilewidth="16" tileheight="16" infinite="0" nextlayerid="14" nextobjectid="28">
+<map version="1.8" tiledversion="1.8.4" orientation="orthogonal" renderorder="right-down" width="43" height="24" tilewidth="16" tileheight="16" infinite="0" nextlayerid="14" nextobjectid="48">
  <tileset firstgid="1" name="Buttons" tilewidth="32" tileheight="16" tilecount="4" columns="2">
   <image source="../sprites/Buttons.png" width="64" height="32"/>
  </tileset>
@@ -44,13 +44,6 @@
     <property name="ColliderName" value="slingshot"/>
    </properties>
   </object>
-  <object id="26" type="Player" gid="6" x="417.032" y="78.1997" width="76" height="60" rotation="190.268">
-   <properties>
-    <property name="Sprite" value="sprites/pillbug.png"/>
-    <property name="columns" value="1"/>
-    <property name="rows" value="1"/>
-   </properties>
-  </object>
   <object id="12" type="Objects.ColliderObject" gid="6" x="138.934" y="201.671" width="76" height="60" rotation="336.968">
    <properties>
     <property name="ColliderName" value="slingshot"/>
@@ -67,6 +60,33 @@
    </properties>
   </object>
   <object id="23" type="Objects.PhysicsBall" gid="9" x="495.253" y="117.343" width="31" height="31"/>
+  <object id="43" type="Player" gid="9" x="352" y="128" width="31" height="31">
+   <properties>
+    <property name="Sprite" value="sprites/pillbug.png"/>
+    <property name="columns" value="1"/>
+    <property name="rows" value="1"/>
+   </properties>
+  </object>
+  <object id="44" type="Objects.ColliderObject" gid="6" x="425.258" y="164.614" width="76" height="60" rotation="10.9313">
+   <properties>
+    <property name="ColliderName" value="slingshot"/>
+   </properties>
+  </object>
+  <object id="46" type="Objects.ColliderObject" gid="6" x="109.5" y="149.217" width="76" height="60" rotation="2.20854">
+   <properties>
+    <property name="ColliderName" value="slingshot"/>
+   </properties>
+  </object>
+  <object id="47" type="Objects.EnvironmentalObjects" gid="6" x="332.889" y="150.737" width="76" height="60" rotation="277">
+   <properties>
+    <property name="ColliderName" value="slingshot"/>
+    <property name="Sprite" value="sprites/slingshot1.png"/>
+    <property name="columns" value="1"/>
+    <property name="maxHealth" type="int" value="10"/>
+    <property name="rows" value="1"/>
+    <property name="type" type="int" value="1"/>
+   </properties>
+  </object>
  </objectgroup>
  <imagelayer id="11" name="Image Layer 2">
   <image source="../sprites/ui.png" width="683" height="384"/>
