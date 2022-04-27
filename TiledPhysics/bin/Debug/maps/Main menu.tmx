@@ -77,14 +77,9 @@
     <property name="ColliderName" value="slingshot"/>
    </properties>
   </object>
-  <object id="47" type="Objects.EnvironmentalObjects" gid="6" x="332.889" y="150.737" width="76" height="60" rotation="277">
+  <object id="47" type="Objects.HealthEffect" gid="6" x="332.889" y="150.737" width="76" height="60" rotation="277">
    <properties>
-    <property name="ColliderName" value="slingshot"/>
-    <property name="Sprite" value="sprites/slingshot1.png"/>
-    <property name="columns" value="1"/>
     <property name="maxHealth" type="int" value="10"/>
-    <property name="rows" value="1"/>
-    <property name="type" type="int" value="1"/>
    </properties>
   </object>
  </objectgroup>
