@@ -98,12 +98,12 @@ public class Player : Pivot
 
     public void Update()
     {
-        health -= 0.01f;
+        health -= 0.01f + 0.01f * _mover.Velocity.Length() / 10f;
         animation.scale = health01;
         if (_mover.collider is Ball ball)
         {
             ball.radius = radius;
-            collider.width = (int)radius;
+            collider.width = (int)radius; //problematic?
             collider.height = (int)radius;
 
         }
@@ -119,7 +119,6 @@ public class Player : Pivot
     /// </summary>
     private void HandleInput()
     {
-
         if (health < 1)
         {
             health = maxHealth;
@@ -128,13 +127,11 @@ public class Player : Pivot
         {
             animation.rotation -= 5;
             _mover.Velocity += new Vec2(-1f,0);
-            health -= 0.04f;
         }
         if (Input.GetKey(Key.D))
         {
             animation.rotation += 5;
             _mover.Velocity += new Vec2(1f, 0);
-            health -= 0.04f;
         }
     }
 

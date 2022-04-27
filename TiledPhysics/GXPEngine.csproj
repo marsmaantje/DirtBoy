@@ -59,7 +59,8 @@
     <Compile Include="Objects\ColliderObject.cs" />
     <Compile Include="Objects\CustomObject.cs" />
     <Compile Include="Objects\ComplexMover.cs" />
-    <Compile Include="Objects\EnvironmentalObjects.cs" />
+    <Compile Include="Objects\Fan.cs" />
+    <Compile Include="Objects\HealthEffect.cs" />
     <Compile Include="Objects\PhysicsBall.cs" />
     <Compile Include="Physics\ColliderLoader.cs" />
     <Compile Include="Physics\ColliderManager.cs" />

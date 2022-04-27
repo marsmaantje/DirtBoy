@@ -19,7 +19,7 @@ namespace Objects
                 case 1: health = 0.25f; Console.WriteLine("puddle of dirt was created"); break;
                 case 2: health = -0.25f; Console.WriteLine("puddle of water was created"); break;
                 case 3: health = -10f; Console.WriteLine("a river was created"); break;
-                default: Console.WriteLine("add " + obj.GetIntProperty("type") +  " to the list"); break;
+                default: Console.WriteLine("add " + obj.GetIntProperty("type") +  " to the list in HealthEffect"); break;
             }
         }
 
