@@ -16,10 +16,9 @@ namespace Objects
             collider.isTrigger = true;
             switch (obj.GetIntProperty("type"))
             {
-                case 1: health = 0.25f; Console.WriteLine("puddle of dirt was created"); break;
+                case 1: health = 0.25f; Console.WriteLine("pile of dirt was created"); break;
                 case 2: health = -0.25f; Console.WriteLine("puddle of water was created"); break;
                 case 3: health = -10f; Console.WriteLine("a river was created"); break;
-                case 4: health -= 0.05f; Console.WriteLine("concrete (?) was created"); break;
                 default: Console.WriteLine("add " + obj.GetIntProperty("type") +  " to the list in HealthEffect"); break;
             }
         }

@@ -2,6 +2,7 @@
 using GXPEngine;
 using TiledMapParser;
 using Physics;
+using Objects;
 
 public class Player : Pivot
 {
@@ -127,7 +128,6 @@ public class Player : Pivot
         Vec2 desiredVelocity = new Vec2(
             ((Input.GetKey(Key.D) ? 1 : 0) - (Input.GetKey(Key.A) ? 1 : 0)) * maxSpeed,
             0);
-        Console.WriteLine(health);
         health = Mathf.Clamp(health, 0, maxHealth);
         if (health < 1)
         {
@@ -145,9 +145,22 @@ public class Player : Pivot
         //    _mover.Velocity += new Vec2(1f, 0);
         //}
         if (_mover.lastCollision != null)
+        {
             _mover.Accelaration = (desiredVelocity - _mover.Velocity) * 0.1f * _mover.lastCollision.normal.Normal();
+            if (_mover.lastCollision.other.owner is ColliderObject other)
+            {
+                switch (other._collisionType)
+                {
+                    case CollisionType.CONCRETE: health -= 0.05f; break;
+                    case CollisionType.DIRT: health += 0.25f; break;
+                    case CollisionType.NULL: break;
+                }
+            }
+        }
         else
+        {
             _mover.Accelaration = new Vec2();
+        }
     }
 
     /// <summary>

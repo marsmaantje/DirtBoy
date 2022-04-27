@@ -9,6 +9,7 @@ using Visuals;
 
 namespace Objects
 {
+    public enum CollisionType { CONCRETE, DIRT, NULL }
     /// <summary>
     /// Base class for custom objects, allows for respawning,
     /// initializing and stores a reference to the current Scene and tiled object
@@ -18,6 +19,7 @@ namespace Objects
         MultiSegmentCollider _collider;
         ColliderManager _colliderManager;
         ColliderLoader _colliderLoader;
+        public CollisionType _collisionType;
 
         public ColliderObject(string filename, int cols, int rows, TiledObject obj) : this(filename, cols, rows, obj, -1)
         { }
@@ -25,6 +27,7 @@ namespace Objects
         public ColliderObject(string filename, int cols, int rows, TiledObject obj, int frames = -1, bool keepInCache = false, bool addCollider = true) : base(obj, filename, cols, rows, frames, keepInCache, addCollider)
         {
             this.obj = obj;
+            _collisionType = (CollisionType)obj.GetIntProperty("type", (int)CollisionType.NULL);
         }
 
         public ColliderObject() : base(null, "sprites/empty.png", 1, 1, addCollider: false) { }
@@ -41,6 +44,16 @@ namespace Objects
             _collider.AddToManager(_colliderManager);
 
             //AddChild(new MultiSegmentVisual(_collider));
+        }
+        void OnCollision(GameObject other)
+        {
+            if (other is EasyDraw easyDraw)
+            {
+                if (easyDraw.parent is Player player)
+                {
+                    Console.WriteLine("player got hit");
+                }
+            }
         }
     }
 }
