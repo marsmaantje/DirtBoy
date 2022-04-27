@@ -19,6 +19,7 @@ public class Player : Pivot
     float maxHealth;
     float maxHealthRadius;
     float minHealthRadius;
+    float maxSpeed;
 
     float radius
     {
@@ -53,6 +54,7 @@ public class Player : Pivot
         maxHealth = obj.GetIntProperty("maxHealth", 10);
         maxHealthRadius = obj.GetFloatProperty("maxHealthRadius", 10);
         minHealthRadius = obj.GetFloatProperty("minHealthRadius", 1);
+        maxSpeed = obj.GetFloatProperty("maxSpeed", 10);
         health = maxHealth;
     }
 
@@ -93,17 +95,19 @@ public class Player : Pivot
         _mover.SetCollider(new Ball(_mover, _mover.position, radius));
         Console.WriteLine(parent);
         collider = new EasyDraw(10, 10);
+        _mover.Bounciness = 0.5f;
     }
 
 
     public void Update()
     {
-        health -= 0.01f + 0.01f * _mover.Velocity.Length() / 10f;
+        //health -= 0.01f;
+        //health -= _mover.Velocity.Length() / maxSpeed;
         animation.scale = health01;
         if (_mover.collider is Ball ball)
         {
             ball.radius = radius;
-            collider.width = (int)radius; //problematic?
+            collider.width = (int)radius;
             collider.height = (int)radius;
 
         }
@@ -119,20 +123,28 @@ public class Player : Pivot
     /// </summary>
     private void HandleInput()
     {
+        Vec2 desiredVelocity = new Vec2(
+            ((Input.GetKey(Key.D) ? 1 : 0) - (Input.GetKey(Key.A) ? 1 : 0)) * maxSpeed,
+            0);
         if (health < 1)
         {
             health = maxHealth;
         }
-        if (Input.GetKey(Key.A))
-        {
-            animation.rotation -= 5;
-            _mover.Velocity += new Vec2(-1f,0);
-        }
-        if (Input.GetKey(Key.D))
-        {
-            animation.rotation += 5;
-            _mover.Velocity += new Vec2(1f, 0);
-        }
+        //if (Input.GetKey(Key.A))
+        //{
+        //    animation.rotation -= 5;
+
+        //    _mover.Velocity += new Vec2(-1f,0);
+        //}
+        //if (Input.GetKey(Key.D))
+        //{
+        //    animation.rotation += 5;
+        //    _mover.Velocity += new Vec2(1f, 0);
+        //}
+        if (_mover.lastCollision != null)
+            _mover.Accelaration = (desiredVelocity - _mover.Velocity) * 0.1f * _mover.lastCollision.normal.Normal();
+        else
+            _mover.Accelaration = new Vec2();
     }
 
     /// <summary>

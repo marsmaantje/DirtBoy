@@ -40,12 +40,15 @@ namespace Physics
 
             ColliderManager manager = ColliderManager.main;
             CollisionInfo firstCollision = manager.MoveUntilCollision(collider, Velocity);
+            lastCollision = firstCollision;
 
             UpdatePosition(firstCollision);
             if (firstCollision != null && Mathf.RoughlyEquals(firstCollision.timeOfImpact, 0, 0.001f))
             {
                 firstCollision = manager.MoveUntilCollision(collider, Velocity);
                 UpdatePosition(firstCollision);
+                if(firstCollision != null)
+                    lastCollision = firstCollision;
             }
         }
 
