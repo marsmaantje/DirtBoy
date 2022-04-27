@@ -95,6 +95,9 @@ public class Player : Pivot
         _mover.SetCollider(new Ball(_mover, _mover.position, radius));
         Console.WriteLine(parent);
         collider = new EasyDraw(10, 10);
+        AddChild(collider);
+        collider.SetOrigin(5,5);
+        collider.SetXY(0, 0);
         _mover.Bounciness = 0.5f;
     }
 
