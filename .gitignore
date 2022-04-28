@@ -1,4 +1,4 @@
-**/bin/*.pdb
+*.pdb
 *.suo
 GXPEngine.exe
 **/obj
