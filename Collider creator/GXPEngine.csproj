@@ -44,9 +44,6 @@
     <Compile Include="..\GXPEngine2022\GXPEngine\Core\Vec2.cs">
       <Link>GXPEngine\Core\Vec2.cs</Link>
     </Compile>
-    <Compile Include="..\GXPEngine2022\GXPEngine\SoLoudNew\soloud.cs">
-      <Link>Sound\soloud.cs</Link>
-    </Compile>
     <Compile Include="ColliderCreator.cs" />
     <Compile Include="ColliderListPreview.cs" />
     <Compile Include="GameElements\Block.cs" />
@@ -187,7 +184,6 @@
     <Compile Include="Physics\Colliders\Collider.cs" />
     <Compile Include="Physics\Colliders\Line.cs" />
     <Compile Include="Physics\Mover.cs" />
-    <Compile Include="Sound\SoundSystem.cs" />
     <Compile Include="UIElements\Button.cs" />
     <Compile Include="UIElements\ButtonManager.cs" />
     <Compile Include="UIElements\ColliderPreview.cs" />
