@@ -17,7 +17,7 @@ public class Player : Pivot
     SingleMover _mover;
     EasyDraw collider;
     public float health;
-    float maxHealth, minHealthRadius, maxHealthRadius, maxSpeed;
+    float maxHealth, minHealthRadius, maxHealthRadius, maxSpeed, minMass, maxMass;
 
     float radius
     {
@@ -53,6 +53,8 @@ public class Player : Pivot
         maxHealthRadius = obj.GetFloatProperty("maxHealthRadius", 10);
         minHealthRadius = obj.GetFloatProperty("minHealthRadius", 1);
         maxSpeed = obj.GetFloatProperty("maxSpeed", 10);
+        minMass = obj.GetFloatProperty("minMass", 1);
+        maxMass = obj.GetFloatProperty("maxMass", 10);
         health = maxHealth;
     }
 
@@ -104,14 +106,16 @@ public class Player : Pivot
         UpdateHealth();
         float radiusDelta = radius - pRadius;
 
-        animation.scale = health01;
+        animation.scale = Mathf.Map(health01, 0, 1, 1, 3);
         if (_mover.collider is Ball ball)
         {
             ball.radius = radius;
             collider.width = (int)radius;
             collider.height = (int)radius;
         }
-        if(_mover.lastCollision != null)
+
+        _mover.Mass = Mathf.Map(health01, 0, 1, minMass, maxMass);
+        if (_mover.lastCollision != null)
             _mover.collider.position += (_mover.lastCollision.normal * radiusDelta);
 
         
@@ -120,8 +124,12 @@ public class Player : Pivot
         PlayerAnimation();
         UpdateUI();
         //Gizmos.DrawCross(_mover.x, _mover.y, 10, parentScene);
+        Console.WriteLine(_mover.Mass);
     }
 
+    /// <summary>
+    /// Update all health related things of the player
+    /// </summary>
     private void UpdateHealth()
     {
         if (_mover.lastCollision != null && _mover.lastCollision.other.owner is ColliderObject other)
@@ -135,10 +143,12 @@ public class Player : Pivot
             }
         }
         health = Mathf.Clamp(health, 0, maxHealth);
+        /*
         if (health < 1)
         {
             health = maxHealth;
         }
+        */
     }
 
     /// <summary>
@@ -149,17 +159,21 @@ public class Player : Pivot
         Vec2 desiredVelocity = new Vec2(
             ((Input.GetKey(Key.D) ? 1 : 0) - (Input.GetKey(Key.A) ? 1 : 0)) * maxSpeed,
             0);
+        Vec2 deltaVelocity = desiredVelocity - _mover.Velocity;
         animation.rotation = _mover.Velocity.x * 2;
         if (_mover.lastCollision != null)
         {
-            _mover.Accelaration = (desiredVelocity - _mover.Velocity) * 0.1f * _mover.lastCollision.normal.Normal();
+            _mover.Accelaration = (deltaVelocity) * 0.1f * _mover.lastCollision.normal.Normal();
+            //_mover.ApplyForce(deltaVelocity * _mover.lastCollision.normal.Normal());
             if (Input.GetKey(Key.W))
             {
-                _mover.Velocity += _mover.lastCollision.normal * maxSpeed;
+                //_mover.Velocity += _mover.lastCollision.normal * maxSpeed;
+                _mover.ApplyForce(new Vec2(0, -maxSpeed) * maxMass);
             }
         }
         else
         {
+            //_mover.ApplyForce(deltaVelocity * 0.5f * new Vec2(1, 0));
             _mover.Accelaration = (desiredVelocity - _mover.Velocity) * 0.05f * new Vec2(1, 0);
         }
     }
