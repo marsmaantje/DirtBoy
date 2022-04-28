@@ -35,8 +35,9 @@ namespace Physics
         /// </summary>
         override public void Step()
         {
-            Velocity += Accelaration;
-            Velocity += gravity;
+            _velocity += Accelaration;
+            _velocity += gravity;
+            _velocity *= 1 - _airFriction;
 
             ColliderManager manager = ColliderManager.main;
             CollisionInfo firstCollision = manager.MoveUntilCollision(collider, Velocity);
@@ -45,6 +46,7 @@ namespace Physics
             UpdatePosition(firstCollision);
             if (firstCollision != null && Mathf.RoughlyEquals(firstCollision.timeOfImpact, 0, 0.001f))
             {
+                _velocity *= 1 - _friction;
                 firstCollision = manager.MoveUntilCollision(collider, Velocity);
                 UpdatePosition(firstCollision);
                 if(firstCollision != null)
