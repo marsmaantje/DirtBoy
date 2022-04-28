@@ -68,7 +68,7 @@ namespace Physics
         /// <summary>
         /// The bounciness of the object
         /// </summary>
-        protected float _bounciness = 1f;
+        protected float _bounciness = 0.95f;
         public float Bounciness
         {
             get => _bounciness;
@@ -96,6 +96,15 @@ namespace Physics
         public Mover()
         {
             OnCollision += (Collider other, Mover current) => { };
+        }
+
+        /// <summary>
+        /// Applies the given force on the velocity
+        /// </summary>
+        /// <param name="force">The force to apply</param>
+        public void ApplyForce(Vec2 force)
+        {
+            _velocity += force / _mass;
         }
 
         /// <summary>

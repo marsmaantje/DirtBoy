@@ -51,7 +51,7 @@ namespace Objects
             {
                 if (easyDraw.parent is Player player)
                 {
-                    Console.WriteLine("player got hit");
+                    //Console.WriteLine("player got hit");
                 }
             }
         }
