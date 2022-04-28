@@ -17,6 +17,7 @@ public class Player : Pivot
     SingleMover _mover;
     EasyDraw collider;
     public float health;
+    float pRadius;
     float maxHealth;
     float maxHealthRadius;
     float minHealthRadius;
@@ -103,9 +104,8 @@ public class Player : Pivot
 
     public void Update()
     {
-        float pRadius = radius;
         health -= 0.01f;
-        health -= _mover.Velocity.Length() / (20*maxSpeed);
+        //health -= _mover.Velocity.Length() / (20*maxSpeed);
         health = Mathf.Clamp(health, 0, maxHealth);
         if (health < 1)
         {
@@ -128,6 +128,7 @@ public class Player : Pivot
         HandleInput();
         PlayerAnimation();
         UpdateUI();
+        pRadius = radius;
         //Gizmos.DrawCross(_mover.x, _mover.y, 10, parentScene);
     }
 
@@ -148,8 +149,9 @@ public class Player : Pivot
             {
                 switch (other._collisionType)
                 {
-                    case CollisionType.CONCRETE: health -= 0.05f; break;
-                    case CollisionType.DIRT: health += 0.25f; break;
+                    case CollisionType.CONCRETE: health -= _mover.Velocity.Length() / (20 * maxSpeed); ; break;
+                    case CollisionType.DIRT: health += Mathf.Clamp(maxSpeed / (5*_mover.Velocity.Length()), 0, maxHealth-health) ; Console.WriteLine(health); ; break;
+                    case CollisionType.GRASS: break;
                     case CollisionType.NULL: break;
                 }
             }
