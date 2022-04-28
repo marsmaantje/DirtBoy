@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.8" tiledversion="1.8.4" orientation="orthogonal" renderorder="right-down" width="60" height="24" tilewidth="16" tileheight="16" infinite="0" nextlayerid="15" nextobjectid="120">
+<map version="1.8" tiledversion="1.8.4" orientation="orthogonal" renderorder="right-down" width="60" height="24" tilewidth="16" tileheight="16" infinite="0" nextlayerid="15" nextobjectid="233">
  <tileset firstgid="1" name="empty" tilewidth="16" tileheight="16" tilecount="1" columns="1">
   <image source="../sprites/empty.png" width="16" height="16"/>
  </tileset>
@@ -26,152 +26,143 @@
    <properties>
     <property name="distance" type="float" value="500"/>
     <property name="falloff" type="float" value="0.4"/>
-    <property name="strength" type="float" value="3"/>
+    <property name="strength" type="float" value="5"/>
    </properties>
   </object>
-  <object id="68" type="Player" gid="10" x="288" y="288" width="32" height="32">
+  <object id="68" type="Player" gid="10" x="560.667" y="248" width="32" height="32">
    <properties>
     <property name="Sprite" value="sprites/dirtboy_concept_art.png"/>
     <property name="columns" value="1"/>
+    <property name="maxHealth" type="float" value="10"/>
+    <property name="maxHealthRadius" type="float" value="30"/>
+    <property name="maxMass" type="float" value="5"/>
+    <property name="maxSpeed" type="float" value="10"/>
+    <property name="minHealthRadius" type="float" value="1"/>
+    <property name="minMass" type="float" value="1"/>
     <property name="rows" value="1"/>
    </properties>
   </object>
-  <object id="69" type="Objects.ColliderObject" gid="8" x="144" y="448" width="563" height="184">
-   <properties>
-    <property name="ColliderName" value="WorldCollider"/>
-   </properties>
-  </object>
-  <object id="72" type="Objects.ColliderObject" gid="8" x="656" y="-288" width="563" height="184" rotation="180">
-   <properties>
-    <property name="ColliderName" value="WorldCollider"/>
-   </properties>
-  </object>
-  <object id="75" type="Objects.ColliderObject" gid="8" x="1360" y="320" width="563" height="184" rotation="-90">
-   <properties>
-    <property name="ColliderName" value="WorldCollider"/>
-   </properties>
-  </object>
-  <object id="76" type="Objects.ColliderObject" gid="8" x="688" y="448" width="563" height="184">
-   <properties>
-    <property name="ColliderName" value="WorldCollider"/>
-   </properties>
-  </object>
-  <object id="80" type="Objects.Fan" gid="7" x="1296" y="288" width="53.8618" height="113.879" rotation="267.309">
+  <object id="80" type="Objects.Fan" gid="7" x="1242" y="356" width="53.8618" height="113.879" rotation="267.309">
    <properties>
     <property name="distance" type="float" value="500"/>
     <property name="falloff" type="float" value="0.4"/>
-    <property name="strength" type="float" value="3"/>
+    <property name="strength" type="float" value="5"/>
    </properties>
   </object>
-  <object id="81" type="Objects.ColliderObject" gid="8" x="1200" y="-288" width="563" height="184" rotation="180">
+  <object id="195" gid="9" x="280" y="329.25" width="64" height="16"/>
+  <object id="196" gid="9" x="344" y="329.25" width="64" height="16"/>
+  <object id="197" gid="9" x="408" y="329.25" width="64" height="16"/>
+  <object id="198" gid="9" x="472" y="329.25" width="64" height="16"/>
+  <object id="199" gid="9" x="536" y="329.25" width="64" height="16"/>
+  <object id="200" gid="9" x="600" y="329.25" width="64" height="16"/>
+  <object id="201" type="Objects.ColliderObject" gid="3" x="662" y="349.25" width="31" height="31">
    <properties>
-    <property name="ColliderName" value="WorldCollider"/>
+    <property name="type" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="202" type="Objects.ColliderObject" gid="3" x="694" y="349.25" width="31" height="31">
+   <properties>
+    <property name="type" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="203" type="Objects.ColliderObject" gid="3" x="726" y="349.25" width="31" height="31">
+   <properties>
+    <property name="type" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="204" type="Objects.ColliderObject" gid="3" x="758" y="349.25" width="31" height="31">
+   <properties>
+    <property name="type" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="205" type="Objects.ColliderObject" gid="3" x="790" y="349.25" width="31" height="31">
+   <properties>
+    <property name="type" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="206" type="Objects.ColliderObject" gid="3" x="822" y="349.25" width="31" height="31">
+   <properties>
+    <property name="type" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="207" type="Objects.ColliderObject" gid="3" x="854" y="349.25" width="31" height="31">
+   <properties>
+    <property name="type" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="208" type="Objects.ColliderObject" gid="3" x="886" y="349.25" width="31" height="31">
+   <properties>
+    <property name="type" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="209" type="Objects.ColliderObject" gid="3" x="918" y="349.25" width="31" height="31">
+   <properties>
+    <property name="type" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="210" type="Objects.ColliderObject" gid="3" x="950" y="349.25" width="31" height="31">
+   <properties>
+    <property name="type" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="211" type="Objects.ColliderObject" gid="3" x="982" y="349.25" width="31" height="31">
+   <properties>
+    <property name="type" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="212" type="Objects.ColliderObject" gid="3" x="1014" y="349.25" width="31" height="31">
+   <properties>
+    <property name="type" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="213" gid="9" x="280" y="345.25" width="64" height="16"/>
+  <object id="214" gid="9" x="344" y="345.25" width="64" height="16"/>
+  <object id="215" gid="9" x="408" y="345.25" width="64" height="16"/>
+  <object id="216" gid="9" x="472" y="345.25" width="64" height="16"/>
+  <object id="217" gid="9" x="536" y="345.25" width="64" height="16"/>
+  <object id="218" gid="9" x="600" y="345.25" width="64" height="16"/>
+  <object id="219" gid="9" x="216" y="329.25" width="64" height="16"/>
+  <object id="220" gid="9" x="216" y="345.25" width="64" height="16"/>
+  <object id="221" gid="9" x="152" y="329.25" width="64" height="16"/>
+  <object id="222" gid="9" x="152" y="345.25" width="64" height="16"/>
+  <object id="223" type="Objects.ColliderObject" gid="3" x="1046" y="349.25" width="31" height="31">
+   <properties>
+    <property name="type" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="224" type="Objects.ColliderObject" gid="3" x="1078" y="349.25" width="31" height="31">
+   <properties>
+    <property name="type" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="225" type="Objects.ColliderObject" gid="3" x="1110" y="349.25" width="31" height="31">
+   <properties>
+    <property name="type" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="226" x="305.167" y="283.75" width="228.333" height="19">
+   <text wrap="1">Step here to shrink</text>
+  </object>
+  <object id="227" x="852.5" y="294.417" width="277.667" height="19">
+   <text wrap="1">Step here to grow</text>
+  </object>
+  <object id="228" type="Objects.ColliderObject" x="152" y="313.25" width="512" height="32">
+   <properties>
+    <property name="type" type="int" value="0"/>
+   </properties>
+  </object>
+  <object id="229" type="Objects.ColliderObject" x="662" y="317.25" width="480" height="32">
+   <properties>
+    <property name="type" type="int" value="1"/>
    </properties>
   </object>
  </objectgroup>
- <objectgroup id="14" name="WorldColliders">
+ <objectgroup id="14" name="WorldColliders" locked="1">
   <object id="53" type="Objects.ColliderObject" gid="8" x="-16" y="-160" width="563" height="184" rotation="90">
    <properties>
     <property name="ColliderName" value="WorldCollider"/>
     <property name="type" type="int" value="1"/>
    </properties>
-  </object>
-  <object id="54" gid="9" x="304" y="64" width="64" height="16"/>
-  <object id="77" gid="9" x="368" y="64" width="64" height="16"/>
-  <object id="78" gid="9" x="432" y="64" width="64" height="16"/>
-  <object id="79" gid="9" x="496" y="64" width="64" height="16"/>
-  <object id="83" gid="9" x="560" y="64" width="64" height="16"/>
-  <object id="84" gid="9" x="624" y="64" width="64" height="16"/>
-  <object id="85" type="Objects.ColliderObject" gid="3" x="688" y="80" width="31" height="31">
-   <properties>
-    <property name="type" type="int" value="1"/>
-   </properties>
-  </object>
-  <object id="86" type="Objects.ColliderObject" gid="3" x="720" y="80" width="31" height="31">
-   <properties>
-    <property name="type" type="int" value="1"/>
-   </properties>
-  </object>
-  <object id="87" type="Objects.ColliderObject" gid="3" x="752" y="80" width="31" height="31">
-   <properties>
-    <property name="type" type="int" value="1"/>
-   </properties>
-  </object>
-  <object id="88" type="Objects.ColliderObject" gid="3" x="784" y="80" width="31" height="31">
-   <properties>
-    <property name="type" type="int" value="1"/>
-   </properties>
-  </object>
-  <object id="89" type="Objects.ColliderObject" gid="3" x="816" y="80" width="31" height="31">
-   <properties>
-    <property name="type" type="int" value="1"/>
-   </properties>
-  </object>
-  <object id="90" type="Objects.ColliderObject" gid="3" x="848" y="80" width="31" height="31">
-   <properties>
-    <property name="type" type="int" value="1"/>
-   </properties>
-  </object>
-  <object id="91" type="Objects.ColliderObject" gid="3" x="880" y="80" width="31" height="31">
-   <properties>
-    <property name="type" type="int" value="1"/>
-   </properties>
-  </object>
-  <object id="92" type="Objects.ColliderObject" gid="3" x="912" y="80" width="31" height="31">
-   <properties>
-    <property name="type" type="int" value="1"/>
-   </properties>
-  </object>
-  <object id="93" type="Objects.ColliderObject" gid="3" x="944" y="80" width="31" height="31">
-   <properties>
-    <property name="type" type="int" value="1"/>
-   </properties>
-  </object>
-  <object id="94" type="Objects.ColliderObject" gid="3" x="976" y="80" width="31" height="31">
-   <properties>
-    <property name="type" type="int" value="1"/>
-   </properties>
-  </object>
-  <object id="95" type="Objects.ColliderObject" gid="3" x="1008" y="80" width="31" height="31">
-   <properties>
-    <property name="type" type="int" value="1"/>
-   </properties>
-  </object>
-  <object id="96" type="Objects.ColliderObject" gid="3" x="1040" y="80" width="31" height="31">
-   <properties>
-    <property name="type" type="int" value="1"/>
-   </properties>
-  </object>
-  <object id="97" gid="9" x="304" y="80" width="64" height="16"/>
-  <object id="98" gid="9" x="368" y="80" width="64" height="16"/>
-  <object id="99" gid="9" x="432" y="80" width="64" height="16"/>
-  <object id="100" gid="9" x="496" y="80" width="64" height="16"/>
-  <object id="101" gid="9" x="560" y="80" width="64" height="16"/>
-  <object id="102" gid="9" x="624" y="80" width="64" height="16"/>
-  <object id="103" gid="9" x="240" y="64" width="64" height="16"/>
-  <object id="104" gid="9" x="240" y="80" width="64" height="16"/>
-  <object id="109" gid="9" x="176" y="64" width="64" height="16"/>
-  <object id="110" gid="9" x="176" y="80" width="64" height="16"/>
-  <object id="111" type="Objects.ColliderObject" gid="3" x="1072" y="80" width="31" height="31">
-   <properties>
-    <property name="type" type="int" value="1"/>
-   </properties>
-  </object>
-  <object id="112" type="Objects.ColliderObject" gid="3" x="1104" y="80" width="31" height="31">
-   <properties>
-    <property name="type" type="int" value="1"/>
-   </properties>
-  </object>
-  <object id="113" type="Objects.ColliderObject" gid="3" x="1136" y="80" width="31" height="31">
-   <properties>
-    <property name="type" type="int" value="1"/>
-   </properties>
-  </object>
-  <object id="114" x="329.167" y="18.5" width="228.333" height="19">
-   <text wrap="1">Step here to shrink</text>
-  </object>
-  <object id="115" x="878.5" y="25.1667" width="277.667" height="19">
-   <text wrap="1">Step here to grow</text>
   </object>
   <object id="116" x="971.833" y="198.5" width="376.334" height="19">
    <text wrap="1">Fan lifts you up depending on your weight</text>
@@ -179,15 +170,23 @@
   <object id="117" x="61.1663" y="274.5" width="376.334" height="19">
    <text wrap="1">Fan lifts you up depending on your weight</text>
   </object>
-  <object id="118" type="Objects.ColliderObject" x="176" y="48" width="512" height="32">
+  <object id="121" type="Objects.ColliderObject" gid="8" x="652.5" y="-286" width="563" height="184" rotation="180">
    <properties>
-    <property name="type" type="int" value="0"/>
+    <property name="ColliderName" value="WorldCollider"/>
    </properties>
   </object>
-  <object id="119" type="Objects.ColliderObject" x="688" y="48" width="480" height="32">
+  <object id="122" type="Objects.ColliderObject" gid="8" x="1356.5" y="322" width="563" height="184" rotation="-90">
    <properties>
-    <property name="type" type="int" value="1"/>
+    <property name="ColliderName" value="WorldCollider"/>
    </properties>
   </object>
+  <object id="124" type="Objects.ColliderObject" gid="8" x="1196.5" y="-286" width="563" height="184" rotation="180">
+   <properties>
+    <property name="ColliderName" value="WorldCollider"/>
+   </properties>
+  </object>
+  <object id="230" type="Objects.ColliderObject" gid="3" x="149" y="380" width="1105" height="31"/>
+  <object id="231" type="Objects.ColliderObject" x="39" y="314" width="118" height="31"/>
+  <object id="232" type="Objects.ColliderObject" x="1127" y="318" width="118" height="31"/>
  </objectgroup>
 </map>
