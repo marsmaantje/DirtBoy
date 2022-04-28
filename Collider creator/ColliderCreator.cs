@@ -86,6 +86,8 @@ public class ColliderCreator : Pivot
     /// </summary>
     public void Save()
     {
+        if(colliderName == null)
+            colliderName = new Prompt("Enter a name for the collider:", "Name").Result;
         ColliderLoader.main.AddCollider(colliderName, collider, true);
     }
 

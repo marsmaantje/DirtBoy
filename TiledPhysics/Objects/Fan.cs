@@ -47,14 +47,10 @@ namespace Objects
                 float distanceToFan = relativePosition.Dot(direction);
                 if (distanceToCenter < height/2 && distanceToFan < distance && distanceToFan > 0)
                 {//if the mover is inside the area of effect
-                    //Console.WriteLine("mover in fan");
                     float force = strength * (1 - Mathf.Pow(distanceToFan / distance, 1 - falloff));
                     mover.ApplyForce(direction * force);
-                    //Console.WriteLine(distanceToFan / distance);
                 }
             }
-
-            Gizmos.DrawArrow(position.x, position.y, checkVector.x, checkVector.y, 0.25f, parentScene);
         }
     }
 }

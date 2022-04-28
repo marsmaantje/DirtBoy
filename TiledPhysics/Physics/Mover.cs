@@ -91,6 +91,32 @@ namespace Physics
             }
         }
 
+        /// <summary>
+        /// The friction of the object, gets applied when on the ground
+        /// </summary>
+        protected float _friction = 0.03f;
+        public float Friction
+        {
+            get => _friction;
+            set
+            {
+                _friction = value;
+            }
+        }
+
+        /// <summary>
+        /// Friction of the oject in the air
+        /// </summary>
+        protected float _airFriction = 0.01f;
+        public float AirFriction
+        {
+            get => _airFriction;
+            set
+            {
+                _airFriction = value;
+            }
+        }
+
         #endregion
 
         public Mover()

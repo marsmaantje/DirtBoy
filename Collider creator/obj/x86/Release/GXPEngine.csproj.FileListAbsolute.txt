@@ -1,4 +1,0 @@
-D:\school\saxion\onedrive\OneDrive - Saxion\year1\physics programming\final assignment\002_Breakout\bin\Release\GXPEngine.exe
-D:\school\saxion\onedrive\OneDrive - Saxion\year1\physics programming\final assignment\002_Breakout\obj\x86\Release\GXPEngine.csproj.AssemblyReference.cache
-D:\school\saxion\onedrive\OneDrive - Saxion\year1\physics programming\final assignment\002_Breakout\obj\x86\Release\GXPEngine.csproj.CoreCompileInputs.cache
-D:\school\saxion\onedrive\OneDrive - Saxion\year1\physics programming\final assignment\002_Breakout\obj\x86\Release\GXPEngine.exe
