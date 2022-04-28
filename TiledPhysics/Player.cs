@@ -146,7 +146,7 @@ public class Player : Pivot
         //}
         if (_mover.lastCollision != null)
         {
-            _mover.Accelaration = (desiredVelocity - _mover.Velocity) * 0.1f * _mover.lastCollision.normal.Normal();
+            _mover.Accelaration = (desiredVelocity - _mover.Velocity) * 0.1f;// * _mover.lastCollision.normal.Normal();
             if (_mover.lastCollision.other.owner is ColliderObject other)
             {
                 switch (other._collisionType)
@@ -159,7 +159,7 @@ public class Player : Pivot
         }
         else
         {
-            _mover.Accelaration = new Vec2();
+            _mover.Accelaration = desiredVelocity * 0.05f;
         }
     }
 
