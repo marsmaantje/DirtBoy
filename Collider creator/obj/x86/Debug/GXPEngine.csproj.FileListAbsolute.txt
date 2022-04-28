@@ -49,3 +49,14 @@ D:\school\saxion\onedrive\OneDrive - Saxion\year1\final approach\Collider creato
 D:\school\saxion\onedrive\OneDrive - Saxion\year1\final approach\Collider creator\obj\x86\Debug\GXPEngine.csproj.CopyComplete
 D:\school\saxion\onedrive\OneDrive - Saxion\year1\final approach\Collider creator\obj\x86\Debug\GXPEngine.exe
 D:\school\saxion\onedrive\OneDrive - Saxion\year1\final approach\Collider creator\obj\x86\Debug\GXPEngine.pdb
+C:\Users\Santos\Documents\GitHub\FinalApproach\Collider creator\bin\Debug\GXPEngine.exe.config
+C:\Users\Santos\Documents\GitHub\FinalApproach\Collider creator\bin\Debug\GXPEngine.exe
+C:\Users\Santos\Documents\GitHub\FinalApproach\Collider creator\bin\Debug\GXPEngine.pdb
+C:\Users\Santos\Documents\GitHub\FinalApproach\Collider creator\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Santos\Documents\GitHub\FinalApproach\Collider creator\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Santos\Documents\GitHub\FinalApproach\Collider creator\obj\x86\Debug\GXPEngine.csproj.AssemblyReference.cache
+C:\Users\Santos\Documents\GitHub\FinalApproach\Collider creator\obj\x86\Debug\GXPEngine.csproj.SuggestedBindingRedirects.cache
+C:\Users\Santos\Documents\GitHub\FinalApproach\Collider creator\obj\x86\Debug\GXPEngine.csproj.CoreCompileInputs.cache
+C:\Users\Santos\Documents\GitHub\FinalApproach\Collider creator\obj\x86\Debug\GXPEngine.csproj.CopyComplete
+C:\Users\Santos\Documents\GitHub\FinalApproach\Collider creator\obj\x86\Debug\GXPEngine.exe
+C:\Users\Santos\Documents\GitHub\FinalApproach\Collider creator\obj\x86\Debug\GXPEngine.pdb
