@@ -34,8 +34,6 @@ namespace Objects
             strength = obj.GetFloatProperty("strength", 1f);
 
             checkVector = direction * Mathf.Max(distance - height / 2, 0);
-            Console.WriteLine(distance - height / 2);
-            Console.WriteLine(distance);
         }
 
         public void Update()

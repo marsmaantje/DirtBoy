@@ -41,7 +41,7 @@ namespace Visuals
                 _segments[i].end = collider.segments[i].end;
             }
 
-            Gizmos.DrawCross(0,0, 10, this);
+            //Gizmos.DrawCross(0,0, 10, this);
         }
 
         void RegenerateVisuals()

@@ -107,7 +107,7 @@ namespace Physics
         /// <summary>
         /// Friction of the oject in the air
         /// </summary>
-        protected float _airFriction = 0.01f;
+        protected float _airFriction = 0.005f;
         public float AirFriction
         {
             get => _airFriction;
