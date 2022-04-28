@@ -41,7 +41,10 @@ namespace Objects
             _colliderManager = ColliderManager.main;
             _colliderLoader = ColliderLoader.main;
             _collider = _colliderLoader.GetCollider(obj.GetStringProperty("ColliderName"), this);
-            _collider.AddToManager(_colliderManager);
+            if (_collider != null)
+                _collider.AddToManager(_colliderManager);
+            else
+                throw new Exception("Collider with name " + obj.GetStringProperty("ColliderName") + " not found");
 
             //AddChild(new MultiSegmentVisual(_collider));
         }
