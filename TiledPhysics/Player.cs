@@ -105,7 +105,7 @@ public class Player : Pivot
     {
         float pRadius = radius;
         health -= 0.01f;
-        health -= _mover.Velocity.Length() / maxSpeed;
+        health -= _mover.Velocity.Length() / (20*maxSpeed);
         health = Mathf.Clamp(health, 0, maxHealth);
         if (health < 1)
         {
@@ -139,18 +139,8 @@ public class Player : Pivot
         Vec2 desiredVelocity = new Vec2(
             ((Input.GetKey(Key.D) ? 1 : 0) - (Input.GetKey(Key.A) ? 1 : 0)) * maxSpeed,
             0);
-        
-        //if (Input.GetKey(Key.A))
-        //{
-        //    animation.rotation -= 5;
+        animation.rotation += _mover.Velocity.x;
 
-        //    _mover.Velocity += new Vec2(-1f,0);
-        //}
-        //if (Input.GetKey(Key.D))
-        //{
-        //    animation.rotation += 5;
-        //    _mover.Velocity += new Vec2(1f, 0);
-        //}
         if (_mover.lastCollision != null)
         {
             _mover.Accelaration = (desiredVelocity - _mover.Velocity) * 0.1f * _mover.lastCollision.normal.Normal();
