@@ -17,7 +17,7 @@ public class Player : Pivot
     SingleMover _mover;
     EasyDraw collider;
     public float health;
-    float maxHealth, minHealthRadius, maxHealthRadius, maxSpeed, pRadius;
+    float maxHealth, minHealthRadius, maxHealthRadius, maxSpeed;
 
     float radius
     {
@@ -100,7 +100,8 @@ public class Player : Pivot
 
     public void Update()
     {
-        //UpdateHealth();
+        float pRadius = radius;
+        UpdateHealth();
         float radiusDelta = radius - pRadius;
 
         animation.scale = health01;
@@ -119,17 +120,19 @@ public class Player : Pivot
         PlayerAnimation();
         UpdateUI();
         //Gizmos.DrawCross(_mover.x, _mover.y, 10, parentScene);
-        pRadius = radius;
     }
 
     private void UpdateHealth(CollisionType type = CollisionType.NULL)
     {
-        switch (type)
+        if (_mover.lastCollision != null && _mover.lastCollision.other.owner is ColliderObject other)
         {
-            case CollisionType.CONCRETE: health-= _mover.Velocity.Length() / (10*maxSpeed); break;
-            case CollisionType.DIRT: health += maxSpeed / (5 * _mover.Velocity.Length()); break;
-            case CollisionType.GRASS: break;
-            case CollisionType.NULL: break;
+            switch (other._collisionType)
+            {
+                case CollisionType.CONCRETE: health -= _mover.Velocity.Length() / (10 * maxSpeed); break;
+                case CollisionType.DIRT: health += maxSpeed / (5 * _mover.Velocity.Length()); break;
+                case CollisionType.GRASS: break;
+                case CollisionType.NULL: break;
+            }
         }
         health = Mathf.Clamp(health, 0, maxHealth);
         if (health < 1)
@@ -153,10 +156,6 @@ public class Player : Pivot
             if (Input.GetKey(Key.W))
             {
                 _mover.Velocity += _mover.lastCollision.normal * maxSpeed;
-            }
-            if (_mover.lastCollision.other.owner is ColliderObject other)
-            {
-                UpdateHealth(other._collisionType);
             }
         }
         else
