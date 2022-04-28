@@ -2,3 +2,4 @@
 *.suo
 GXPEngine.exe
 **/obj
+*.zip
