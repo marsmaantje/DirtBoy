@@ -79,7 +79,7 @@ public class Player : Pivot
         this.parentScene = parentScene;
 
         //setup the camera
-        this.SetScaleXY(1, 1);
+        this.SetScaleXY(1f, 1f);
         Pivot lookTarget = new Pivot();
         AddChild(lookTarget);
         lookTarget.SetXY(0, 0);
@@ -104,13 +104,7 @@ public class Player : Pivot
     public void Update()
     {
         float pRadius = radius;
-        health -= 0.01f;
-        health -= _mover.Velocity.Length() / maxSpeed;
-        health = Mathf.Clamp(health, 0, maxHealth);
-        if (health < 1)
-        {
-            health = maxHealth;
-        }
+        //UpdateHealth();
         float radiusDelta = radius - pRadius;
 
         animation.scale = health01;
@@ -131,6 +125,17 @@ public class Player : Pivot
         //Gizmos.DrawCross(_mover.x, _mover.y, 10, parentScene);
     }
 
+    private void UpdateHealth()
+    {
+        health -= 0.01f;
+        health -= _mover.Velocity.Length() / maxSpeed;
+        health = Mathf.Clamp(health, 0, maxHealth);
+        if (health < 1)
+        {
+            health = maxHealth;
+        }
+    }
+
     /// <summary>
     /// Handle the player input
     /// </summary>
@@ -139,7 +144,7 @@ public class Player : Pivot
         Vec2 desiredVelocity = new Vec2(
             ((Input.GetKey(Key.D) ? 1 : 0) - (Input.GetKey(Key.A) ? 1 : 0)) * maxSpeed,
             0);
-        
+        animation.rotation = _mover.Velocity.x * 2;
         //if (Input.GetKey(Key.A))
         //{
         //    animation.rotation -= 5;
@@ -154,6 +159,8 @@ public class Player : Pivot
         if (_mover.lastCollision != null)
         {
             _mover.Accelaration = (desiredVelocity - _mover.Velocity) * 0.1f * _mover.lastCollision.normal.Normal();
+            if (Input.GetKey(Key.W))
+                _mover.Velocity += _mover.lastCollision.normal * maxSpeed;
             if (_mover.lastCollision.other.owner is ColliderObject other)
             {
                 switch (other._collisionType)
@@ -166,7 +173,7 @@ public class Player : Pivot
         }
         else
         {
-            _mover.Accelaration = (desiredVelocity - _mover.Velocity) * 0.05f;
+            _mover.Accelaration = (desiredVelocity - _mover.Velocity) * 0.05f * new Vec2(1, 0);
         }
     }
 
