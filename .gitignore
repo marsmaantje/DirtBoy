@@ -1,0 +1,4 @@
+**/bin/*.pdb
+*.suo
+GXPEngine.exe
+**/obj
