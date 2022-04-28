@@ -112,10 +112,4 @@
    </properties>
   </object>
  </objectgroup>
- <imagelayer id="11" name="Image Layer 2">
-  <image source="../sprites/ui.png" width="683" height="384"/>
-  <properties>
-   <property name="isOnTop" type="bool" value="true"/>
-  </properties>
- </imagelayer>
 </map>
