@@ -17,10 +17,7 @@ public class Player : Pivot
     SingleMover _mover;
     EasyDraw collider;
     public float health;
-    float maxHealth;
-    float maxHealthRadius;
-    float minHealthRadius;
-    float maxSpeed;
+    float maxHealth, minHealthRadius, maxHealthRadius, maxSpeed, pRadius;
 
     float radius
     {
@@ -103,7 +100,6 @@ public class Player : Pivot
 
     public void Update()
     {
-        float pRadius = radius;
         //UpdateHealth();
         float radiusDelta = radius - pRadius;
 
@@ -123,12 +119,18 @@ public class Player : Pivot
         PlayerAnimation();
         UpdateUI();
         //Gizmos.DrawCross(_mover.x, _mover.y, 10, parentScene);
+        pRadius = radius;
     }
 
-    private void UpdateHealth()
+    private void UpdateHealth(CollisionType type = CollisionType.NULL)
     {
-        health -= 0.01f;
-        health -= _mover.Velocity.Length() / maxSpeed;
+        switch (type)
+        {
+            case CollisionType.CONCRETE: health-= _mover.Velocity.Length() / (10*maxSpeed); break;
+            case CollisionType.DIRT: health += maxSpeed / (5 * _mover.Velocity.Length()); break;
+            case CollisionType.GRASS: break;
+            case CollisionType.NULL: break;
+        }
         health = Mathf.Clamp(health, 0, maxHealth);
         if (health < 1)
         {
@@ -145,30 +147,16 @@ public class Player : Pivot
             ((Input.GetKey(Key.D) ? 1 : 0) - (Input.GetKey(Key.A) ? 1 : 0)) * maxSpeed,
             0);
         animation.rotation = _mover.Velocity.x * 2;
-        //if (Input.GetKey(Key.A))
-        //{
-        //    animation.rotation -= 5;
-
-        //    _mover.Velocity += new Vec2(-1f,0);
-        //}
-        //if (Input.GetKey(Key.D))
-        //{
-        //    animation.rotation += 5;
-        //    _mover.Velocity += new Vec2(1f, 0);
-        //}
         if (_mover.lastCollision != null)
         {
             _mover.Accelaration = (desiredVelocity - _mover.Velocity) * 0.1f * _mover.lastCollision.normal.Normal();
             if (Input.GetKey(Key.W))
+            {
                 _mover.Velocity += _mover.lastCollision.normal * maxSpeed;
+            }
             if (_mover.lastCollision.other.owner is ColliderObject other)
             {
-                switch (other._collisionType)
-                {
-                    case CollisionType.CONCRETE: health -= 0.05f; break;
-                    case CollisionType.DIRT: health += 0.25f; break;
-                    case CollisionType.NULL: break;
-                }
+                UpdateHealth(other._collisionType);
             }
         }
         else

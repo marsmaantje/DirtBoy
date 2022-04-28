@@ -9,7 +9,7 @@ using Visuals;
 
 namespace Objects
 {
-    public enum CollisionType { CONCRETE, DIRT, NULL }
+    public enum CollisionType { CONCRETE, DIRT, GRASS, NULL }
     /// <summary>
     /// Base class for custom objects, allows for respawning,
     /// initializing and stores a reference to the current Scene and tiled object
