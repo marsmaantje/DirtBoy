@@ -29,8 +29,6 @@ namespace Objects
         {
             this.obj = obj;
             _collisionType = (CollisionType)obj.GetIntProperty("type", (int)CollisionType.NULL);
-            if(!obj.HasProperty("ColliderName", "string"))
-                createBoxCollider = true;
         }
 
         public ColliderObject(TiledObject obj) : this("sprites/empty.png", 1, 1, obj)
@@ -43,12 +41,12 @@ namespace Objects
         public override void initialize(Scene parentScene)
         {
             base.initialize(parentScene);
-            Move(-Origin());
-            SetOrigin(0, 0);
             _colliderManager = ColliderManager.main;
             
-            if (!createBoxCollider)
+            if (!createBoxCollider && obj.HasProperty("ColliderName", "string"))
             {
+                Move(-Origin());
+                SetOrigin(0, 0);
                 _colliderLoader = ColliderLoader.main;
                 _collider = _colliderLoader.GetCollider(obj.GetStringProperty("ColliderName"), this);
                 if (_collider != null)
@@ -66,10 +64,16 @@ namespace Objects
                 _collider.AddSegment(new Vec2(halfWidth, halfHeight), new Vec2(halfWidth, -halfHeight));
                 _collider.AddSegment(new Vec2(halfWidth, -halfHeight), new Vec2(-halfWidth, -halfHeight));
                 _collider.AddToManager(_colliderManager);
-                SetScaleXY(1, 1);
-                alpha = 0;
+                
+                if (createBoxCollider)
+                {
+                    SetScaleXY(1, 1);
+                    alpha = 0;
+                }
             }
-            AddChild(new MultiSegmentVisual(_collider));
+            
+            //if(createBoxCollider)
+                //AddChild(new MultiSegmentVisual(_collider));
         }
         void OnCollision(GameObject other)
         {

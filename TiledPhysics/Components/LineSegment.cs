@@ -36,7 +36,8 @@ namespace GXPEngine
 		//------------------------------------------------------------------------------------------------------------------------
 		override protected void RenderSelf(GLContext glContext) {
 			if (game != null) {
-				Gizmos.RenderLine(start.x, start.y, end.x, end.y, color, lineWidth);
+                Gizmos.DrawLine(start.x, start.y, end.x, end.y, this,  color, (byte)lineWidth);
+                //Gizmos.RenderLine(start.x, start.y, end.x, end.y, color, lineWidth);
                 if(showNormal)
                 {
                     Vec2 middle = (start + end) / 2;
