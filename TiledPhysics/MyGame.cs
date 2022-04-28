@@ -13,6 +13,7 @@ public class MyGame : Game
     string _startSceneName = "maps/Main menu.tmx";
     string ColliderFileName = "Colliders.txt";
     bool levelLoad = false;
+    float gravityStrength = 1f;
 
     public MyGame() : base(1440, 900, false, false, pPixelArt:true)
     {
@@ -91,19 +92,19 @@ public class MyGame : Game
         targetFps = Input.GetKey(Key.SPACE) ? 5 : 60;
         if (Input.GetKeyDown(Key.UP))
         {
-            Mover.gravity = new Vec2(0, -0.5f);
+            Mover.gravity = new Vec2(0, -gravityStrength);
         }
         if (Input.GetKeyDown(Key.RIGHT))
         {
-            Mover.gravity = new Vec2(0.5f, 0);
+            Mover.gravity = new Vec2(gravityStrength, 0);
         }
         if (Input.GetKeyDown(Key.DOWN))
         {
-            Mover.gravity = new Vec2(0, 0.5f);
+            Mover.gravity = new Vec2(0, gravityStrength);
         }
         if (Input.GetKeyDown(Key.LEFT))
         {
-            Mover.gravity = new Vec2(-0.5f, 0);
+            Mover.gravity = new Vec2(-gravityStrength, 0);
         }
         if (Input.GetKeyDown(Key.BACKSPACE))
         {
