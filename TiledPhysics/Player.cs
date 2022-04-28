@@ -103,16 +103,27 @@ public class Player : Pivot
 
     public void Update()
     {
-        //health -= 0.01f;
-        //health -= _mover.Velocity.Length() / maxSpeed;
+        float pRadius = radius;
+        health -= 0.01f;
+        health -= _mover.Velocity.Length() / maxSpeed;
+        health = Mathf.Clamp(health, 0, maxHealth);
+        if (health < 1)
+        {
+            health = maxHealth;
+        }
+        float radiusDelta = radius - pRadius;
+
         animation.scale = health01;
         if (_mover.collider is Ball ball)
         {
             ball.radius = radius;
             collider.width = (int)radius;
             collider.height = (int)radius;
-
         }
+        if(_mover.lastCollision != null)
+            _mover.collider.position += (_mover.lastCollision.normal * radiusDelta);
+
+        
         _mover.Step();
         HandleInput();
         PlayerAnimation();
@@ -128,11 +139,7 @@ public class Player : Pivot
         Vec2 desiredVelocity = new Vec2(
             ((Input.GetKey(Key.D) ? 1 : 0) - (Input.GetKey(Key.A) ? 1 : 0)) * maxSpeed,
             0);
-        health = Mathf.Clamp(health, 0, maxHealth);
-        if (health < 1)
-        {
-            health = maxHealth;
-        }
+        
         //if (Input.GetKey(Key.A))
         //{
         //    animation.rotation -= 5;
@@ -146,7 +153,7 @@ public class Player : Pivot
         //}
         if (_mover.lastCollision != null)
         {
-            _mover.Accelaration = (desiredVelocity - _mover.Velocity) * 0.1f;// * _mover.lastCollision.normal.Normal();
+            _mover.Accelaration = (desiredVelocity - _mover.Velocity) * 0.1f * _mover.lastCollision.normal.Normal();
             if (_mover.lastCollision.other.owner is ColliderObject other)
             {
                 switch (other._collisionType)
@@ -159,7 +166,7 @@ public class Player : Pivot
         }
         else
         {
-            _mover.Accelaration = desiredVelocity * 0.05f;
+            _mover.Accelaration = (desiredVelocity - _mover.Velocity) * 0.05f;
         }
     }
 
