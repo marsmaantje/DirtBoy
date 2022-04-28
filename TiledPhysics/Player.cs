@@ -122,7 +122,7 @@ public class Player : Pivot
         //Gizmos.DrawCross(_mover.x, _mover.y, 10, parentScene);
     }
 
-    private void UpdateHealth(CollisionType type = CollisionType.NULL)
+    private void UpdateHealth()
     {
         if (_mover.lastCollision != null && _mover.lastCollision.other.owner is ColliderObject other)
         {

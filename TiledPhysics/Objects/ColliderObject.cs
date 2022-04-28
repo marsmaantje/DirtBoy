@@ -29,6 +29,8 @@ namespace Objects
         {
             this.obj = obj;
             _collisionType = (CollisionType)obj.GetIntProperty("type", (int)CollisionType.NULL);
+            if(!obj.HasProperty("ColliderName", "string"))
+                createBoxCollider = true;
         }
 
         public ColliderObject(TiledObject obj) : this("sprites/empty.png", 1, 1, obj)
