@@ -134,8 +134,8 @@ public class Player : Pivot
         {
             switch (other._collisionType)
             {
-                case CollisionType.CONCRETE: health -= _mover.Velocity.Length() / (10 * maxSpeed); break;
-                case CollisionType.DIRT: health += maxSpeed / (5 * _mover.Velocity.Length()); break;
+                case CollisionType.CONCRETE: health -= _mover.Velocity.Length() / (50 * maxSpeed); break;
+                case CollisionType.DIRT: health += maxSpeed / (50 * _mover.Velocity.Length()); break;
                 case CollisionType.GRASS: break;
                 case CollisionType.NULL: break;
             }
