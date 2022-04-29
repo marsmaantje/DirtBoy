@@ -46,6 +46,7 @@ namespace Objects
             float targetY = (float)obj.Height / (float)game.height;
             float targetSize = Mathf.Max(targetX, targetY);
             Vector2 actualSize = InverseTransformDirection(targetSize, targetSize);
+            actualSize = parentScene.TransformDirection(actualSize.x, actualSize.y);
             target.SetScaleXY(actualSize.x, actualSize.y); //MATH!
         }
     }
