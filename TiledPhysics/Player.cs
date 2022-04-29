@@ -98,7 +98,6 @@ public class Player : Pivot
         animation.AddChild(collider);
         collider.SetOrigin(animation.width / 2, animation.height / 2);
         collider.SetXY(0, 0);
-        collider.Clear(System.Drawing.Color.White);
         _mover.Bounciness = 0.5f;
     }
 
@@ -161,8 +160,8 @@ public class Player : Pivot
         Vec2 deltaVelocity = desiredVelocity - _mover.Velocity;
         if (_mover.lastCollision != null)
         {
-            _mover.Accelaration = (deltaVelocity) * 0.1f * _mover.lastCollision.normal.Normal();
-            //_mover.ApplyForce(deltaVelocity * _mover.lastCollision.normal.Normal());
+            //_mover.Accelaration = (deltaVelocity) * 0.1f * _mover.lastCollision.normal.Normal();
+            _mover.ApplyForce(deltaVelocity * _mover.lastCollision.normal.Normal());
             if (Input.GetKey(Key.W))
             {
                 //_mover.Velocity += _mover.lastCollision.normal * maxSpeed;
@@ -184,6 +183,7 @@ public class Player : Pivot
         animation.scale = Mathf.Map(health01, 0, 1, 0.1f, 1f);
         animation.rotation = _mover.Velocity.x * 2;
         animation.position -= (animation.position - _mover.Velocity) * 0.01f;
+        cameraTarget.scale = animation.scale * 0.5f;
 
         parentScene.setLookTarget(cameraTarget);
         foreach (GameObject other in collider.GetCollisions())

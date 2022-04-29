@@ -38,8 +38,8 @@ namespace Layers
         /// </summary>
         public void Update()
         {
-            this.x = parentScene.x * (paralaxX - 1);
-            this.y = parentScene.y * (paralaxY - 1);
+            this.y = parentScene.y * (paralaxY - 1) * (1 / parentScene.scaleY);
+            this.x = parentScene.x * (paralaxX - 1) * (1 / parentScene.scaleX);
         }
     }
 }
