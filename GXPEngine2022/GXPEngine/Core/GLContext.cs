@@ -230,8 +230,6 @@ namespace GXPEngine.Core {
 					Time.newFrame ();
 					GL.glfwPollEvents();
 				}
-				
-				
 			} while (GL.glfwGetWindowParam(GL.GLFW_ACTIVE) == 1);
 		}
 		

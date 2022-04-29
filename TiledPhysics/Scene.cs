@@ -17,7 +17,7 @@ public class Scene : Pivot
     public UI ui;
 
     //camera movement
-    float smoothSpeed = 4f;
+    float smoothSpeed = 0.1f;
     GameObject currentLookTarget;
 
     public Scene(UI ui)
@@ -36,11 +36,11 @@ public class Scene : Pivot
             Vector2 localTargetScale = this.TransformDirection(globalTargetScale.x, globalTargetScale.y);
             float deltaX = (game.width / 2f) - relativePosition.x * this.scaleX - this.x;
             float deltaY = (game.height / 2f) - relativePosition.y * this.scaleY - this.y;
-            float deltaScaleX = (-this.scaleX + localTargetScale.x) * smoothSpeed * Time.deltaTime / 1000f;
-            float deltaScaleY = (-this.scaleY + localTargetScale.y) * smoothSpeed * Time.deltaTime / 1000f;
+            float deltaScaleX = (-this.scaleX + localTargetScale.x) * smoothSpeed;
+            float deltaScaleY = (-this.scaleY + localTargetScale.y) * smoothSpeed;
 
             //update position
-            Move(deltaX * smoothSpeed * Time.deltaTime / 1000f, deltaY * smoothSpeed * Time.deltaTime / 1000f);
+            Move(deltaX * smoothSpeed, deltaY * smoothSpeed);
 
             //update scale
             this.scaleX += deltaScaleX;

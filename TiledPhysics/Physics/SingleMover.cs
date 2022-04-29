@@ -49,8 +49,7 @@ namespace Physics
                 _velocity *= 1 - _friction;
                 firstCollision = manager.MoveUntilCollision(collider, Velocity);
                 UpdatePosition(firstCollision);
-                if(firstCollision != null)
-                    lastCollision = firstCollision;
+                lastCollision = firstCollision ?? lastCollision;
             }
         }
 

@@ -133,11 +133,11 @@ public struct Vec2
     /// </summary>
     /// <param name="normal">normal to reflect against</param>
     /// <returns>the reflected vector</returns>
-    public Vec2 Reflect(Vec2 normal, float bounciness = 1)
+    public Vec2 Reflect(Vec2 normal, float bounciness = 1, float friction = 0)
     {
         normal.Normalize(); //just to be sure that the normal is normalized
         this = this - ((1 + bounciness) * (this.Dot(normal) * normal));
-        
+        this = this - (this * Vec2.Abs(normal.Normal()) * friction);
         return this;
     }
 
@@ -182,6 +182,8 @@ public struct Vec2
     public static Vec2 operator /(Vec2 a, float b) => new Vec2(a.x / b, a.y / b);
     public static bool operator ==(Vec2 a, Vec2 b) => (a.x == b.x && a.y == b.y);
     public static bool operator !=(Vec2 a, Vec2 b) => (a.x != b.x || a.y != b.y);
+
+    public static Vec2 Abs(Vec2 a) => new Vec2(Mathf.Abs(a.x), Mathf.Abs(a.y));
 
     public override string ToString()
     {

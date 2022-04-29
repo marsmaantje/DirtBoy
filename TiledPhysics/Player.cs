@@ -17,7 +17,7 @@ public class Player : Pivot
     SingleMover _mover;
     EasyDraw collider;
     public float health;
-    float maxHealth, minHealthRadius, maxHealthRadius, maxSpeed, minMass, maxMass;
+    float maxHealth, minHealthRadius, maxHealthRadius, maxSpeed, minMass, maxMass, animationWidth, cameraSize;
 
     float radius
     {
@@ -67,6 +67,7 @@ public class Player : Pivot
         animation = new AnimationSprite(obj.GetStringProperty("Sprite"), obj.GetIntProperty("columns"), obj.GetIntProperty("rows"));
         AddChild(animation);
         animation.SetOrigin(animation.width / 2, animation.height / 2);
+        animationWidth = animation.width;
     }
 
     /// <summary>
@@ -86,6 +87,7 @@ public class Player : Pivot
         parentScene.setLookTarget(lookTarget);
         parentScene.jumpToTarget();
         cameraTarget = lookTarget;
+        cameraSize = 1f;
 
         //setup the physics
         _mover = new SingleMover();
@@ -98,7 +100,9 @@ public class Player : Pivot
         animation.AddChild(collider);
         collider.SetOrigin(animation.width / 2, animation.height / 2);
         collider.SetXY(0, 0);
-        _mover.Bounciness = 0.5f;
+        _mover.Bounciness = 0.01f;
+        _mover.Friction = 0.1f;
+
     }
 
     public void Update()
@@ -162,16 +166,23 @@ public class Player : Pivot
         {
             //_mover.Accelaration = (deltaVelocity) * 0.1f * _mover.lastCollision.normal.Normal();
             _mover.ApplyForce(deltaVelocity * _mover.lastCollision.normal.Normal());
-            if (Input.GetKey(Key.W))
+            if (Input.GetKey(Key.W) && _mover.lastCollision.normal.y < -0.3f)
             {
-                //_mover.Velocity += _mover.lastCollision.normal * maxSpeed;
-                _mover.ApplyForce(new Vec2(0, -maxSpeed) * maxMass);
+                _mover.Velocity += _mover.lastCollision.normal * maxSpeed;
+                //_mover.ApplyForce(new Vec2(0, -maxSpeed));
             }
         }
         else
         {
             //_mover.ApplyForce(deltaVelocity * 0.5f * new Vec2(1, 0));
             _mover.Accelaration = (desiredVelocity - _mover.Velocity) * 0.05f * new Vec2(1, 0);
+        }
+
+        if(Input.scrolled)
+        {
+            cameraSize = cameraSize + Input.scrollWheelValue * -0.1f * cameraSize;
+            cameraTarget.scale = cameraSize;
+            Console.WriteLine(cameraSize);
         }
     }
 
@@ -180,13 +191,13 @@ public class Player : Pivot
     /// </summary>
     private void PlayerAnimation()
     {
-        float actualWidth = animation.width / animation.scale;
         float targetWidth = radius * 2;
-        float scale = targetWidth / actualWidth;
+        float scale = targetWidth / animationWidth;
         animation.scale = scale;
         animation.rotation = _mover.Velocity.x * 2;
-        animation.position -= (animation.position - _mover.Velocity) * 0.01f;
-        cameraTarget.scale = animation.scale * 0.5f;
+        cameraTarget.scale = scale * cameraSize;
+
+        Console.WriteLine(_mover.position);
 
         parentScene.setLookTarget(cameraTarget);
         foreach (GameObject other in collider.GetCollisions())
