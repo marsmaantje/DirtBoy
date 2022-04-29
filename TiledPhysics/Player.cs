@@ -180,7 +180,10 @@ public class Player : Pivot
     /// </summary>
     private void PlayerAnimation()
     {
-        animation.scale = Mathf.Map(health01, 0, 1, 0.1f, 1f);
+        float actualWidth = animation.width / animation.scale;
+        float targetWidth = radius * 2;
+        float scale = targetWidth / actualWidth;
+        animation.scale = scale;
         animation.rotation = _mover.Velocity.x * 2;
         animation.position -= (animation.position - _mover.Velocity) * 0.01f;
         cameraTarget.scale = animation.scale * 0.5f;
