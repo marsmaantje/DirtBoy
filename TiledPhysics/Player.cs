@@ -18,6 +18,8 @@ public class Player : Pivot
     EasyDraw collider;
     public float health;
     float maxHealth, minHealthRadius, maxHealthRadius, maxSpeed, minMass, maxMass, animationWidth, cameraSize;
+    Vec2[] prevPositions = new Vec2[2];
+    int prevPositionIndex = 0;
 
     float radius
     {
@@ -107,6 +109,11 @@ public class Player : Pivot
 
     public void Update()
     {
+        //update prevPosition
+        prevPositions[prevPositionIndex] = _mover.position;
+        prevPositionIndex = (prevPositionIndex + 1) % prevPositions.Length;
+        
+        //update radius
         float pRadius = radius;
         UpdateHealth();
         float radiusDelta = radius - pRadius;
@@ -118,11 +125,12 @@ public class Player : Pivot
             collider.height = (int)radius;
         }
 
+        //update mass
         _mover.Mass = Mathf.Map(health01, 0, 1, minMass, maxMass);
         if (_mover.lastCollision != null)
             _mover.collider.position += (_mover.lastCollision.normal * radiusDelta);
 
-        
+
         _mover.Step();
         HandleInput();
         PlayerAnimation();
@@ -196,6 +204,13 @@ public class Player : Pivot
         animation.scale = scale;
         animation.rotation = _mover.Velocity.x * 2;
         cameraTarget.scale = scale * cameraSize;
+
+        Vec2 a = new Vec2();
+        foreach (Vec2 b in prevPositions)
+            a += b;
+        a /= prevPositions.Length;
+        a -= _mover.position;
+        animation.position = a;
 
         Console.WriteLine(_mover.position);
 
