@@ -17,7 +17,7 @@ public class Player : Pivot
     SingleMover _mover;
     EasyDraw collider;
     public float health;
-    float maxHealth, minHealthRadius, maxHealthRadius, maxSpeed, minMass, maxMass, animationWidth, cameraSize;
+    float maxHealth, minHealthRadius, maxHealthRadius, minSpeed, maxSpeed, minMass, maxMass, minJumpHeight, maxJumpHeight, animationWidth, cameraSize;
     Vec2[] prevPositions = new Vec2[2];
     int prevPositionIndex = 0;
 
@@ -52,11 +52,14 @@ public class Player : Pivot
     void ReadVariables()
     {
         maxHealth = obj.GetIntProperty("maxHealth", 10);
-        maxHealthRadius = obj.GetFloatProperty("maxHealthRadius", 10);
         minHealthRadius = obj.GetFloatProperty("minHealthRadius", 1);
+        maxHealthRadius = obj.GetFloatProperty("maxHealthRadius", 10);
+        minSpeed = obj.GetFloatProperty("minSpeed", 1);
         maxSpeed = obj.GetFloatProperty("maxSpeed", 10);
         minMass = obj.GetFloatProperty("minMass", 1);
         maxMass = obj.GetFloatProperty("maxMass", 10);
+        minJumpHeight = obj.GetFloatProperty("minJumpHeight", 1);
+        maxJumpHeight = obj.GetFloatProperty("maxJumpHeight", 10);
         health = maxHealth;
     }
 
@@ -103,7 +106,6 @@ public class Player : Pivot
         collider.SetOrigin(animation.width / 2, animation.height / 2);
         collider.SetXY(0, 0);
         _mover.Bounciness = 0.01f;
-        _mover.Friction = 0.1f;
 
     }
 
@@ -146,19 +148,13 @@ public class Player : Pivot
         {
             switch (other._collisionType)
             {
-                case CollisionType.CONCRETE: health -= _mover.Velocity.Length() / (50 * maxSpeed); break;
-                case CollisionType.DIRT: health += maxSpeed / (50 * _mover.Velocity.Length()); break;
+                case CollisionType.CONCRETE: health -= _mover.Velocity.Length() / (30 * maxSpeed); break;
+                case CollisionType.DIRT: health += _mover.Velocity.Length() / (30 * maxSpeed); break;
                 case CollisionType.GRASS: break;
                 case CollisionType.NULL: break;
             }
         }
         health = Mathf.Clamp(health, 0, maxHealth);
-        /*
-        if (health < 1)
-        {
-            health = maxHealth;
-        }
-        */
     }
 
     /// <summary>
@@ -170,20 +166,18 @@ public class Player : Pivot
             ((Input.GetKey(Key.D) ? 1 : 0) - (Input.GetKey(Key.A) ? 1 : 0)) * maxSpeed,
             0);
         Vec2 deltaVelocity = desiredVelocity - _mover.Velocity;
+        deltaVelocity = Mathf.Abs(deltaVelocity.x) > Mathf.Abs(_mover.Velocity.x) ? deltaVelocity : new Vec2();
         if (_mover.lastCollision != null)
         {
-            //_mover.Accelaration = (deltaVelocity) * 0.1f * _mover.lastCollision.normal.Normal();
             _mover.ApplyForce(deltaVelocity * _mover.lastCollision.normal.Normal());
             if (Input.GetKey(Key.W) && _mover.lastCollision.normal.y < -0.3f)
             {
-                _mover.Velocity += _mover.lastCollision.normal * maxSpeed;
-                //_mover.ApplyForce(new Vec2(0, -maxSpeed));
+                _mover.Velocity += _mover.lastCollision.normal * Mathf.Map(health01, 0, 1, minJumpHeight, maxJumpHeight);
             }
         }
         else
         {
-            //_mover.ApplyForce(deltaVelocity * 0.5f * new Vec2(1, 0));
-            _mover.Accelaration = (desiredVelocity - _mover.Velocity) * 0.05f * new Vec2(1, 0);
+            _mover.ApplyForce(deltaVelocity * 0.2f * new Vec2(1, 0));
         }
 
         if(Input.scrolled)
