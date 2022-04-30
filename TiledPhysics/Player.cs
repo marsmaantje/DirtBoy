@@ -6,7 +6,7 @@ using Objects;
 
 public class Player : Pivot
 {
-
+    #region variables
     //objects
     TiledObject obj;
     private Scene parentScene;
@@ -20,7 +20,9 @@ public class Player : Pivot
     float maxHealth, minHealthRadius, maxHealthRadius, minSpeed, maxSpeed, minMass, maxMass, minJumpHeight, maxJumpHeight, animationWidth, cameraSize;
     Vec2[] prevPositions = new Vec2[2];
     int prevPositionIndex = 0;
+    #endregion
 
+    #region Getters/Setters
     float radius
     {
         get => Mathf.Map(health, 0, maxHealth, minHealthRadius, maxHealthRadius);
@@ -30,7 +32,9 @@ public class Player : Pivot
     {
         get => health / maxHealth;
     }
+    #endregion
 
+    #region construction
     public Player() : base() { ReadVariables(); }
 
     public Player(TiledObject obj) : base()
@@ -108,13 +112,15 @@ public class Player : Pivot
         _mover.Bounciness = 0.01f;
 
     }
+    #endregion
 
+    #region udpate
     public void Update()
     {
         //update prevPosition
         prevPositions[prevPositionIndex] = _mover.position;
         prevPositionIndex = (prevPositionIndex + 1) % prevPositions.Length;
-        
+
         //update radius
         float pRadius = radius;
         UpdateHealth();
@@ -180,7 +186,7 @@ public class Player : Pivot
             _mover.ApplyForce(deltaVelocity * 0.2f * new Vec2(1, 0));
         }
 
-        if(Input.scrolled)
+        if (Input.scrolled)
         {
             cameraSize = cameraSize + Input.scrollWheelValue * -0.1f * cameraSize;
             cameraTarget.scale = cameraSize;
@@ -223,6 +229,7 @@ public class Player : Pivot
     /// </summary>
     private void UpdateUI()
     {
-        
+
     }
+    #endregion
 }

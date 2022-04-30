@@ -8,10 +8,10 @@ namespace Physics
 {
     public class Mover : Pivot
     {
+        #region Variables
         public static bool drawDebugLine = false;
         public event OnCollision OnCollision;
         public CollisionInfo lastCollision = null;
-
 
         /// <summary>
         /// Get and set the global position of the block
@@ -22,8 +22,6 @@ namespace Physics
             set => position = InverseTransformPoint(value);
         }
 
-        #region Variables
-
         /// <summary>
         /// The velocity of the object
         /// </summary>
@@ -31,10 +29,7 @@ namespace Physics
         public Vec2 Velocity
         {
             get => _velocity;
-            set
-            {
-                _velocity = value;
-            }
+            set => _velocity = value;
         }
 
         /// <summary>
@@ -44,10 +39,7 @@ namespace Physics
         public Vec2 Accelaration
         {
             get => _accelaration;
-            set
-            {
-                _accelaration = value;
-            }
+            set => _accelaration = value;
         }
 
         public static Vec2 gravity = new Vec2(0,0);
@@ -59,10 +51,7 @@ namespace Physics
         public float Mass
         {
             get => _mass;
-            set
-            {
-                _mass = value;
-            }
+            set => _mass = value;
         }
 
         /// <summary>
@@ -72,10 +61,7 @@ namespace Physics
         public float Bounciness
         {
             get => _bounciness;
-            set
-            {
-                _bounciness = value;
-            }
+            set => _bounciness = value;
         }
 
         /// <summary>
@@ -85,10 +71,7 @@ namespace Physics
         public bool Moving
         {
             get => _moving;
-            set
-            {
-                _moving = value;
-            }
+            set => _moving = value;
         }
 
         /// <summary>
@@ -98,10 +81,7 @@ namespace Physics
         public float Friction
         {
             get => _friction;
-            set
-            {
-                _friction = value;
-            }
+            set => _friction = value;
         }
 
         /// <summary>
@@ -111,10 +91,7 @@ namespace Physics
         public float AirFriction
         {
             get => _airFriction;
-            set
-            {
-                _airFriction = value;
-            }
+            set => _airFriction = value;
         }
 
         #endregion
@@ -138,7 +115,12 @@ namespace Physics
         /// </summary>
         public virtual void Step()
         { }
-        
+
+        /// <summary>
+        /// Method that is called when the object collides with another object.
+        /// Used to call the public Collision event
+        /// </summary>
+        /// <param name="other">Collider we collided with</param>
         public void Collision(Collider other)
         {
             OnCollision(other, this);

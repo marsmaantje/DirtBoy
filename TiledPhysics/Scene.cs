@@ -11,6 +11,7 @@ using Objects;
 
 public class Scene : Pivot
 {
+    #region variables
     public Player player;
     TiledObject playerObj;
     TiledLoader parser;
@@ -19,12 +20,16 @@ public class Scene : Pivot
     //camera movement
     float smoothSpeed = 0.1f;
     GameObject currentLookTarget;
+    #endregion
 
+    #region constructor
     public Scene(UI ui)
     {
         this.ui = ui;
     }
+    #endregion
 
+    #region Update
     public void Update()
     {
         //if the scene has something to focus on, update its position and scale to do so
@@ -51,7 +56,9 @@ public class Scene : Pivot
             this.y += this.y * deltaScaleY / scaleY;
         }
     }
+    #endregion
 
+    #region methods
     /// <summary>
     /// Will force the camera to teleport to the target, disregarding the smoothing used in Update()
     /// </summary>
@@ -185,4 +192,5 @@ public class Scene : Pivot
             player.SetXY(obj.X, obj.Y);
         }
     }
+    #endregion
 }

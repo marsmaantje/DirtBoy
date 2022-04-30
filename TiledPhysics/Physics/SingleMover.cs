@@ -8,12 +8,10 @@ namespace Physics
 {
     public class SingleMover : Mover
     {
-        public Collider collider;
+        new public Collider collider;
 
         public SingleMover() : base()
-        {
-
-        }
+        { }
 
         /// <summary>
         /// Set the collider of the mover
@@ -67,8 +65,6 @@ namespace Physics
                 position = collider.position;
                 ResolveCollision(info);
 
-
-
                 if (info.other != null)
                 {
                     Collision(info.other); //call the collission event to perhaps do something with the collission
@@ -86,6 +82,7 @@ namespace Physics
         void ResolveCollision(CollisionInfo info)
         {
             info.normal.Normalize();
+            
             if (info.other.owner is Mover && ((Mover)info.other.owner).Moving)
             {//collission with movable object
                 Mover other = (Mover)info.other.owner;
@@ -97,16 +94,9 @@ namespace Physics
                 Vec2 vel2 = other.Velocity - systemVelocity;
                 _velocity = systemVelocity + vel1.Reflect(normal, Bounciness);
                 other.Velocity = systemVelocity + vel2.Reflect(normal, Bounciness);
-
-                //position += info.normal * 1f;//move away from the other so it doesnt collide again in their step
-
             }
-            else
-            {//collission with immovable object
+            else//collission with immovable object
                 _velocity.Reflect(info.normal, Bounciness);
-
-                //position += info.normal * .01f;//move away from the other so it doesnt collide again in their step
-            }
         }
         
         protected override void OnDestroy()
