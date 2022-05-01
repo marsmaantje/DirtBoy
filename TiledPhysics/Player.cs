@@ -155,7 +155,7 @@ public class Player : Pivot
             switch (other._collisionType)
             {
                 case CollisionType.CONCRETE: health -= _mover.Velocity.Length() / (30 * maxSpeed); break;
-                case CollisionType.DIRT: health += _mover.Velocity.Length() / (30 * maxSpeed); break;
+                case CollisionType.DIRT: health += 0.25f / _mover.Velocity.Length(); break;
                 case CollisionType.GRASS: break;
                 case CollisionType.NULL: break;
             }
@@ -178,7 +178,9 @@ public class Player : Pivot
             _mover.ApplyForce(deltaVelocity * _mover.lastCollision.normal.Normal());
             if (Input.GetKey(Key.W) && _mover.lastCollision.normal.y < -0.3f)
             {
+                Console.WriteLine("Before: {0}",_mover.Velocity.x);
                 _mover.Velocity += _mover.lastCollision.normal * Mathf.Map(health01, 0, 1, minJumpHeight, maxJumpHeight);
+                Console.WriteLine("After: {0}",_mover.Velocity.x);
             }
         }
         else
@@ -190,7 +192,7 @@ public class Player : Pivot
         {
             cameraSize = cameraSize + Input.scrollWheelValue * -0.1f * cameraSize;
             cameraTarget.scale = cameraSize;
-            Console.WriteLine(cameraSize);
+            //Console.WriteLine(cameraSize);
         }
     }
 
@@ -212,7 +214,7 @@ public class Player : Pivot
         a -= _mover.position;
         animation.position = a;
 
-        Console.WriteLine(_mover.position);
+        //Console.WriteLine(_mover.position);
 
         parentScene.setLookTarget(cameraTarget);
         foreach (GameObject other in collider.GetCollisions())
