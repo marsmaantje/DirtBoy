@@ -209,11 +209,6 @@
    </properties>
   </object>
   <object id="235" type="Objects.CameraTrigger" gid="1" x="142.5" y="-7" width="325" height="85"/>
-  <object id="257" type="Objects.RadiusDependantCollider" x="340" y="175.5" width="32" height="160">
-   <properties>
-    <property name="minRadius" type="float" value="20"/>
-   </properties>
-  </object>
  </objectgroup>
  <objectgroup id="14" name="WorldColliders">
   <object id="53" type="Objects.ColliderObject" gid="8" x="-102.667" y="-139.167" width="563" height="184" rotation="90">

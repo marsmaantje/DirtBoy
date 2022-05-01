@@ -35,7 +35,6 @@ namespace Physics
         {
             _velocity += Accelaration;
             _velocity += gravity;
-            _velocity *= 1 - _airFriction;
 
             ColliderManager manager = ColliderManager.main;
             CollisionInfo firstCollision = manager.MoveUntilCollision(collider, Velocity);
@@ -48,6 +47,10 @@ namespace Physics
                 firstCollision = manager.MoveUntilCollision(collider, Velocity);
                 UpdatePosition(firstCollision);
                 lastCollision = firstCollision ?? lastCollision;
+            }
+            else
+            {
+                _velocity *= 1 - _airFriction;
             }
         }
 

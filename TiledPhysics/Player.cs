@@ -112,6 +112,8 @@ public class Player : Pivot
         collider.SetOrigin(animation.width / 2, animation.height / 2);
         collider.SetXY(0, 0);
         _mover.Bounciness = 0.01f;
+        _mover.AirFriction = 0.01f;
+        _mover.Friction = 0.01f;
 
     }
     #endregion
@@ -149,6 +151,8 @@ public class Player : Pivot
         HandleInput();
         PlayerAnimation();
         UpdateUI();
+
+        Console.WriteLine(_mover.lastCollision);
     }
 
     /// <summary>
