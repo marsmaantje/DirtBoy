@@ -20,17 +20,19 @@ public class Player : Pivot
     float maxHealth, minHealthRadius, maxHealthRadius, minSpeed, maxSpeed, minMass, maxMass, minJumpHeight, maxJumpHeight, animationWidth, cameraSize;
     Vec2[] prevPositions = new Vec2[2];
     int prevPositionIndex = 0;
+    Vec2[] prevVelocities = new Vec2[5];
+    int prevVelocityIndex = 0;
     #endregion
 
     #region Getters/Setters
-    float radius
+    public float radius
     {
-        get => Mathf.Map(health, 0, maxHealth, minHealthRadius, maxHealthRadius);
+        get => Mathf.Map(health01, 0, 1, minHealthRadius, maxHealthRadius);
     }
 
     float health01
     {
-        get => health / maxHealth;
+        get => Mathf.Pow(health / maxHealth, 2);
     }
     #endregion
 
@@ -121,6 +123,10 @@ public class Player : Pivot
         prevPositions[prevPositionIndex] = _mover.position;
         prevPositionIndex = (prevPositionIndex + 1) % prevPositions.Length;
 
+        //update prevVelocity
+        prevVelocities[prevVelocityIndex] = _mover.Velocity;
+        prevVelocityIndex = (prevVelocityIndex + 1) % prevVelocities.Length;
+
         //update radius
         float pRadius = radius;
         UpdateHealth();
@@ -171,8 +177,7 @@ public class Player : Pivot
         Vec2 desiredVelocity = new Vec2(
             ((Input.GetKey(Key.D) ? 1 : 0) - (Input.GetKey(Key.A) ? 1 : 0)) * maxSpeed,
             0);
-        Vec2 deltaVelocity = desiredVelocity - _mover.Velocity;
-        deltaVelocity = Mathf.Abs(deltaVelocity.x) > Mathf.Abs(_mover.Velocity.x) ? deltaVelocity : new Vec2();
+        Vec2 deltaVelocity = (desiredVelocity - _mover.Velocity) * new Vec2(1,0);
         if (_mover.lastCollision != null)
         {
             _mover.ApplyForce(deltaVelocity * _mover.lastCollision.normal.Normal());
@@ -190,7 +195,6 @@ public class Player : Pivot
         {
             cameraSize = cameraSize + Input.scrollWheelValue * -0.1f * cameraSize;
             cameraTarget.scale = cameraSize;
-            Console.WriteLine(cameraSize);
         }
     }
 
@@ -202,7 +206,6 @@ public class Player : Pivot
         float targetWidth = radius * 2;
         float scale = targetWidth / animationWidth;
         animation.scale = scale;
-        animation.rotation = _mover.Velocity.x * 2;
         cameraTarget.scale = scale * cameraSize;
 
         Vec2 a = new Vec2();
@@ -212,7 +215,11 @@ public class Player : Pivot
         a -= _mover.position;
         animation.position = a;
 
-        Console.WriteLine(_mover.position);
+        a = new Vec2();
+        foreach (Vec2 b in prevVelocities)
+            a += b;
+        a /= prevVelocities.Length;
+        animation.rotation = a.x * 2;
 
         parentScene.setLookTarget(cameraTarget);
         foreach (GameObject other in collider.GetCollisions())
