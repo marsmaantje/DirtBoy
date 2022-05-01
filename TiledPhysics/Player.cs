@@ -151,8 +151,6 @@ public class Player : Pivot
         HandleInput();
         PlayerAnimation();
         UpdateUI();
-
-        Console.WriteLine(prevPositions[prevPositionIndex].x - _mover.position.x);
     }
 
     /// <summary>
