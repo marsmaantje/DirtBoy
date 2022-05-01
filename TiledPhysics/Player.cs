@@ -151,6 +151,7 @@ public class Player : Pivot
         HandleInput();
         PlayerAnimation();
         UpdateUI();
+        Console.WriteLine(_mover.Velocity);
     }
 
     /// <summary>
@@ -162,8 +163,8 @@ public class Player : Pivot
         {
             switch (other._collisionType)
             {
-                case CollisionType.CONCRETE: health -= _mover.Velocity.Length() / (30 * maxSpeed); break;
-                case CollisionType.DIRT: health += 0.1f + _mover.Velocity.Length(); break;
+                case CollisionType.CONCRETE: health -= 0.01f+ _mover.Velocity.Length() / 50; break;
+                case CollisionType.DIRT: health += 0.01f + _mover.Velocity.Length() / 50; break;
                 case CollisionType.GRASS: break;
                 case CollisionType.NULL: break;
             }
@@ -177,9 +178,9 @@ public class Player : Pivot
     private void HandleInput()
     {
         Vec2 desiredVelocity = new Vec2(
-            ((Input.GetKey(Key.D) ? 1 : 0) - (Input.GetKey(Key.A) ? 1 : 0)) * maxSpeed,
+            ((Input.GetKey(Key.D) ? 1 : 0) - (Input.GetKey(Key.A) ? 1 : 0)) * Mathf.Map(health01, 0, 1, minSpeed, maxSpeed),
             0);
-        Vec2 deltaVelocity = (desiredVelocity - _mover.Velocity) * new Vec2(1,0);
+        Vec2 deltaVelocity = (desiredVelocity - _mover.Velocity);
         if (_mover.lastCollision != null)
         {
             _mover.ApplyForce(deltaVelocity * _mover.lastCollision.normal.Normal());
