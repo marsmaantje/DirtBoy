@@ -24,6 +24,7 @@ public class MyGame : Game
         createLevel(_startSceneName);
 
         PrintInfo();
+        Mover.gravity = new Vec2(0, gravityStrength);
     }
 
     void addPropperLine(Vec2 start, Vec2 end)

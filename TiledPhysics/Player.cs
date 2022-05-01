@@ -116,7 +116,7 @@ public class Player : Pivot
     }
     #endregion
 
-    #region udpate
+    #region Update
     public void Update()
     {
         //update prevPosition
@@ -161,7 +161,7 @@ public class Player : Pivot
             switch (other._collisionType)
             {
                 case CollisionType.CONCRETE: health -= _mover.Velocity.Length() / (30 * maxSpeed); break;
-                case CollisionType.DIRT: health += _mover.Velocity.Length() / (30 * maxSpeed); break;
+                case CollisionType.DIRT: health += 0.25f / _mover.Velocity.Length(); break;
                 case CollisionType.GRASS: break;
                 case CollisionType.NULL: break;
             }
