@@ -152,7 +152,7 @@ public class Player : Pivot
         PlayerAnimation();
         UpdateUI();
 
-        Console.WriteLine(_mover.lastCollision);
+        Console.WriteLine(prevPositions[prevPositionIndex].x - _mover.position.x);
     }
 
     /// <summary>

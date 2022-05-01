@@ -41,12 +41,12 @@ namespace Physics
             lastCollision = firstCollision;
 
             UpdatePosition(firstCollision);
-            if (firstCollision != null && Mathf.RoughlyEquals(firstCollision.timeOfImpact, 0, 0.001f))
+            if (firstCollision != null && Mathf.RoughlyEquals(firstCollision.timeOfImpact, 0, 0.02f))
             {
-                _velocity *= 1 - _friction;
                 firstCollision = manager.MoveUntilCollision(collider, Velocity);
                 UpdatePosition(firstCollision);
                 lastCollision = firstCollision ?? lastCollision;
+                _velocity *= 1 - _friction;
             }
             else
             {
