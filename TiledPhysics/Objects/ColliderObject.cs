@@ -16,9 +16,9 @@ namespace Objects
     /// </summary>
     public class ColliderObject : CustomObject
     {
-        MultiSegmentCollider _collider;
-        ColliderManager _colliderManager;
-        ColliderLoader _colliderLoader;
+        protected MultiSegmentCollider _collider;
+        protected ColliderManager _colliderManager;
+        protected ColliderLoader _colliderLoader;
         public CollisionType _collisionType;
         bool createBoxCollider = false;
 

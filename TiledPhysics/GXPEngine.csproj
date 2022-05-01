@@ -62,6 +62,7 @@
     <Compile Include="Objects\Fan.cs" />
     <Compile Include="Objects\HealthEffect.cs" />
     <Compile Include="Objects\PhysicsBall.cs" />
+    <Compile Include="Objects\RadiusDependantCollider.cs" />
     <Compile Include="Physics\ColliderLoader.cs" />
     <Compile Include="Physics\ColliderManager.cs" />
     <Compile Include="Physics\Colliders\MultiSegmentCollider.cs" />

@@ -81,6 +81,18 @@ namespace Physics
         }
 
         /// <summary>
+        /// Remove all segments from the collider manager
+        /// </summary>
+        /// <param name="manager">colliders to remove</param>
+        public void RemoveFromManager(ColliderManager manager, bool isTrigger = false)
+        {
+            foreach (Segment segment in segments)
+            {
+                segment.RemoveFromManager(manager, isTrigger);
+            }
+        }
+
+        /// <summary>
         /// Updates before everything else
         /// check if the position of our owner has changed, if so, update the position of everything
         /// </summary>
@@ -188,6 +200,14 @@ namespace Physics
             manager.AddSolidCollider(ball1);
             if (ball2 != null)
                 manager.AddSolidCollider(ball2);
+        }
+
+        public void RemoveFromManager(ColliderManager manager, bool isTrigger = false)
+        {
+            manager.RemoveSolidCollider(line);
+            manager.RemoveSolidCollider(ball1);
+            if (ball2 != null)
+                manager.RemoveSolidCollider(ball2);
         }
 
         /// <summary>
