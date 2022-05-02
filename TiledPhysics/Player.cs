@@ -151,7 +151,6 @@ public class Player : Pivot
         HandleInput();
         PlayerAnimation();
         UpdateUI();
-        Console.WriteLine(_mover.Velocity);
     }
 
     /// <summary>
