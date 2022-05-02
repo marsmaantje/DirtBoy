@@ -62,9 +62,13 @@ namespace Physics
         /// Set the owner to a new one
         /// </summary>
         /// <param name="owner">the new owner</param>
-        public void setOwner(GameObject owner)
+        public void SetOwner(GameObject owner)
         {
             _owner = owner;
+            foreach (Segment segment in _segments)
+            {
+                segment.SetOwner(owner);
+            }
         }
 
         /// <summary>
@@ -244,6 +248,15 @@ namespace Physics
             if (ball2 != null)
                 colliders.Add(ball2);
             return colliders;
+        }
+
+        public void SetOwner(GameObject owner)
+        {
+            _owner = owner;
+            line.owner = owner;
+            ball1.owner = owner;
+            if (ball2 != null)
+                ball2.owner = owner;
         }
 
         public override string ToString()
