@@ -35,10 +35,18 @@ namespace Physics
             {
                 CollisionInfo firstCollision = GetEarliestCollision();
                 UpdatePosition(firstCollision);
-                if(firstCollision != null && Mathf.RoughlyEquals(firstCollision.timeOfImpact, 0, 0.001f))
+                lastCollision = firstCollision;
+
+                if (firstCollision != null && Mathf.RoughlyEquals(firstCollision.timeOfImpact, 0, 0.001f))
                 {
                     firstCollision = GetEarliestCollision();
                     UpdatePosition(firstCollision);
+                    lastCollision = firstCollision ?? lastCollision;
+                    _velocity *= 1 - _friction;
+                }
+                else
+                {
+                    _velocity *= 1 - _airFriction;
                 }
             }
         }
