@@ -65,8 +65,6 @@ namespace Physics
                 position += Velocity * info.timeOfImpact;
                 ResolveCollision(info);
 
-
-
                 if (info.other != null)
                 {
                     Collision(info.other); //call the collission event to perhaps do something with the collission
@@ -94,14 +92,10 @@ namespace Physics
                 _velocity = systemVelocity + vel1.Reflect(normal, Bounciness);
                 other.Velocity = systemVelocity + vel2.Reflect(normal, Bounciness);
 
-                //position += info.normal * 1f;//move away from the other so it doesnt collide again in their step
-
             }
             else
             {//collission with immovable object
                 _velocity.Reflect(info.normal, Bounciness);
-
-                //position += info.normal * .01f;//move away from the other so it doesnt collide again in their step
             }
         }
 
