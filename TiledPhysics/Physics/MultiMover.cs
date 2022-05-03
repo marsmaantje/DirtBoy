@@ -37,7 +37,7 @@ namespace Physics
                 UpdatePosition(firstCollision);
                 lastCollision = firstCollision;
 
-                if (firstCollision != null && Mathf.RoughlyEquals(firstCollision.timeOfImpact, 0, 0.001f))
+                if (firstCollision != null && Mathf.RoughlyEquals(firstCollision.timeOfImpact, 0, 0.02f))
                 {
                     firstCollision = GetEarliestCollision();
                     UpdatePosition(firstCollision);
