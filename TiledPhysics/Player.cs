@@ -176,6 +176,8 @@ public class Player : Pivot
     /// </summary>
     private void HandleInput()
     {
+        if(Input.GetKeyDown(Key.J))
+            Console.WriteLine("Velocity: {0}, Actual Velocity: {1}",_mover.Velocity, _mover.position - prevPositions[prevPositions.Length-1]);
         Vec2 desiredVelocity = new Vec2(
             ((Input.GetKey(Key.D) ? 1 : 0) - (Input.GetKey(Key.A) ? 1 : 0)) * Mathf.Map(health01, 0, 1, minSpeed, maxSpeed),
             0);
