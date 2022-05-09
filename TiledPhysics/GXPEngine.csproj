@@ -64,6 +64,9 @@
     <Compile Include="Objects\PhysicalButton.cs" />
     <Compile Include="Objects\PhysicsBall.cs" />
     <Compile Include="Objects\RadiusDependantCollider.cs" />
+    <Compile Include="Particles\ParticleEmitter.cs" />
+    <Compile Include="Particles\Particles.cs" />
+    <Compile Include="Particles\ParticleStyle.cs" />
     <Compile Include="Physics\ColliderLoader.cs" />
     <Compile Include="Physics\ColliderManager.cs" />
     <Compile Include="Physics\Colliders\MultiSegmentCollider.cs" />

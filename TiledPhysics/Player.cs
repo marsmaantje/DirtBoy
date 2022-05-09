@@ -3,6 +3,7 @@ using GXPEngine;
 using TiledMapParser;
 using Physics;
 using Objects;
+using Particles;
 
 public class Player : Pivot
 {
@@ -10,7 +11,8 @@ public class Player : Pivot
     //objects
     TiledObject obj;
     private Scene parentScene;
-
+    ParticleEmitter emitter;
+    float emitRate = 1f;
     //camera target when following the player
     public Pivot cameraTarget;
     AnimationSprite animation;
@@ -34,6 +36,20 @@ public class Player : Pivot
     {
         get => Mathf.Pow(health / maxHealth, 2);
     }
+    bool isOnGround
+    {
+        get => _mover.lastCollision != null && _mover.lastCollision.normal.y < 0f;
+    }
+    CollisionType groundType
+    {
+        get
+        {
+            if (_mover.lastCollision != null && _mover.lastCollision.other.owner is ColliderObject other)
+                return other._collisionType;
+            return CollisionType.NULL;
+        }
+    }
+
     #endregion
 
     #region construction
@@ -44,12 +60,14 @@ public class Player : Pivot
         this.obj = obj;
         ReadVariables();
         createAnimation();
+        emitter = new ParticleEmitter("sprites/empty.png");
     }
 
     public Player(String filename, int cols, int rows, TiledObject obj) : base()
     {
         this.obj = obj;
         ReadVariables();
+        emitter = new ParticleEmitter("sprites/empty.png");
     }
 
     /// <summary>
@@ -114,7 +132,8 @@ public class Player : Pivot
         _mover.Bounciness = 0.01f;
         _mover.AirFriction = 0.01f;
         _mover.Friction = 0.01f;
-
+        //setting particle parent
+        emitter.particleSpace = parentScene;
     }
     #endregion
 
@@ -158,16 +177,13 @@ public class Player : Pivot
     /// </summary>
     private void UpdateHealth()
     {
-        if (_mover.lastCollision != null && _mover.lastCollision.other.owner is ColliderObject other)
-        {
-            switch (other._collisionType)
+            switch (groundType)
             {
                 case CollisionType.CONCRETE: health -= 0.01f+ _mover.Velocity.Length() / 50; break;
                 case CollisionType.DIRT: health += 0.01f + _mover.Velocity.Length() / 50; break;
                 case CollisionType.GRASS: break;
                 case CollisionType.NULL: break;
             }
-        }
         health = Mathf.Clamp(health, 0, maxHealth);
     }
 
@@ -207,11 +223,13 @@ public class Player : Pivot
     /// </summary>
     private void PlayerAnimation()
     {
+        //update scale
         float targetWidth = radius * 2;
         float scale = targetWidth / animationWidth;
         animation.scale = scale;
         cameraTarget.scale = scale * cameraSize;
 
+        //smooth position
         Vec2 a = new Vec2();
         foreach (Vec2 b in prevPositions)
             a += b;
@@ -219,12 +237,14 @@ public class Player : Pivot
         a -= _mover.position;
         animation.position = a;
 
+        //smooth rotation
         a = new Vec2();
         foreach (Vec2 b in prevVelocities)
             a += b;
         a /= prevVelocities.Length;
         animation.rotation = a.x * 2;
 
+        //camera control
         parentScene.setLookTarget(cameraTarget);
         foreach (GameObject other in collider.GetCollisions())
         {
@@ -233,6 +253,17 @@ public class Player : Pivot
                 parentScene.setLookTarget(trigger.target);
             }
         }
+
+        //particles
+        /*switch (groundType)
+        {
+            case CollisionType.CONCRETE: emitter.sprite = "sprites/concreteParticle.png"; break;
+            case CollisionType.DIRT: emitter.sprite = "sprites/dirtParticle.png"; break;
+            case CollisionType.GRASS: emitter.sprite = "sprites/grassParticle.png"; break;
+            case CollisionType.NULL: break;
+        }
+        
+        emitter.rate = isOnGround ? emitRate : 0;*/
     }
 
     /// <summary>
