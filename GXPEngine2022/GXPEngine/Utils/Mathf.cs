@@ -264,5 +264,17 @@ namespace GXPEngine
 			return to;
 		}
 
-	}
+        /// <summary>
+        /// lerps from a to b by t (0 to 1)
+        /// </summary>
+        /// <param name="a">start</param>
+        /// <param name="b">end</param>
+        /// <param name="t">0 to 1 progress</param>
+        /// <returns></returns>
+        public static float lerp(float a, float b, float t)
+        {
+            return a + (b - a) * t;
+        }
+
+    }
 }
