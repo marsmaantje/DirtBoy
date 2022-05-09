@@ -10,7 +10,7 @@ namespace Objects
 {
     public class PhysicsBall : CustomObject
     {
-        SingleMover _mover;
+        protected SingleMover _mover;
         
         public PhysicsBall(string filename, int cols, int rows, TiledObject obj) : base(obj, filename, cols, rows, addCollider:false)
         {

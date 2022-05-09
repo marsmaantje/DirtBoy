@@ -34,6 +34,21 @@ public class Player : Pivot
     {
         get => Mathf.Pow(health / maxHealth, 2);
     }
+
+    bool isOnGround
+    {
+        get => _mover.lastCollision != null && _mover.lastCollision.normal.y > 0.5f;
+    }
+
+    CollisionType groundType
+    {
+        get
+        {
+            if (_mover.lastCollision != null && _mover.lastCollision.other.owner is ColliderObject other)
+                return other._collisionType;
+            return CollisionType.NULL;
+        }
+    }
     #endregion
 
     #region construction
