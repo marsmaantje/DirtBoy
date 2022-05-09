@@ -61,11 +61,10 @@ namespace Physics
         /// <param name="info"></param>
         void UpdatePosition(CollisionInfo info)
         {
-            if (info == null)
-                position = collider.position;
-            else
+            position = collider.position;
+            
+            if (info != null)
             {
-                position = collider.position;
                 ResolveCollision(info);
 
                 if (info.other != null)

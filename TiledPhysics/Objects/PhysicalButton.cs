@@ -48,7 +48,7 @@ namespace Objects
 
             _mover.SetCollider(_collider);
             _collider.SetOwner(_mover);
-            _mover.Mass = 10000; //set the mass very high so the player does not stick to the button
+            _mover.Mass = 100000; //set the mass very high so the player does not stick to the button
             _mover.Moving = true;
             _mover.OnCollision += OnCollision;
 
@@ -61,7 +61,7 @@ namespace Objects
         public void Update()
         {
             _mover.Accelaration = -Mover.gravity;
-            Vec2 onAxisVelocity = _mover.Velocity.Project(up) * 1000;
+            Vec2 onAxisVelocity = _mover.Velocity.Project(up) * 10000;
             if (!isPressing)
                 onAxisVelocity = up * 0.01f;
             Vec2 newPosition = _mover.position + onAxisVelocity;
