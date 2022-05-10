@@ -19,11 +19,12 @@ namespace Objects
             base.initialize(parentScene);
             Vec2 windDirection = Vec2.GetUnitVectorDeg(rotation);
             velocity += windDirection * obj.GetFloatProperty("strength", 1f);
+            OnPressing += pushPlayer;
         }
 
-        public void Update()
+        void pushPlayer()
         {
-
+            parentScene.player.Mover.Velocity = velocity;
         }
     }
 }

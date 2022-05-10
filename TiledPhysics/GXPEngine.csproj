@@ -55,6 +55,7 @@
     <Compile Include="Layers\Layer.cs" />
     <Compile Include="Layers\ObjectLayer.cs" />
     <Compile Include="Layers\TileLayer.cs" />
+    <Compile Include="Objects\Button.cs" />
     <Compile Include="Objects\CameraTrigger.cs" />
     <Compile Include="Objects\ColliderObject.cs" />
     <Compile Include="Objects\CustomObject.cs" />
@@ -64,6 +65,8 @@
     <Compile Include="Objects\PhysicalButton.cs" />
     <Compile Include="Objects\PhysicsBall.cs" />
     <Compile Include="Objects\RadiusDependantCollider.cs" />
+    <Compile Include="Objects\Shot.cs" />
+    <Compile Include="Objects\Trampoline.cs" />
     <Compile Include="Particles\ParticleEmitter.cs" />
     <Compile Include="Particles\Particles.cs" />
     <Compile Include="Particles\ParticleStyle.cs" />

@@ -50,6 +50,11 @@ public class Player : Pivot
         }
     }
 
+    public Mover Mover
+    {
+        get => _mover;
+    }
+
     #endregion
 
     #region construction
