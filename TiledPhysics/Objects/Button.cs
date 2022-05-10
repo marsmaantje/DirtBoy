@@ -30,7 +30,7 @@ namespace Objects
         public void Update()
         {
             bool pPressed = _isPressed;
-            _isPressed = collider.HitTest(parentScene.player.collider);
+            _isPressed = collider.HitTest(parentScene.player.Collider);
 
             if (_isPressed && !pPressed)
             {

@@ -7,8 +7,7 @@ namespace Objects
 {
     public class Trampoline : Button
     {
-        float strength;
-        Vec2 velocity, checkVector;
+        Vec2 velocity;
 
         public Trampoline(string filename, int cols, int rows, TiledObject obj) : base(filename, cols, rows, obj)
         {
@@ -18,8 +17,9 @@ namespace Objects
         {
             base.initialize(parentScene);
             Vec2 windDirection = Vec2.GetUnitVectorDeg(rotation);
-            velocity += windDirection * obj.GetFloatProperty("strength", 1f);
+            velocity += windDirection * obj.GetFloatProperty("strength", 0f);
             OnPressing += pushPlayer;
+            OnPressed += pushPlayer;
         }
 
         void pushPlayer()

@@ -17,7 +17,7 @@ public class Player : Pivot
     public Pivot cameraTarget;
     AnimationSprite animation;
     SingleMover _mover;
-    EasyDraw collider;
+    EasyDraw _collider;
     public float health;
     float maxHealth, minHealthRadius, maxHealthRadius, minSpeed, maxSpeed, minMass, maxMass, minJumpHeight, maxJumpHeight, animationWidth, cameraSize;
     Vec2[] prevPositions = new Vec2[2];
@@ -53,6 +53,11 @@ public class Player : Pivot
     public Mover Mover
     {
         get => _mover;
+    }
+
+    public GXPEngine.Core.Collider Collider
+    {
+        get => _collider.collider;
     }
 
     #endregion
@@ -130,10 +135,10 @@ public class Player : Pivot
         _mover.AddChild(this);
         SetXY(0, 0);
         _mover.SetCollider(new Ball(_mover, _mover.position, radius));
-        collider = new EasyDraw(animation.width, animation.height);
-        animation.AddChild(collider);
-        collider.SetOrigin(animation.width / 2, animation.height / 2);
-        collider.SetXY(0, 0);
+        _collider = new EasyDraw(animation.width, animation.height);
+        animation.AddChild(_collider);
+        _collider.SetOrigin(animation.width / 2, animation.height / 2);
+        _collider.SetXY(0, 0);
         _mover.Bounciness = 0.01f;
         _mover.AirFriction = 0.01f;
         _mover.Friction = 0.01f;
@@ -161,8 +166,8 @@ public class Player : Pivot
         if (_mover.collider is Ball ball)
         {
             ball.radius = radius;
-            collider.width = (int)radius;
-            collider.height = (int)radius;
+            _collider.width = (int)radius;
+            _collider.height = (int)radius;
         }
 
         //update mass
@@ -197,8 +202,11 @@ public class Player : Pivot
     /// </summary>
     private void HandleInput()
     {
+        //debug log
         if(Input.GetKeyDown(Key.J))
             Console.WriteLine("Velocity: {0}, Actual Velocity: {1}",_mover.Velocity, _mover.position - prevPositions[prevPositionIndex]);
+        
+        //movement
         Vec2 desiredVelocity = new Vec2(
             ((Input.GetKey(Key.D) ? 1 : 0) - (Input.GetKey(Key.A) ? 1 : 0)) * Mathf.Map(health01, 0, 1, minSpeed, maxSpeed),
             0);
@@ -216,10 +224,19 @@ public class Player : Pivot
             _mover.ApplyForce(deltaVelocity * 0.2f * new Vec2(1, 0));
         }
 
+        //zoom
         if (Input.scrolled)
         {
             cameraSize = cameraSize + Input.scrollWheelValue * -0.1f * cameraSize;
             cameraTarget.scale = cameraSize;
+        }
+
+        //shooting
+        if(Input.GetMouseButton(0))
+        {//if click, shoot
+            Vec2 relativeMouseDirection = new Vec2(Input.mouseX, Input.mouseY) - this.TransformPoint(new Vec2());
+            relativeMouseDirection /= parentScene.scale;
+            Gizmos.DrawArrow(0, 0, relativeMouseDirection.x, relativeMouseDirection.y, 0.1f, this);
         }
     }
 
@@ -251,7 +268,7 @@ public class Player : Pivot
 
         //camera control
         parentScene.setLookTarget(cameraTarget);
-        foreach (GameObject other in collider.GetCollisions())
+        foreach (GameObject other in _collider.GetCollisions())
         {
             if (other is CameraTrigger trigger)
             {
