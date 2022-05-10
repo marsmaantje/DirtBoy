@@ -25,7 +25,6 @@ namespace Objects
 
         public override void initialize(Scene parentScene)
         {
-            Console.WriteLine(InverseTransformPoint(0, 0));
             base.initialize(parentScene);
             _mover = new SingleMover();
             parent.AddChild(_mover);
@@ -33,7 +32,6 @@ namespace Objects
             _mover.AddChild(this);
             SetXY(0, 0);
             _mover.SetCollider(new Ball(_mover, _mover.position, 10), addToManager);
-            Console.WriteLine(InverseTransformPoint(0, 0));
         }
 
         public void Update()

@@ -144,10 +144,10 @@ public class Scene : Pivot
             }
         }
 
-        if (FindObjectOfType<Player>() != null)
-            SetChildIndex(FindObjectOfType<Player>().parent, GetChildCount());//render the player on top of all other gameObjects
-        else
-            this.SetXY(0, 0);
+        //if (FindObjectOfType<Player>() != null)
+        //    SetChildIndex(FindObjectOfType<Player>().parent, GetChildCount());//render the player on top of all other gameObjects
+        //else
+        //    this.SetXY(0, 0);
     }
 
     /// <summary>

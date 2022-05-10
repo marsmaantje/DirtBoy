@@ -21,14 +21,16 @@ namespace Objects
         protected ColliderLoader _colliderLoader;
         public CollisionType _collisionType;
         bool createBoxCollider = false;
+        bool addToManager;
 
         public ColliderObject(string filename, int cols, int rows, TiledObject obj) : this(filename, cols, rows, obj, -1)
         { }
         
-        public ColliderObject(string filename, int cols, int rows, TiledObject obj, int frames = -1, bool keepInCache = false, bool addCollider = true) : base(obj, filename, cols, rows, frames, keepInCache, addCollider)
+        public ColliderObject(string filename, int cols, int rows, TiledObject obj, int frames = -1, bool keepInCache = false, bool addCollider = true, bool pAddToManager = true) : base(obj, filename, cols, rows, frames, keepInCache, addCollider)
         {
             this.obj = obj;
             _collisionType = (CollisionType)obj.GetIntProperty("type", (int)CollisionType.NULL);
+            addToManager = pAddToManager;
         }
 
         public ColliderObject(TiledObject obj) : this("sprites/empty.png", 1, 1, obj)
@@ -49,7 +51,7 @@ namespace Objects
                 SetOrigin(0, 0);
                 _colliderLoader = ColliderLoader.main;
                 _collider = _colliderLoader.GetCollider(obj.GetStringProperty("ColliderName"), this);
-                if (_collider != null)
+                if (_collider != null && addToManager)
                     _collider.AddToManager(_colliderManager);
                 else
                     throw new Exception("Collider with name " + obj.GetStringProperty("ColliderName") + " not found");
