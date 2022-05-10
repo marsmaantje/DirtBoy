@@ -7,7 +7,6 @@ namespace Objects
 {
     public class Fan : CustomObject
     {
-        Vec2 velocity;
         Vec2 areaOfEffect;
         
         float distance;
@@ -24,8 +23,7 @@ namespace Objects
         {
             base.initialize(parentScene);
             Vec2 windDirection = Vec2.GetUnitVectorDeg(rotation - 90);
-            velocity = windDirection * obj.GetFloatProperty("windStrength", 1f);
-            velocity *= windDirection;
+            Vec2 velocity = windDirection * windDirection * obj.GetFloatProperty("windStrength", 1f);
             areaOfEffect = velocity * 5 - new Vec2(x,y);
 
             direction = Vec2.GetUnitVectorDeg(rotation);
