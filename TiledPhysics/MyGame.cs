@@ -122,7 +122,7 @@ public class MyGame : Game
         }
     }
 
-    void Update()
+    public void Update()
     {
         //if we are currently loading a new level, actually do it
         if (levelLoad)
@@ -135,7 +135,6 @@ public class MyGame : Game
         ui.clearText(); //since this is always the first update called, clear the ui text here
         
         HandleInput();
-
     }
 
     [STAThread]

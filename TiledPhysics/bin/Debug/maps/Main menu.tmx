@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.8" tiledversion="1.8.4" orientation="orthogonal" renderorder="right-down" width="160" height="24" tilewidth="16" tileheight="16" infinite="0" nextlayerid="21" nextobjectid="261">
+<map version="1.8" tiledversion="1.8.4" orientation="orthogonal" renderorder="right-down" width="160" height="24" tilewidth="16" tileheight="16" infinite="0" nextlayerid="21" nextobjectid="263">
  <tileset firstgid="1" name="empty" tilewidth="16" tileheight="16" tilecount="1" columns="1">
   <image source="../sprites/empty.png" width="16" height="16"/>
  </tileset>
@@ -186,7 +186,7 @@
     <property name="rows" value="1"/>
    </properties>
   </object>
-  <object id="80" type="Objects.Fan" gid="7" x="678.333" y="390.333" width="53.8618" height="113.879" rotation="270">
+  <object id="80" type="Objects.Fan" gid="7" x="660.527" y="272.434" width="53.8618" height="113.879" rotation="214.538">
    <properties>
     <property name="distance" type="float" value="500"/>
     <property name="falloff" type="float" value="0.4"/>
@@ -213,6 +213,12 @@
  </objectgroup>
  <objectgroup id="14" name="WorldColliders">
   <object id="53" type="Objects.ColliderObject" gid="8" x="-102.667" y="-139.167" width="563" height="184" rotation="90">
+   <properties>
+    <property name="ColliderName" value="WorldCollider"/>
+    <property name="type" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="262" type="Objects.ComplexMover" gid="8" x="1134.17" y="16.0772" width="319" height="104.256" rotation="180">
    <properties>
     <property name="ColliderName" value="WorldCollider"/>
     <property name="type" type="int" value="1"/>
