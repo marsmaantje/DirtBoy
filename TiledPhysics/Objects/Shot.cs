@@ -10,9 +10,11 @@ namespace Objects
 {
     public class Shot : PhysicsBall
     {
-        public Shot(string filename, int cols, int rows) : base(filename, cols, rows, null)
+        int deathMoment;
+        
+        public Shot(string filename, int cols, int rows, int pLifetime) : base(filename, cols, rows, null)
         {
-            
+            deathMoment = Time.time + pLifetime;
         }
 
         public override void initialize(Scene parentScene)
@@ -21,9 +23,27 @@ namespace Objects
             _mover.OnCollision += Collision;
         }
 
+        public void Update()
+        {
+            base.Update();
+            if (Time.time > deathMoment)
+            {
+                LateDestroy();
+            }
+        }
+
+        /// <summary>
+        /// when we collide with a customobject, call its hit method and delete ourselves
+        /// </summary>
+        /// <param name="other"></param>
+        /// <param name="current"></param>
         void Collision(Collider other, Mover current)
         {
-            
+            if(other.owner is CustomObject owner)
+            {
+                owner.OnHit(current, other);
+            }
+            LateDestroy();
         }
     }
 }

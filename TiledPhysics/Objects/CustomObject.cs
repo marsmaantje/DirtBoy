@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using GXPEngine;
 using TiledMapParser;
+using Physics;
 
 namespace Objects
 {
@@ -29,5 +30,7 @@ namespace Objects
         }
 
         public virtual void respawn() {}
+
+        public virtual void OnHit(Mover source, Collider collider) { }
     }
 }
