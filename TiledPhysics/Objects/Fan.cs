@@ -22,10 +22,6 @@ namespace Objects
         public override void initialize(Scene parentScene)
         {
             base.initialize(parentScene);
-            Vec2 windDirection = Vec2.GetUnitVectorDeg(rotation - 90);
-            Vec2 velocity = windDirection * windDirection * obj.GetFloatProperty("windStrength", 1f);
-            areaOfEffect = velocity * 5 - new Vec2(x,y);
-
             direction = Vec2.GetUnitVectorDeg(rotation);
             distance = obj.GetFloatProperty("distance", 10f);
             falloff = obj.GetFloatProperty("falloff", 0.5f);
