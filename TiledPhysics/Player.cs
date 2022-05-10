@@ -233,14 +233,29 @@ public class Player : Pivot
         }
 
         //shooting
-        if(Input.GetMouseButton(0))
+        if(Input.GetMouseButtonDown(0) && health > maxHealth / 3)
         {//if click, shoot
             Vec2 relativeMouseDirection = new Vec2(Input.mouseX, Input.mouseY) - this.TransformPoint(new Vec2());
             relativeMouseDirection /= parentScene.scale;
-            Gizmos.DrawArrow(0, 0, relativeMouseDirection.x, relativeMouseDirection.y, 0.1f, this);
+            //Gizmos.DrawArrow(0, 0, relativeMouseDirection.x, relativeMouseDirection.y, 0.1f, this);
+            Shoot(relativeMouseDirection, 30);
+            health -= maxHealth / 3.5f;
+            
         }
     }
 
+    void Shoot(Vec2 direction, float strength)
+    {
+        direction.Normalize();
+        Vec2 speed = direction * strength;
+        Shot shot = new Shot("sprites/empty.png", 1, 1, 2000);
+        parentScene.AddChild(shot);
+        shot.position = _mover.position + direction * radius;
+        shot.initialize(parentScene);
+        shot.Mover.Velocity = speed;
+
+    }
+    
     /// <summary>
     /// moves the player and updates all the visuals accordingly
     /// </summary>

@@ -12,7 +12,7 @@ namespace Objects
     {
         int deathMoment;
         
-        public Shot(string filename, int cols, int rows, int pLifetime) : base(filename, cols, rows, null)
+        public Shot(string filename, int cols, int rows, int pLifetime) : base(filename, cols, rows, null, false)
         {
             deathMoment = Time.time + pLifetime;
         }

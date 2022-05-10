@@ -63,7 +63,7 @@ namespace Objects
             _mover.Accelaration = -Mover.gravity;
             Vec2 onAxisVelocity = _mover.Velocity.Project(up) * 10000;
             if (!isPressing)
-                onAxisVelocity = up * 0.01f;
+                onAxisVelocity = up * 0.5f;
             Vec2 newPosition = _mover.position + onAxisVelocity;
             _mover.position = newPosition.Clamp(pressed, released);
             _mover.Velocity = new Vec2();
