@@ -11,6 +11,9 @@ i:{b5126d4c-7fe0-4552-bc8c-e68d529c22b2}:c:\users\santos\documents\github\finala
 i:{b5126d4c-7fe0-4552-bc8c-e68d529c22b2}:c:\users\santos\documents\github\finalapproach\tiledphysics\layers\
 ++Objects
 i:{b5126d4c-7fe0-4552-bc8c-e68d529c22b2}:c:\users\santos\documents\github\finalapproach\tiledphysics\objects\
+++Button.cs
+i:{b5126d4c-7fe0-4552-bc8c-e68d529c22b2}:c:\users\santos\documents\github\finalapproach\tiledphysics\objects\button.cs
+i:{b5126d4c-7fe0-4552-bc8c-e68d529c22b2}:c:\users\santos\documents\github\finalapproach\tiledphysics\uielements\button.cs
 ++CameraTrigger.cs
 i:{b5126d4c-7fe0-4552-bc8c-e68d529c22b2}:c:\users\santos\documents\github\finalapproach\tiledphysics\objects\cameratrigger.cs
 ++ColliderObject.cs
@@ -29,8 +32,18 @@ i:{b5126d4c-7fe0-4552-bc8c-e68d529c22b2}:c:\users\santos\documents\github\finala
 i:{b5126d4c-7fe0-4552-bc8c-e68d529c22b2}:c:\users\santos\documents\github\finalapproach\tiledphysics\objects\physicsball.cs
 ++RadiusDependantCollider.cs
 i:{b5126d4c-7fe0-4552-bc8c-e68d529c22b2}:c:\users\santos\documents\github\finalapproach\tiledphysics\objects\radiusdependantcollider.cs
+++Shot.cs
+i:{b5126d4c-7fe0-4552-bc8c-e68d529c22b2}:c:\users\santos\documents\github\finalapproach\tiledphysics\objects\shot.cs
+++Trampoline.cs
+i:{b5126d4c-7fe0-4552-bc8c-e68d529c22b2}:c:\users\santos\documents\github\finalapproach\tiledphysics\objects\trampoline.cs
 ++Particles
 i:{b5126d4c-7fe0-4552-bc8c-e68d529c22b2}:c:\users\santos\documents\github\finalapproach\tiledphysics\particles\
+++ParticleEmitter.cs
+i:{b5126d4c-7fe0-4552-bc8c-e68d529c22b2}:c:\users\santos\documents\github\finalapproach\tiledphysics\particles\particleemitter.cs
+++Particles.cs
+i:{b5126d4c-7fe0-4552-bc8c-e68d529c22b2}:c:\users\santos\documents\github\finalapproach\tiledphysics\particles\particles.cs
+++ParticleStyle.cs
+i:{b5126d4c-7fe0-4552-bc8c-e68d529c22b2}:c:\users\santos\documents\github\finalapproach\tiledphysics\particles\particlestyle.cs
 ++Physics
 i:{b5126d4c-7fe0-4552-bc8c-e68d529c22b2}:c:\users\santos\documents\github\finalapproach\tiledphysics\physics\
 ++Colliders
@@ -65,12 +78,6 @@ i:{b5126d4c-7fe0-4552-bc8c-e68d529c22b2}:c:\users\santos\documents\github\finala
 i:{b5126d4c-7fe0-4552-bc8c-e68d529c22b2}:c:\users\santos\documents\github\finalapproach\tiledphysics\mygame.cs
 ++packages.config
 i:{b5126d4c-7fe0-4552-bc8c-e68d529c22b2}:c:\users\santos\documents\github\finalapproach\tiledphysics\packages.config
-++ParticleEmitter.cs
-i:{b5126d4c-7fe0-4552-bc8c-e68d529c22b2}:c:\users\santos\documents\github\finalapproach\tiledphysics\particles\particleemitter.cs
-++Particles.cs
-i:{b5126d4c-7fe0-4552-bc8c-e68d529c22b2}:c:\users\santos\documents\github\finalapproach\tiledphysics\particles\particles.cs
-++ParticleStyle.cs
-i:{b5126d4c-7fe0-4552-bc8c-e68d529c22b2}:c:\users\santos\documents\github\finalapproach\tiledphysics\particles\particlestyle.cs
 ++Player.cs
 i:{b5126d4c-7fe0-4552-bc8c-e68d529c22b2}:c:\users\santos\documents\github\finalapproach\tiledphysics\player.cs
 ++Scene.cs
@@ -140,8 +147,6 @@ i:{b5126d4c-7fe0-4552-bc8c-e68d529c22b2}:c:\users\santos\documents\github\finala
 i:{b5126d4c-7fe0-4552-bc8c-e68d529c22b2}:c:\users\santos\documents\github\finalapproach\tiledphysics\physics\colliders\line.cs
 ++MultiSegmentCollider.cs
 i:{b5126d4c-7fe0-4552-bc8c-e68d529c22b2}:c:\users\santos\documents\github\finalapproach\tiledphysics\physics\colliders\multisegmentcollider.cs
-++Button.cs
-i:{b5126d4c-7fe0-4552-bc8c-e68d529c22b2}:c:\users\santos\documents\github\finalapproach\tiledphysics\uielements\button.cs
 ++ButtonManager.cs
 i:{b5126d4c-7fe0-4552-bc8c-e68d529c22b2}:c:\users\santos\documents\github\finalapproach\tiledphysics\uielements\buttonmanager.cs
 ++ColliderPreview.cs
@@ -216,3 +221,5 @@ i:{b5126d4c-7fe0-4552-bc8c-e68d529c22b2}:c:\users\santos\documents\github\finala
 i:{b5126d4c-7fe0-4552-bc8c-e68d529c22b2}:c:\users\santos\documents\github\finalapproach\gxpengine2022\gxpengine\utils\time.cs
 ++Utils.cs
 i:{b5126d4c-7fe0-4552-bc8c-e68d529c22b2}:c:\users\santos\documents\github\finalapproach\gxpengine2022\gxpengine\utils\utils.cs
+++Pickup.cs
+i:{b5126d4c-7fe0-4552-bc8c-e68d529c22b2}:c:\users\santos\documents\github\finalapproach\tiledphysics\objects\pickup.cs

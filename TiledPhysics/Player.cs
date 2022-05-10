@@ -24,6 +24,7 @@ public class Player : Pivot
     int prevPositionIndex = 0;
     Vec2[] prevVelocities = new Vec2[5];
     int prevVelocityIndex = 0;
+    public int soulCounter;
     #endregion
 
     #region Getters/Setters

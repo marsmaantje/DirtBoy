@@ -64,6 +64,7 @@
     <Compile Include="Objects\HealthEffect.cs" />
     <Compile Include="Objects\PhysicalButton.cs" />
     <Compile Include="Objects\PhysicsBall.cs" />
+    <Compile Include="Objects\Pickup.cs" />
     <Compile Include="Objects\RadiusDependantCollider.cs" />
     <Compile Include="Objects\Shot.cs" />
     <Compile Include="Objects\Trampoline.cs" />
