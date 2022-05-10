@@ -21,7 +21,6 @@ namespace Objects
         void PickedUp()
         {
             parentScene.player.soulCounter++;
-            Console.WriteLine(parentScene.player.soulCounter);
             LateDestroy();
         }
     }

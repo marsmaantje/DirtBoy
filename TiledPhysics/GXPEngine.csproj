@@ -67,6 +67,7 @@
     <Compile Include="Objects\Pickup.cs" />
     <Compile Include="Objects\RadiusDependantCollider.cs" />
     <Compile Include="Objects\Shot.cs" />
+    <Compile Include="Objects\SnappingBranch.cs" />
     <Compile Include="Objects\Trampoline.cs" />
     <Compile Include="Particles\ParticleEmitter.cs" />
     <Compile Include="Particles\Particles.cs" />
