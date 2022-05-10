@@ -17,7 +17,7 @@ namespace Objects
         public override void initialize(Scene parentScene)
         {
             base.initialize(parentScene);
-            Vec2 windDirection = Vec2.GetUnitVectorDeg(rotation - 90);
+            Vec2 windDirection = Vec2.GetUnitVectorDeg(rotation);
             velocity += windDirection * obj.GetFloatProperty("strength", 1f);
         }
 
