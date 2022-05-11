@@ -7,6 +7,7 @@ using TiledMapParser;
 using GXPEngine.Core;
 using Layers;
 using Objects;
+using UIElements;
 
 
 public class Scene : Pivot
@@ -134,13 +135,13 @@ public class Scene : Pivot
 
         foreach (GameObject child in this.GetChildren())
         {
-            if (child is CustomObject)
+            if (child is CustomObject customObject)
             {
-                ((CustomObject)child).initialize(this);
+                customObject.initialize(this);
             }
-            if (child is Player)
+            if (child is Player player)
             {
-                ((Player)child).initialize(this);
+                player.initialize(this);
             }
         }
 

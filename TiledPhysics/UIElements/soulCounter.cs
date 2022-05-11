@@ -11,14 +11,13 @@ namespace UIElements
     /// Indicator for how many lives the player has.
     /// It will indicate this by utilizing an array of animationSprites each representing one life
     /// </summary>
-    class soulCounter : Pivot
+    class SoulCounter : Pivot
     {
         List<AnimationSprite> souls = new List<AnimationSprite>();
         string filename;
         float soulSize = 1;
         Vector2 boundsMin;
         Vector2 boundsMax;
-
         public int currentSouls
         {
             get => souls.Count;
@@ -26,7 +25,7 @@ namespace UIElements
             set => setHealth(value);
         }
 
-        public soulCounter(string filename, Vector2 min, Vector2 max, float pSoulSize) : base()
+        public SoulCounter(string filename, Vector2 min, Vector2 max, float pSoulSize) : base()
         {
             this.filename = filename;
             boundsMin = min;
@@ -35,7 +34,6 @@ namespace UIElements
             currentSouls = GlobalVariables.soulCounter;
             RecalculatePositions();
         }
-
         public void Update()
         {
             foreach (AnimationSprite soul in souls)
@@ -44,6 +42,10 @@ namespace UIElements
                 {
                     soul.Animate(18 * Time.deltaTime / 1000f);
                 }
+            }
+            if (currentSouls != GlobalVariables.soulCounter)
+            {
+                setHealth(GlobalVariables.soulCounter);
             }
         }
 
