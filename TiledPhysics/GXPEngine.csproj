@@ -208,6 +208,8 @@
     <Compile Include="Physics\SingleMover.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Scene.cs" />
+    <Compile Include="Scripts\Music.cs" />
+    <Compile Include="Scripts\Script.cs" />
     <Compile Include="SFX.cs" />
     <Compile Include="UI.cs" />
     <Compile Include="UIElements\Button.cs" />
@@ -222,7 +224,5 @@
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Scripts\" />
-  </ItemGroup>
+  <ItemGroup />
 </Project>

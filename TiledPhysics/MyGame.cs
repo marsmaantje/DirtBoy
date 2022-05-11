@@ -16,9 +16,12 @@ public class MyGame : Game
     bool levelLoad = false;
     float gravityStrength = 1f;
 
-    //public MyGame() : base(1440, 900, false, false, pPixelArt:true)
-    public MyGame() : base(1920, 1080, true, false)
+    public MyGame() : base(1920, 1080, false, false, pPixelArt:true)
+    //public MyGame() : base(1920, 1080, true, false)
     {
+        cursor = new Cursor();
+        AddChild(cursor);
+        
         targetFps = 60;
 
         ColliderLoader.main.loadFile(ColliderFileName);
@@ -28,8 +31,6 @@ public class MyGame : Game
         PrintInfo();
         Mover.gravity = new Vec2(0, gravityStrength);
 
-        cursor = new Cursor();
-        AddChild(cursor);
     }
 
     void addPropperLine(Vec2 start, Vec2 end)
@@ -60,7 +61,7 @@ public class MyGame : Game
 
         //set the index of the ui to be in front of the level
         SetChildIndex(ui, GetChildCount());
-        SetChildIndex(cursor, GetChildCount());)
+        SetChildIndex(cursor, GetChildCount());
     }
 
     /// <summary>
