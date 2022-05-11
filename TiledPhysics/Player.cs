@@ -138,7 +138,7 @@ public class Player : Pivot
         SetXY(0, 0);
         _mover.SetCollider(new Ball(_mover, _mover.position, radius));
         _collider = new EasyDraw(animation.width, animation.height);
-        animation.AddChild(_collider);
+        AddChild(_collider);
         _collider.SetOrigin(animation.width / 2, animation.height / 2);
         _collider.SetXY(0, 0);
         _mover.Bounciness = 0.01f;

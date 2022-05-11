@@ -11,7 +11,7 @@ namespace Objects
 
         public Trampoline(string filename, int cols, int rows, TiledObject obj) : base(filename, cols, rows, obj)
         {
-
+            visible = false;
         }
         public override void initialize(Scene parentScene)
         {
