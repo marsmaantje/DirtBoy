@@ -204,7 +204,7 @@
     <property name="type" type="int" value="2"/>
    </properties>
   </object>
-  <object id="235" type="Objects.CameraTrigger" gid="1" x="142.5" y="-7" width="325" height="85"/>
+  <object id="235" type="Objects.CameraTrigger" gid="1" x="158.5" y="-25.6667" width="325" height="85"/>
   <object id="263" type="Objects.Trampoline" gid="1" x="934.913" y="-55.9273" width="59.6667" height="194.333" rotation="269.846">
    <properties>
     <property name="strength" type="float" value="20"/>

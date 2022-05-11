@@ -53,8 +53,8 @@ public class Scene : Pivot
             this.scaleY += deltaScaleY;
 
             //fix position update caused by scale change
-            this.x += this.x * deltaScaleX / scaleX;
-            this.y += this.y * deltaScaleY / scaleY;
+            this.x += (this.x - game.width/2) * deltaScaleX / scaleX;
+            this.y += (this.y - game.height/2) * deltaScaleY / scaleY;
         }
     }
     #endregion
