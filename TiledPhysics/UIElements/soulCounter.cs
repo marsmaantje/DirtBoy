@@ -22,7 +22,7 @@ namespace UIElements
         {
             get => souls.Count;
 
-            set => setHealth(value);
+            set => setSoulCounter(value);
         }
 
         public SoulCounter(string filename, Vector2 min, Vector2 max, float pSoulSize) : base()
@@ -45,11 +45,11 @@ namespace UIElements
             }
             if (currentSouls != GlobalVariables.soulCounter)
             {
-                setHealth(GlobalVariables.soulCounter);
+                setSoulCounter(GlobalVariables.soulCounter);
             }
         }
 
-        void setHealth(int targetSouls)
+        void setSoulCounter(int targetSouls)
         {
             if (targetSouls != currentSouls && targetSouls >= 0)
             {
