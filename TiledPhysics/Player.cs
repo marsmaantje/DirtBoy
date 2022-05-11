@@ -191,7 +191,7 @@ public class Player : Pivot
     {
         switch (groundType)
         {
-            case CollisionType.CONCRETE: health -= 0.01f + _mover.Velocity.Length() / 50; break;
+            case CollisionType.TREE: health -= 0.01f + _mover.Velocity.Length() / 50; break;
             case CollisionType.DIRT: health += 0.01f + _mover.Velocity.Length() / 50; break;
             case CollisionType.GRASS: break;
             case CollisionType.NULL: break;

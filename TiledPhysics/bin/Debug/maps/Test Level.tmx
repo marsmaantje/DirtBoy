@@ -216,6 +216,7 @@
    <properties>
     <property name="rotDelta" type="float" value="180"/>
     <property name="snappingForce" type="int" value="1"/>
+    <property name="type" type="int" value="0"/>
     <property name="xDelta" type="float" value="50"/>
    </properties>
   </object>
