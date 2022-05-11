@@ -20,7 +20,7 @@ namespace Objects
 
         void PickedUp()
         {
-            parentScene.player.soulCounter++;
+            GlobalVariables.soulCounter++;
             LateDestroy();
         }
     }

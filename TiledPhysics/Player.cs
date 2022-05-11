@@ -19,12 +19,12 @@ public class Player : Pivot
     SingleMover _mover;
     EasyDraw _collider;
     public float health;
+    bool shooting;
     float maxHealth, minHealthRadius, maxHealthRadius, minSpeed, maxSpeed, minMass, maxMass, minJumpHeight, maxJumpHeight, animationWidth, cameraSize;
     Vec2[] prevPositions = new Vec2[2];
     int prevPositionIndex = 0;
     Vec2[] prevVelocities = new Vec2[5];
     int prevVelocityIndex = 0;
-    public int soulCounter;
     #endregion
 
     #region Getters/Setters
@@ -235,12 +235,14 @@ public class Player : Pivot
         //shooting
         if(Input.GetMouseButtonDown(0) && health > maxHealth / 3)
         {//if click, shoot
-            Vec2 relativeMouseDirection = new Vec2(Input.mouseX, Input.mouseY) - this.TransformPoint(new Vec2());
-            relativeMouseDirection /= parentScene.scale;
-            //Gizmos.DrawArrow(0, 0, relativeMouseDirection.x, relativeMouseDirection.y, 0.1f, this);
-            Shoot(relativeMouseDirection, 30);
-            health -= maxHealth / 3.5f;
-            
+            if (GlobalVariables.shooting)
+            {
+                Vec2 relativeMouseDirection = new Vec2(Input.mouseX, Input.mouseY) - this.TransformPoint(new Vec2());
+                relativeMouseDirection /= parentScene.scale;
+                //Gizmos.DrawArrow(0, 0, relativeMouseDirection.x, relativeMouseDirection.y, 0.1f, this);
+                Shoot(relativeMouseDirection, 30);
+                health -= maxHealth / 3.5f;
+            }
         }
     }
 

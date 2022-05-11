@@ -50,6 +50,7 @@
     </Compile>
     <Compile Include="ColliderListPreview.cs" />
     <Compile Include="Cursor.cs" />
+    <Compile Include="GlobalVariables.cs" />
     <Compile Include="ImageSelector.cs" />
     <Compile Include="Layers\ImageLayer.cs" />
     <Compile Include="Layers\Layer.cs" />
@@ -210,7 +211,7 @@
     <Compile Include="Scene.cs" />
     <Compile Include="Scripts\Music.cs" />
     <Compile Include="Scripts\Script.cs" />
-    <Compile Include="SFX.cs" />
+    <Compile Include="Scripts\SFX.cs" />
     <Compile Include="UI.cs" />
     <Compile Include="UIElements\Button.cs" />
     <Compile Include="UIElements\ColliderPreview.cs" />

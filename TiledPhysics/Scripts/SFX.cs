@@ -1,7 +1,8 @@
-﻿using GXPEngine.Core;
+﻿using GXPEngine;
+using GXPEngine.Core;
 using System;
 
-namespace GXPEngine
+namespace Scripts
 {
     public class SFX : GameObject
     {
