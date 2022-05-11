@@ -208,6 +208,7 @@
     <Compile Include="Physics\SingleMover.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Scene.cs" />
+    <Compile Include="SFX.cs" />
     <Compile Include="UI.cs" />
     <Compile Include="UIElements\Button.cs" />
     <Compile Include="UIElements\ColliderPreview.cs" />
