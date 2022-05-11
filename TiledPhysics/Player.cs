@@ -128,7 +128,7 @@ public class Player : Pivot
         parentScene.setLookTarget(lookTarget);
         parentScene.jumpToTarget();
         cameraTarget = lookTarget;
-        cameraSize = 1f;
+        cameraSize = 4f;
 
         //setup the physics
         _mover = new SingleMover();
@@ -221,7 +221,7 @@ public class Player : Pivot
             _mover.ApplyForce(deltaVelocity * _mover.lastCollision.normal.Normal());
             if (Input.GetKey(Key.W) && _mover.lastCollision.normal.y < -0.3f)
             {
-                _mover.Velocity += _mover.lastCollision.normal * Mathf.Map(health01, 0, 1, minJumpHeight, maxJumpHeight);
+                _mover.Velocity += new Vec2(0,-1) * Mathf.Map(health01, 0, 1, minJumpHeight, maxJumpHeight);
             }
         }
         else
