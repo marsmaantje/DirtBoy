@@ -15,10 +15,9 @@ namespace GXPEngine
         public Vector2 effectVolumePoz = new Vector2(260, 169.5f);
         public SFX()
         {
-            backgroundMusic = new Sound("The_Endless_Journey.ogg", true).Play(); //Play the backgroundMusic (that loops)
-            Console.WriteLine("");
-            landingSFX = new Sound("Landing.mp3"); //Load sound that plays when you land on the ground
-            fallDamageSFX = new Sound("fallDamage.wav"); //Load sound that plays when you take fallDamage
+            backgroundMusic = new Sound("OST/The_Endless_Journey.ogg", true).Play(); //Play the backgroundMusic (that loops)
+            landingSFX = new Sound("OST/Landing.mp3"); //Load sound that plays when you land on the ground
+            fallDamageSFX = new Sound("OST/fallDamage.wav"); //Load sound that plays when you take fallDamage
             backgroundMusic.IsPaused = false;
             this.SetVolume();
         }
