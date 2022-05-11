@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.8" tiledversion="1.8.4" orientation="orthogonal" renderorder="right-down" width="160" height="24" tilewidth="16" tileheight="16" infinite="0" nextlayerid="21" nextobjectid="267">
+ <tileset firstgid="1" name="empty" tilewidth="16" tileheight="16" tilecount="1" columns="1">
+  <image source="../sprites/empty.png" width="16" height="16"/>
+ </tileset>
+ <tileset firstgid="2" name="slingshot1" tilewidth="76" tileheight="60" tilecount="1" columns="1">
+  <image source="../sprites/slingshot1.png" width="76" height="60"/>
+ </tileset>
+ <tileset firstgid="3" name="UI_Tiles" tilewidth="31" tileheight="31" tilecount="4" columns="2">
+  <image source="../sprites/UI_Tiles.png" width="62" height="62"/>
+ </tileset>
+ <tileset firstgid="7" name="Fan" tilewidth="105" tileheight="222" tilecount="1" columns="1">
+  <image source="../sprites/Fan.png" width="105" height="222"/>
+ </tileset>
+ <tileset firstgid="8" name="WorldCollider" tilewidth="563" tileheight="184" tilecount="1" columns="1">
+  <image source="../sprites/WorldCollider.png" width="563" height="184"/>
+ </tileset>
+ <tileset firstgid="9" name="groundCollider" tilewidth="64" tileheight="16" tilecount="1" columns="1">
+  <image source="../sprites/groundCollider.png" width="64" height="16"/>
+ </tileset>
+ <tileset firstgid="10" name="dirtboy_concept_art" tilewidth="32" tileheight="32" tilecount="1" columns="1">
+  <image source="../sprites/dirtboy_concept_art.png" width="32" height="32"/>
+ </tileset>
+ <tileset firstgid="11" name="prop pack" tilewidth="16" tileheight="16" tilecount="108" columns="9">
+  <image source="../sprites/prop pack.png" width="144" height="192"/>
+  <wangsets>
+   <wangset name="Nothingness" type="mixed" tile="93">
+    <wangcolor name="Edge" color="#ff0000" tile="-1" probability="1"/>
+    <wangtile tileid="36" wangid="1,1,0,0,0,1,1,1"/>
+    <wangtile tileid="37" wangid="1,1,0,0,0,0,0,1"/>
+    <wangtile tileid="38" wangid="1,1,1,1,0,0,0,1"/>
+    <wangtile tileid="39" wangid="1,1,0,1,0,1,1,1"/>
+    <wangtile tileid="40" wangid="1,1,0,1,0,1,0,1"/>
+    <wangtile tileid="41" wangid="1,1,1,1,0,1,0,1"/>
+    <wangtile tileid="45" wangid="0,0,0,0,0,1,1,1"/>
+    <wangtile tileid="47" wangid="0,1,1,1,0,0,0,0"/>
+    <wangtile tileid="48" wangid="0,1,0,1,0,1,1,1"/>
+    <wangtile tileid="49" wangid="0,1,0,1,0,1,0,1"/>
+    <wangtile tileid="50" wangid="0,1,1,1,0,1,0,1"/>
+    <wangtile tileid="54" wangid="0,0,0,1,1,1,1,1"/>
+    <wangtile tileid="55" wangid="0,0,0,1,1,1,0,0"/>
+    <wangtile tileid="56" wangid="0,1,1,1,1,1,0,0"/>
+    <wangtile tileid="57" wangid="0,1,0,1,1,1,1,1"/>
+    <wangtile tileid="58" wangid="0,1,0,1,1,1,0,1"/>
+    <wangtile tileid="59" wangid="0,1,1,1,1,1,0,1"/>
+    <wangtile tileid="63" wangid="0,0,0,1,0,0,0,0"/>
+    <wangtile tileid="64" wangid="0,0,0,1,0,1,0,0"/>
+    <wangtile tileid="65" wangid="0,0,0,0,0,1,0,0"/>
+    <wangtile tileid="66" wangid="1,1,1,1,0,1,1,1"/>
+    <wangtile tileid="67" wangid="0,1,0,0,0,1,1,1"/>
+    <wangtile tileid="68" wangid="0,1,1,1,0,0,0,1"/>
+    <wangtile tileid="72" wangid="0,1,0,1,0,0,0,0"/>
+    <wangtile tileid="73" wangid="0,1,0,1,0,1,0,1"/>
+    <wangtile tileid="74" wangid="0,0,0,0,0,1,0,1"/>
+    <wangtile tileid="75" wangid="0,1,1,1,0,1,1,1"/>
+    <wangtile tileid="76" wangid="0,0,0,1,0,1,1,1"/>
+    <wangtile tileid="77" wangid="0,1,1,1,0,1,0,0"/>
+    <wangtile tileid="81" wangid="0,1,0,0,0,0,0,0"/>
+    <wangtile tileid="82" wangid="0,1,0,0,0,0,0,1"/>
+    <wangtile tileid="83" wangid="0,0,0,0,0,0,0,1"/>
+    <wangtile tileid="84" wangid="0,1,1,1,1,1,1,1"/>
+    <wangtile tileid="85" wangid="1,1,0,0,0,1,0,1"/>
+    <wangtile tileid="86" wangid="1,1,0,1,0,0,0,1"/>
+    <wangtile tileid="87" wangid="0,1,0,0,0,0,0,1"/>
+    <wangtile tileid="88" wangid="0,1,0,0,0,0,0,1"/>
+    <wangtile tileid="90" wangid="1,1,0,1,1,1,1,1"/>
+    <wangtile tileid="91" wangid="1,1,0,1,1,1,0,1"/>
+    <wangtile tileid="92" wangid="1,1,1,1,1,1,0,1"/>
+    <wangtile tileid="93" wangid="1,1,1,1,1,1,1,1"/>
+    <wangtile tileid="94" wangid="0,0,0,1,1,1,0,1"/>
+    <wangtile tileid="95" wangid="0,1,0,1,1,1,0,0"/>
+    <wangtile tileid="96" wangid="0,0,0,1,0,1,0,1"/>
+    <wangtile tileid="97" wangid="0,1,0,1,0,1,0,0"/>
+   </wangset>
+   <wangset name="tile" type="mixed" tile="-1">
+    <wangcolor name="" color="#ff0000" tile="-1" probability="1"/>
+    <wangtile tileid="36" wangid="0,0,1,1,1,0,0,0"/>
+    <wangtile tileid="37" wangid="0,0,1,1,1,1,1,0"/>
+    <wangtile tileid="38" wangid="0,0,0,0,1,1,1,0"/>
+    <wangtile tileid="39" wangid="0,0,1,0,1,0,0,0"/>
+    <wangtile tileid="40" wangid="0,0,1,0,1,0,1,0"/>
+    <wangtile tileid="41" wangid="0,0,0,0,1,0,1,0"/>
+    <wangtile tileid="45" wangid="1,1,1,1,1,0,0,0"/>
+    <wangtile tileid="46" wangid="1,1,1,1,1,1,1,1"/>
+    <wangtile tileid="47" wangid="1,0,0,0,1,1,1,1"/>
+    <wangtile tileid="48" wangid="1,0,1,0,1,0,0,0"/>
+    <wangtile tileid="49" wangid="1,0,1,0,1,0,1,0"/>
+    <wangtile tileid="50" wangid="1,0,0,0,1,0,1,0"/>
+    <wangtile tileid="54" wangid="1,1,1,0,0,0,0,0"/>
+    <wangtile tileid="55" wangid="1,1,1,0,0,0,1,1"/>
+    <wangtile tileid="56" wangid="1,0,0,0,0,0,1,1"/>
+    <wangtile tileid="57" wangid="1,0,1,0,0,0,0,0"/>
+    <wangtile tileid="58" wangid="1,0,1,0,0,0,1,0"/>
+    <wangtile tileid="59" wangid="1,0,0,0,0,0,1,0"/>
+    <wangtile tileid="63" wangid="1,1,1,0,1,1,1,1"/>
+    <wangtile tileid="64" wangid="1,1,1,0,1,0,1,1"/>
+    <wangtile tileid="65" wangid="1,1,1,1,1,0,1,1"/>
+    <wangtile tileid="66" wangid="0,0,0,0,1,0,0,0"/>
+    <wangtile tileid="67" wangid="1,0,1,1,1,0,0,0"/>
+    <wangtile tileid="68" wangid="1,0,0,0,1,1,1,0"/>
+    <wangtile tileid="72" wangid="1,0,1,0,1,1,1,1"/>
+    <wangtile tileid="73" wangid="1,0,1,0,1,0,1,0"/>
+    <wangtile tileid="74" wangid="1,1,1,1,1,0,1,0"/>
+    <wangtile tileid="75" wangid="1,0,0,0,1,0,0,0"/>
+    <wangtile tileid="76" wangid="1,1,1,0,1,0,0,0"/>
+    <wangtile tileid="77" wangid="1,0,0,0,1,0,1,1"/>
+    <wangtile tileid="81" wangid="1,0,1,1,1,1,1,1"/>
+    <wangtile tileid="82" wangid="1,0,1,1,1,1,1,0"/>
+    <wangtile tileid="83" wangid="1,1,1,1,1,1,1,0"/>
+    <wangtile tileid="84" wangid="1,0,0,0,0,0,0,0"/>
+    <wangtile tileid="85" wangid="0,0,1,1,1,0,1,0"/>
+    <wangtile tileid="86" wangid="0,0,1,0,1,1,1,0"/>
+    <wangtile tileid="87" wangid="1,0,1,1,1,0,1,0"/>
+    <wangtile tileid="88" wangid="1,0,1,0,1,1,1,0"/>
+    <wangtile tileid="90" wangid="0,0,1,0,0,0,0,0"/>
+    <wangtile tileid="91" wangid="0,0,1,0,0,0,1,0"/>
+    <wangtile tileid="92" wangid="0,0,0,0,0,0,1,0"/>
+    <wangtile tileid="94" wangid="1,1,1,0,0,0,1,0"/>
+    <wangtile tileid="95" wangid="1,0,1,0,0,0,1,1"/>
+    <wangtile tileid="96" wangid="1,1,1,0,1,0,1,0"/>
+    <wangtile tileid="97" wangid="1,0,1,0,1,0,1,1"/>
+   </wangset>
+  </wangsets>
+ </tileset>
+ <imagelayer id="19" name="background 0" parallaxx="0" repeatx="1">
+  <image source="../sprites/forrest/0.png" width="400" height="330"/>
+ </imagelayer>
+ <imagelayer id="15" name="background 1" parallaxx="0.3" repeatx="1">
+  <image source="../sprites/forrest/1.png" width="400" height="330"/>
+ </imagelayer>
+ <imagelayer id="16" name="background 2" parallaxx="0.6" repeatx="1">
+  <image source="../sprites/forrest/2.png" width="400" height="330"/>
+ </imagelayer>
+ <imagelayer id="17" name="background 3" parallaxx="0.8" repeatx="1">
+  <image source="../sprites/forrest/3.png" width="400" height="330"/>
+ </imagelayer>
+ <layer id="20" name="Tiles" width="160" height="24">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,47,48,48,48,48,48,48,48,48,48,48,49,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,47,94,57,57,57,57,57,57,57,57,57,57,58,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,47,94,57,57,57,57,57,57,57,57,57,57,57,58,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,47,94,74,66,66,66,66,66,66,66,66,66,66,76,58,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,47,94,74,67,0,0,0,0,0,0,0,0,0,0,56,58,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,47,94,57,58,0,0,0,0,0,0,0,0,0,0,0,56,58,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,47,94,57,57,58,0,0,0,0,0,0,0,0,0,0,0,56,58,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,47,94,57,57,57,58,0,0,0,0,0,0,0,0,0,0,0,65,67,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,47,94,57,57,57,57,58,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,47,94,57,57,57,57,57,58,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,47,48,48,48,48,48,48,48,48,48,48,48,48,48,49,47,48,48,48,48,48,48,48,48,48,48,48,48,48,49,47,48,48,48,48,48,48,48,48,48,48,48,94,57,57,57,57,57,57,92,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,48,49,
+0,0,0,0,0,65,66,66,75,66,66,66,66,66,75,66,66,66,66,67,87,66,66,66,66,66,75,66,66,66,66,66,75,66,67,65,66,66,66,66,66,66,66,66,75,66,66,66,66,66,66,66,66,66,66,66,75,66,66,66,66,76,74,66,66,66,66,66,75,66,66,66,66,66,75,66,66,66,66,66,75,66,66,66,66,66,75,66,66,66,66,66,75,66,66,66,66,66,75,66,66,66,66,66,75,66,66,66,66,66,75,66,66,66,66,66,75,66,66,66,66,66,75,66,66,66,66,66,75,66,66,66,66,66,75,66,66,66,66,66,75,66,66,66,66,66,75,66,66,66,66,66,75,66,66,66,66,66,75,67,
+0,0,0,0,0,0,0,0,86,0,0,0,0,0,86,0,0,0,0,0,86,0,0,0,0,0,86,0,0,0,0,0,86,0,0,0,0,0,0,0,0,0,0,0,86,0,0,0,0,0,0,0,0,0,0,0,86,0,0,0,0,56,58,0,0,0,0,0,86,0,0,0,0,0,86,0,0,0,0,0,86,0,0,0,0,0,86,0,0,0,0,0,86,0,0,0,0,0,86,0,0,0,0,0,86,0,0,0,0,0,86,0,0,0,0,0,86,0,0,0,0,0,86,0,0,0,0,0,86,0,0,0,0,0,86,0,0,0,0,0,86,0,0,0,0,0,86,0,0,0,0,0,86,0,0,0,0,0,86,0,
+0,0,0,0,0,0,0,0,86,0,0,0,0,0,86,0,0,0,0,0,86,0,0,0,0,0,86,0,0,0,0,0,86,0,0,0,0,0,0,0,0,0,0,0,86,0,0,0,0,0,0,0,0,0,0,0,86,0,0,0,0,56,58,0,0,0,0,0,86,0,0,0,0,0,86,0,0,0,0,0,86,0,0,0,0,0,86,0,0,0,0,0,86,0,0,0,0,0,86,0,0,0,0,0,86,0,0,0,0,0,86,0,0,0,0,0,86,0,0,0,0,0,86,0,0,0,0,0,86,0,0,0,0,0,86,0,0,0,0,0,86,0,0,0,0,0,86,0,0,0,0,0,86,0,0,0,0,0,86,0,
+0,0,0,0,0,0,0,0,86,0,47,48,49,0,78,48,49,0,47,48,93,48,48,48,49,0,78,49,0,47,48,48,79,0,0,0,0,0,0,0,0,0,0,0,78,48,48,48,48,48,48,49,0,0,47,48,93,48,48,48,48,94,92,48,48,48,48,48,93,48,48,48,48,48,93,48,48,48,48,48,93,48,48,48,48,48,93,48,48,48,48,48,93,48,48,48,48,48,93,48,48,48,48,48,93,48,48,48,48,48,93,48,48,48,48,48,93,48,48,48,48,48,93,48,48,48,48,48,93,48,48,48,48,48,93,48,48,48,48,48,93,48,48,48,48,48,93,48,48,48,48,48,93,48,48,48,48,48,79,0
+</data>
+ </layer>
+ <objectgroup id="9" name="Buttons">
+  <object id="50" type="Objects.Fan" gid="7" x="80" y="360" width="53.8618" height="113.879" rotation="270">
+   <properties>
+    <property name="distance" type="float" value="500"/>
+    <property name="falloff" type="float" value="0.4"/>
+    <property name="strength" type="float" value="5"/>
+   </properties>
+  </object>
+  <object id="68" type="Player" gid="10" x="249.333" y="254" width="32" height="32">
+   <properties>
+    <property name="Sprite" value="sprites/dirtboy_concept_art.png"/>
+    <property name="columns" value="1"/>
+    <property name="maxHealth" type="float" value="10"/>
+    <property name="maxHealthRadius" type="float" value="32"/>
+    <property name="maxJumpHeight" type="float" value="10"/>
+    <property name="maxMass" type="float" value="5"/>
+    <property name="maxSpeed" type="float" value="5"/>
+    <property name="minHealthRadius" type="float" value="10"/>
+    <property name="minJumpHeight" type="float" value="20"/>
+    <property name="minMass" type="float" value="1"/>
+    <property name="minSpeed" type="float" value="5"/>
+    <property name="rows" value="1"/>
+   </properties>
+  </object>
+  <object id="228" type="Objects.ColliderObject" x="80" y="304" width="240" height="32">
+   <properties>
+    <property name="type" type="int" value="0"/>
+   </properties>
+  </object>
+  <object id="236" type="Objects.ColliderObject" x="320" y="304" width="240" height="32">
+   <properties>
+    <property name="type" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="237" type="Objects.ColliderObject" x="560" y="304" width="2000" height="32">
+   <properties>
+    <property name="type" type="int" value="2"/>
+   </properties>
+  </object>
+  <object id="235" type="Objects.CameraTrigger" gid="1" x="142.5" y="-7" width="325" height="85"/>
+  <object id="263" type="Objects.Trampoline" gid="1" x="934.913" y="-55.9273" width="59.6667" height="194.333" rotation="269.846">
+   <properties>
+    <property name="strength" type="float" value="20"/>
+   </properties>
+  </object>
+  <object id="260" type="Objects.PhysicalButton" gid="7" x="1351.64" y="370.51" width="105" height="222" rotation="268.722"/>
+  <object id="264" type="Objects.Pickup" gid="1" x="585.374" y="-52.0623" width="19.8496" height="31.5397" rotation="269.846"/>
+  <object id="265" type="Objects.SnappingBranch" gid="1" x="387.831" y="270.761" width="83.9643" height="81.9622" rotation="269.846">
+   <properties>
+    <property name="rotDelta" type="float" value="180"/>
+    <property name="snappingForce" type="int" value="1"/>
+    <property name="xDelta" type="float" value="50"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup id="14" name="WorldColliders">
+  <object id="53" type="Objects.ColliderObject" gid="8" x="-102.667" y="-139.167" width="563" height="184" rotation="90">
+   <properties>
+    <property name="ColliderName" value="WorldCollider"/>
+    <property name="type" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="233" type="Objects.ColliderObject" gid="8" x="2631.67" y="379.833" width="563" height="184" rotation="270">
+   <properties>
+    <property name="ColliderName" value="WorldCollider"/>
+    <property name="type" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="116" x="1130.83" y="-208" width="376.334" height="19">
+   <text wrap="1">Fan lifts you up depending on your weight</text>
+  </object>
+  <object id="117" x="-54.3337" y="215.667" width="376.334" height="19">
+   <text wrap="1">Fan lifts you up depending on your weight</text>
+  </object>
+  <object id="238" x="185.666" y="281.667" width="83.334" height="19">
+   <text wrap="1">Shrink here</text>
+  </object>
+  <object id="239" x="376.333" y="284" width="95.334" height="19">
+   <text wrap="1">Grow here</text>
+  </object>
+  <object id="231" type="Objects.ColliderObject" x="-45.6667" y="304" width="125.667" height="31"/>
+  <object id="252" type="Objects.ColliderObject" x="896" y="144" width="192" height="64"/>
+  <object id="258" type="Objects.ColliderObject" x="864" y="192" width="16" height="128"/>
+  <object id="259" type="Objects.ColliderObject" x="880" y="176" width="16" height="48"/>
+  <object id="256" type="Objects.ColliderObject" x="896" y="144" width="24.3645" height="240.333" rotation="45"/>
+  <object id="255" type="Objects.ColliderObject" x="1056" y="192" width="32" height="80"/>
+ </objectgroup>
+</map>

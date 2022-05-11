@@ -9,13 +9,15 @@ public class MyGame : Game
 
     Scene currentScene;
     UI ui;
+    Cursor cursor;
 
-    string _startSceneName = "maps/Main menu.tmx";
+    string _startSceneName = "maps/Main Menu.tmx";
     string ColliderFileName = "Colliders.txt";
     bool levelLoad = false;
     float gravityStrength = 1f;
 
-    public MyGame() : base(1440, 900, false, false, pPixelArt:true)
+    //public MyGame() : base(1440, 900, false, false, pPixelArt:true)
+    public MyGame() : base(1920, 1080, true, false)
     {
         targetFps = 60;
 
@@ -25,6 +27,9 @@ public class MyGame : Game
 
         PrintInfo();
         Mover.gravity = new Vec2(0, gravityStrength);
+
+        cursor = new Cursor();
+        AddChild(cursor);
     }
 
     void addPropperLine(Vec2 start, Vec2 end)
@@ -54,7 +59,8 @@ public class MyGame : Game
         currentScene.createLevel();
 
         //set the index of the ui to be in front of the level
-        this.SetChildIndex(ui, GetChildCount());
+        SetChildIndex(ui, GetChildCount());
+        SetChildIndex(cursor, GetChildCount());)
     }
 
     /// <summary>

@@ -48,8 +48,8 @@
     <Compile Include="..\GXPEngine2022\GXPEngine\Core\Vec2.cs">
       <Link>GXPEngine\Core\Vec2.cs</Link>
     </Compile>
-    <Compile Include="ColliderCreator.cs" />
     <Compile Include="ColliderListPreview.cs" />
+    <Compile Include="Cursor.cs" />
     <Compile Include="ImageSelector.cs" />
     <Compile Include="Layers\ImageLayer.cs" />
     <Compile Include="Layers\Layer.cs" />
@@ -210,8 +210,9 @@
     <Compile Include="Scene.cs" />
     <Compile Include="UI.cs" />
     <Compile Include="UIElements\Button.cs" />
-    <Compile Include="UIElements\ButtonManager.cs" />
     <Compile Include="UIElements\ColliderPreview.cs" />
+    <Compile Include="UIElements\ExitButton.cs" />
+    <Compile Include="UIElements\PlayButton.cs" />
     <Compile Include="Visuals\BallVisual.cs" />
     <Compile Include="Visuals\LineCollider.cs" />
     <Compile Include="Visuals\MultiSegmentVisual.cs" />

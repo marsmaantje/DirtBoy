@@ -3,82 +3,42 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using GXPEngine;
-using System.Drawing;
+using TiledMapParser;
+using Objects;
 
 namespace UIElements
 {
-    public class Button : EasyDraw
+    /// <summary>
+    /// Basic button class
+    /// </summary>
+    class Button : CustomObject
     {
-        Color borderColor;
-        Color highlightColor;
-        Color baseColor;
-        int borderWidth;
-        string text;
-        bool isOver = false;
-        public bool IsOver
+        int releasedFrame;
+        int pressedFrame;
+
+        public Button(string filename, int cols, int rows, TiledObject obj) : base(obj, filename, cols, rows) { }
+
+        public override void initialize(Scene parentScene)
         {
-            get => isOver;
-        }
-
-        public event ButtonAction OnClick;
-        
-        
-        public Button(int width, int height, Color baseColor, Color highlightColor, int borderWidth = 1) : base(width, height, false)
-        {
-            this.baseColor = baseColor;
-            this.highlightColor = highlightColor;
-            this.borderWidth = borderWidth;
-            this.text = "";
-            OnClick += () => { };
-
-            borderColor = baseColor;
-            Draw();
-
-            ButtonManager.Main.AddButton(this);
-        }
-
-        public void SetText(string text)
-        {
-            this.text = text;
-            TextSize(1);
-            float textWidth = TextWidth(text);
-            float desiredWidth = width - borderWidth * 2;
-            TextSize(desiredWidth / textWidth);
-            Draw();
-        }
-
-        void Draw()
-        {
-            Clear(0);
-            NoFill();
-            StrokeWeight(borderWidth);
-            Stroke(borderColor);
-            float quadWidth = width - Mathf.Ceiling(borderWidth / 2f);
-            float quadHeight = height - Mathf.Ceiling(borderWidth / 2f);
-            Quad(0, 0, quadWidth, 0, quadWidth, quadHeight, 0, quadHeight);
-            Fill(255);
-            NoStroke();
-            TextAlign(CenterMode.Center, CenterMode.Center);
-            Text(text, width / 2, height / 2);
-
+            base.initialize(parentScene);
+            releasedFrame = currentFrame;
+            pressedFrame = releasedFrame + 1; //calculate pressed frame
         }
 
         public void Update()
         {
-            Vec2 relativeMousePosition = InverseTransformPoint(Input.mousePosition);
-            isOver = (relativeMousePosition.x > 0 && relativeMousePosition.x < width && relativeMousePosition.y > 0 && relativeMousePosition.y < height);
-            borderColor = isOver ? highlightColor : baseColor;
-            Draw();
-
-            if (isOver && Input.GetMouseButtonDown(0))
-                OnClick();
+            currentFrame = releasedFrame;
+            if (HitTestPoint(Input.mouseX, Input.mouseY))
+            {
+                currentFrame = pressedFrame;
+                if (Input.GetMouseButtonDown(0))
+                    OnClicked(); //call the clicked method if the mouse is over and just pressed down
+            }
         }
 
-        protected override void OnDestroy()
-        {
-            base.OnDestroy();
-            ButtonManager.Main.RemoveButton(this);
-        }
+        /// <summary>
+        /// Should be overridden by objects inheritting this one, gets called when the object gets clicked
+        /// </summary>
+        protected virtual void OnClicked() { }
     }
-    public delegate void ButtonAction();
 }
