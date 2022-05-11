@@ -146,6 +146,9 @@ public class Player : Pivot
         _mover.Friction = 0.01f;
         //setting particle parent
         emitter.particleSpace = parentScene;
+
+        PlayerAnimation();
+        parentScene.jumpToTarget();
     }
     #endregion
 
@@ -305,6 +308,7 @@ public class Player : Pivot
         }
         
         emitter.rate = isOnGround ? emitRate : 0;*/
+        
         animation.Animate(1 / 60f * 8);
 
         if (_mover.Velocity.Length() > 0.1f) //we are moving

@@ -22,7 +22,7 @@
  <objectgroup id="3" name="buttons">
   <object id="1" type="UIElements.PlayButton" gid="1" x="600" y="540" width="326" height="186">
    <properties>
-    <property name="mapName" value="maps/Test Level.tmx"/>
+    <property name="mapName" value="maps/Level1.tmx"/>
    </properties>
   </object>
   <object id="2" type="UIElements.PlayButton" gid="3" x="990" y="540" width="326" height="186">
