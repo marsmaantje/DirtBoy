@@ -122,6 +122,9 @@
    </wangset>
   </wangsets>
  </tileset>
+ <tileset firstgid="119" name="playerSprite" tilewidth="645" tileheight="545" tilecount="12" columns="12">
+  <image source="../sprites/playerSprite.png" width="7740" height="545"/>
+ </tileset>
  <imagelayer id="19" name="background 0" parallaxx="0" repeatx="1">
   <image source="../sprites/forrest/0.png" width="400" height="330"/>
  </imagelayer>
@@ -170,10 +173,10 @@
     <property name="strength" type="float" value="5"/>
    </properties>
   </object>
-  <object id="68" type="Player" gid="10" x="249.333" y="254" width="32" height="32">
+  <object id="68" type="Player" gid="119" x="454" y="271.333" width="102.963" height="87">
    <properties>
-    <property name="Sprite" value="sprites/dirtboy_concept_art.png"/>
-    <property name="columns" value="1"/>
+    <property name="Sprite" value="sprites/playerSprite.png"/>
+    <property name="columns" type="int" value="12"/>
     <property name="maxHealth" type="float" value="10"/>
     <property name="maxHealthRadius" type="float" value="32"/>
     <property name="maxJumpHeight" type="float" value="10"/>
@@ -183,7 +186,7 @@
     <property name="minJumpHeight" type="float" value="20"/>
     <property name="minMass" type="float" value="1"/>
     <property name="minSpeed" type="float" value="5"/>
-    <property name="rows" value="1"/>
+    <property name="rows" type="int" value="1"/>
    </properties>
   </object>
   <object id="228" type="Objects.ColliderObject" x="80" y="304" width="240" height="32">

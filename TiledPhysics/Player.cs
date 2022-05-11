@@ -25,6 +25,7 @@ public class Player : Pivot
     int prevPositionIndex = 0;
     Vec2[] prevVelocities = new Vec2[5];
     int prevVelocityIndex = 0;
+    int frameOffset = 0;
     #endregion
 
     #region Getters/Setters
@@ -188,13 +189,13 @@ public class Player : Pivot
     /// </summary>
     private void UpdateHealth()
     {
-            switch (groundType)
-            {
-                case CollisionType.CONCRETE: health -= 0.01f+ _mover.Velocity.Length() / 50; break;
-                case CollisionType.DIRT: health += 0.01f + _mover.Velocity.Length() / 50; break;
-                case CollisionType.GRASS: break;
-                case CollisionType.NULL: break;
-            }
+        switch (groundType)
+        {
+            case CollisionType.CONCRETE: health -= 0.01f + _mover.Velocity.Length() / 50; break;
+            case CollisionType.DIRT: health += 0.01f + _mover.Velocity.Length() / 50; break;
+            case CollisionType.GRASS: break;
+            case CollisionType.NULL: break;
+        }
         health = Mathf.Clamp(health, 0, maxHealth);
     }
 
@@ -204,9 +205,9 @@ public class Player : Pivot
     private void HandleInput()
     {
         //debug log
-        if(Input.GetKeyDown(Key.J))
-            Console.WriteLine("Velocity: {0}, Actual Velocity: {1}",_mover.Velocity, _mover.position - prevPositions[prevPositionIndex]);
-        
+        if (Input.GetKeyDown(Key.J))
+            Console.WriteLine("Velocity: {0}, Actual Velocity: {1}", _mover.Velocity, _mover.position - prevPositions[prevPositionIndex]);
+
         //movement
         Vec2 desiredVelocity = new Vec2(
             ((Input.GetKey(Key.D) ? 1 : 0) - (Input.GetKey(Key.A) ? 1 : 0)) * Mathf.Map(health01, 0, 1, minSpeed, maxSpeed),
@@ -233,7 +234,7 @@ public class Player : Pivot
         }
 
         //shooting
-        if(Input.GetMouseButtonDown(0) && health > maxHealth / 3)
+        if (Input.GetMouseButtonDown(0) && health > maxHealth / 3)
         {//if click, shoot
             if (GlobalVariables.shooting)
             {
@@ -257,7 +258,7 @@ public class Player : Pivot
         shot.Mover.Velocity = speed;
 
     }
-    
+
     /// <summary>
     /// moves the player and updates all the visuals accordingly
     /// </summary>
@@ -275,7 +276,7 @@ public class Player : Pivot
             a += b;
         a /= prevPositions.Length;
         a -= _mover.position;
-        animation.position = a;
+        animation.position = a + new Vec2(0, Mathf.Map(health01, 0, 1, 5, 15));
 
         //smooth rotation
         a = new Vec2();
@@ -304,6 +305,38 @@ public class Player : Pivot
         }
         
         emitter.rate = isOnGround ? emitRate : 0;*/
+        animation.Animate(1 / 60f * 8);
+
+        if (_mover.Velocity.Length() > 0.1f) //we are moving
+        {
+            if (_mover.Velocity.x > 0)
+                animation.Mirror(false, false);
+            else
+                animation.Mirror(true, false);
+
+            if (isOnGround)
+                animation.SetCycle(8 + frameOffset, 2);
+            else
+            {
+                if (_mover.Velocity.y < 0) //we are moving up
+                {
+                    animation.SetCycle(4 + frameOffset, 2);
+                }
+                else //we are moving down
+                {
+                    animation.SetCycle(6 + frameOffset, 2);
+                }
+            }
+        }
+        else
+        {
+            animation.SetCycle(0 + frameOffset, 2);
+        }
+
+        if(isOnGround)
+            frameOffset = (Time.time / 1000f) % 1 < 0.5f ? 2 : 0;
+        else
+            frameOffset = 0;
     }
 
     /// <summary>
