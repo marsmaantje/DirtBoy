@@ -216,6 +216,7 @@
     <Compile Include="UIElements\Button.cs" />
     <Compile Include="UIElements\ColliderPreview.cs" />
     <Compile Include="UIElements\ExitButton.cs" />
+    <Compile Include="UIElements\LivesCounter.cs" />
     <Compile Include="UIElements\PlayButton.cs" />
     <Compile Include="Visuals\BallVisual.cs" />
     <Compile Include="Visuals\LineCollider.cs" />
