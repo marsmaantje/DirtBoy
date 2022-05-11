@@ -25,9 +25,21 @@
     <property name="mapName" value="maps/Test Level.tmx"/>
    </properties>
   </object>
-  <object id="2" gid="3" x="990" y="540" width="326" height="186"/>
-  <object id="3" gid="5" x="600" y="780" width="326" height="186"/>
-  <object id="4" gid="7" x="990" y="780" width="326" height="186"/>
-  <object id="5" gid="9" x="810" y="990" width="326" height="186"/>
+  <object id="2" type="UIElements.PlayButton" gid="3" x="990" y="540" width="326" height="186">
+   <properties>
+    <property name="mapName" value="maps/LevelSelect.tmx"/>
+   </properties>
+  </object>
+  <object id="3" type="UIElements.PlayButton" gid="5" x="600" y="780" width="326" height="186">
+   <properties>
+    <property name="mapName" value="maps/HowToPlay.tmx"/>
+   </properties>
+  </object>
+  <object id="4" type="UIElements.PlayButton" gid="7" x="990" y="780" width="326" height="186">
+   <properties>
+    <property name="mapName" value="maps/Credits.tmx"/>
+   </properties>
+  </object>
+  <object id="5" type="UIElements.ExitButton" gid="9" x="810" y="990" width="326" height="186"/>
  </objectgroup>
 </map>
