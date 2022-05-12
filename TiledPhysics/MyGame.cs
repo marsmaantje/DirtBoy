@@ -16,8 +16,8 @@ public class MyGame : Game
     bool levelLoad = false;
     float gravityStrength = 1f;
 
-    //public MyGame() : base(1920, 1080, false, false, pPixelArt:true)
-    public MyGame() : base(1920, 1080, true, true)
+    public MyGame() : base(1920, 1080, false, false, pPixelArt:true)
+    //public MyGame() : base(1920, 1080, true, true)
     {
         cursor = new Cursor();
         AddChild(cursor);

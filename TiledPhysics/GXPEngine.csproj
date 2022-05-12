@@ -71,6 +71,7 @@
     <Compile Include="Objects\Shot.cs" />
     <Compile Include="Objects\SnappingBranch.cs" />
     <Compile Include="Objects\Trampoline.cs" />
+    <Compile Include="Objects\WindEffect.cs" />
     <Compile Include="Particles\ParticleEmitter.cs" />
     <Compile Include="Particles\Particles.cs" />
     <Compile Include="Particles\ParticleStyle.cs" />
