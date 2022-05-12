@@ -24,6 +24,8 @@ namespace UIElements
 
         protected override void OnClicked()
         {
+            Sound soundEffect = new Sound("Sound/Menu_Press.mp3");
+            soundEffect.Play();
             //either go back to the main menu or close the game
             if (backToMain)
             {

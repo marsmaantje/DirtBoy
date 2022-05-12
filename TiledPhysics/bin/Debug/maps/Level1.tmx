@@ -128,7 +128,7 @@
     <property name="type" type="int" value="0"/>
    </properties>
   </object>
-  <object id="26" type="Objects.ColliderObject" x="1941.11" y="570.329" width="81.6241" height="18.5935" rotation="0.376073">
+  <object id="26" type="Objects.ColliderObject" x="1941.11" y="570.329" width="81.6241" height="18.5935">
    <properties>
     <property name="type" type="int" value="2"/>
    </properties>
@@ -304,7 +304,7 @@
     <property name="type" type="int" value="0"/>
    </properties>
   </object>
-  <object id="63" type="Objects.ColliderObject" x="2846" y="431.575" width="35.6687" height="162.789">
+  <object id="63" type="Objects.ColliderObject" x="2846" y="431.575" width="35.6687" height="291.456">
    <properties>
     <property name="type" type="int" value="0"/>
    </properties>
