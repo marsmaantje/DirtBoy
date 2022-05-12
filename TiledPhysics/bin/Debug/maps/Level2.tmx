@@ -10,7 +10,7 @@
   <image source="../sprites/empty.png" width="16" height="16"/>
  </tileset>
  <imagelayer id="6" name="background">
-  <image source="../sprites/level.png" width="4369" height="1251"/>
+  <image source="../sprites/level2.png" width="3513" height="1251"/>
  </imagelayer>
  <objectgroup id="4" name="Colliders">
   <object id="4" type="Objects.ColliderObject" x="6" y="1166.67" width="1800" height="73.3333">

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.8" tiledversion="1.8.4" orientation="orthogonal" renderorder="right-down" width="42" height="9" tilewidth="120" tileheight="120" infinite="0" nextlayerid="8" nextobjectid="72">
+<map version="1.8" tiledversion="1.8.4" orientation="orthogonal" renderorder="right-down" width="42" height="9" tilewidth="120" tileheight="120" infinite="0" nextlayerid="8" nextobjectid="73">
  <tileset firstgid="1" name="Back Button" tilewidth="228" tileheight="129" tilecount="2" columns="2">
   <image source="../Main Menu Assets/Back Button.png" width="456" height="139"/>
  </tileset>
@@ -25,7 +25,7 @@
   <image source="../sprites/level.png" width="4369" height="1251"/>
  </imagelayer>
  <objectgroup id="2" name="Objects">
-  <object id="65" type="Player" gid="3" x="1769.96" y="631.817" width="159.963" height="135.163">
+  <object id="65" type="Player" gid="3" x="185.96" y="1043.82" width="159.963" height="135.163">
    <properties>
     <property name="Sprite" value="sprites/playerSprite.png"/>
     <property name="columns" type="int" value="12"/>
@@ -128,7 +128,7 @@
     <property name="type" type="int" value="0"/>
    </properties>
   </object>
-  <object id="26" type="Objects.ColliderObject" x="1941.11" y="570.329" width="81.6241" height="18.5935">
+  <object id="26" type="Objects.ColliderObject" x="1941.11" y="570.329" width="81.6241" height="18.5935" rotation="0.376073">
    <properties>
     <property name="type" type="int" value="2"/>
    </properties>
@@ -304,7 +304,7 @@
     <property name="type" type="int" value="0"/>
    </properties>
   </object>
-  <object id="63" type="Objects.ColliderObject" x="2846" y="431.575" width="35.6687" height="291.456">
+  <object id="63" type="Objects.ColliderObject" x="2846" y="431.575" width="35.6687" height="162.789">
    <properties>
     <property name="type" type="int" value="0"/>
    </properties>
