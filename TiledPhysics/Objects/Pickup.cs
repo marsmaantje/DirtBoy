@@ -28,6 +28,7 @@ namespace Objects
         {
             GlobalVariables.soulCounter++;
             Sound soundEffect = new Sound("Sound/Pick_up_Soul.mp3");
+            soundEffect.Play();
             LateDestroy();
         }
     }

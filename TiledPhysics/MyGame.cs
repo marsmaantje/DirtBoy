@@ -97,7 +97,7 @@ public class MyGame : Game
 
     void HandleInput()
     {
-        targetFps = Input.GetKey(Key.SPACE) ? 5 : 60;
+        /*targetFps = Input.GetKey(Key.SPACE) ? 5 : 60;
         if (Input.GetKeyDown(Key.UP))
         {
             Mover.gravity = new Vec2(0, -gravityStrength);
@@ -117,7 +117,7 @@ public class MyGame : Game
         if (Input.GetKeyDown(Key.BACKSPACE))
         {
             Mover.gravity = new Vec2(0, 0);
-        }
+        }*/
         if (Input.GetKeyDown(Key.P))
         {
             _paused ^= true;
