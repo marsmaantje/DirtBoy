@@ -18,13 +18,14 @@ namespace Objects
         
 
 
-        public Button(string filename, int cols, int rows, TiledObject obj) : base(obj, filename, cols, rows)
+        public Button(string filename, int cols, int rows, TiledObject obj, bool visible = true) : base(obj, filename, cols, rows)
         {
             _isPressed = false;
             OnPressed += ()=>{ };
             OnPressing += () => { };
             OnReleased += () => { };
             collider.isTrigger = true;
+            this.visible = visible;
         }
 
         public void Update()
