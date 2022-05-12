@@ -29,7 +29,7 @@ namespace Scripts
             song = new Sound(this.filename, true, false);
 
             musicChannel = song.Play();
-            musicChannel.Volume = 0.5f;
+            musicChannel.Volume = obj.GetFloatProperty("volume", 0.5f);
         }
 
         protected override void OnDestroy()
