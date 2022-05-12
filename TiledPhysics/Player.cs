@@ -131,10 +131,21 @@ public class Player : Pivot
         cameraSize = 4f;
 
         //setup the physics
+        int index = 0;
+        foreach (GameObject child in parentScene.GetChildren())
+        {
+            if (child == this)
+            {
+                break;
+            }
+            index++;
+        }
+            
         _mover = new SingleMover();
         parent.AddChild(_mover);
         _mover.position = position;
         _mover.AddChild(this);
+        _mover.parent.SetChildIndex(_mover, index);
         SetXY(0, 0);
         _mover.SetCollider(new Ball(_mover, _mover.position, radius));
         _collider = new EasyDraw(animation.width, animation.height);
