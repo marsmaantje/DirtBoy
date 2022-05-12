@@ -20,6 +20,7 @@ namespace Objects
 
         public void Update()
         {
+            base.Update();
             Animate(1/60f * 12);
         }
 
