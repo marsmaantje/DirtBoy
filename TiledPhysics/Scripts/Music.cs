@@ -15,6 +15,9 @@ namespace Scripts
 
         string filename;
 
+        public Music(TiledObject obj) : this("sprites/empty.png", 1, 1, obj)
+        { }
+
         public Music(string filename, int cols, int rows, TiledObject obj)
         {
             this.obj = obj;

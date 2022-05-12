@@ -196,6 +196,11 @@ public class Player : Pivot
         HandleInput();
         PlayerAnimation();
         UpdateUI();
+
+        if (_mover.lastCollision != null && _mover.lastCollision.other.owner is SnappingBranch branch)
+        {
+            branch.OnHit(_mover, _mover.lastCollision.other);
+        }
     }
 
     /// <summary>
