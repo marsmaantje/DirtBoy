@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.8" tiledversion="1.8.4" orientation="orthogonal" renderorder="right-down" width="16" height="9" tilewidth="120" tileheight="120" infinite="0" nextlayerid="7" nextobjectid="52">
+<map version="1.8" tiledversion="1.8.4" orientation="orthogonal" renderorder="right-down" width="16" height="9" tilewidth="120" tileheight="120" infinite="0" nextlayerid="7" nextobjectid="56">
  <tileset firstgid="1" name="Back Button" tilewidth="228" tileheight="129" tilecount="2" columns="2">
   <image source="../Main Menu Assets/Back Button.png" width="456" height="139"/>
  </tileset>
@@ -13,7 +13,7 @@
   <image source="../sprites/level.png" width="4369" height="1251"/>
  </imagelayer>
  <objectgroup id="4" name="Colliders">
-  <object id="4" type="Objects.ColliderObject" x="6" y="1166.67" width="1800" height="73.3333">
+  <object id="4" type="Objects.ColliderObject" x="6" y="1166.67" width="2194" height="73.3333">
    <properties>
     <property name="type" type="int" value="2"/>
    </properties>
@@ -93,7 +93,7 @@
     <property name="type" type="int" value="1"/>
    </properties>
   </object>
-  <object id="25" type="Objects.ColliderObject" x="2057.76" y="492.683" width="151.394" height="628.378" rotation="0.376073">
+  <object id="25" type="Objects.ColliderObject" x="2057.76" y="492.683" width="151.394" height="672.364" rotation="0.376073">
    <properties>
     <property name="type" type="int" value="0"/>
    </properties>
@@ -158,9 +158,9 @@
     <property name="type" type="int" value="1"/>
    </properties>
   </object>
-  <object id="33" type="Objects.Trampoline" gid="15" x="3202.18" y="1116.16" width="187.917" height="221.33" rotation="269.846">
+  <object id="33" type="Objects.Trampoline" gid="15" x="3201.94" y="1028.17" width="99.9281" height="221.33" rotation="269.846">
    <properties>
-    <property name="strength" type="float" value="20"/>
+    <property name="strength" type="float" value="30"/>
    </properties>
   </object>
   <object id="34" type="Objects.ColliderObject" x="2847.19" y="378.703" width="373.854" height="52.6761" rotation="0.376073">
@@ -185,17 +185,12 @@
   </object>
   <object id="38" type="Objects.ColliderObject" x="3400.58" y="677.475" width="241.896" height="456.825" rotation="0.376073">
    <properties>
-    <property name="type" type="int" value="2"/>
+    <property name="type" type="int" value="0"/>
    </properties>
   </object>
   <object id="40" type="Objects.ColliderObject" x="3733.97" y="859.662" width="204.055" height="52.6761" rotation="-10.62">
    <properties>
     <property name="type" type="int" value="0"/>
-   </properties>
-  </object>
-  <object id="42" type="Objects.LevelTrigger" x="4019.97" y="1015.66" width="352.055" height="128.676">
-   <properties>
-    <property name="MapName" value="Level2"/>
    </properties>
   </object>
   <object id="43" type="Objects.ColliderObject" x="3513.93" y="252.107" width="555.256" height="73.4973" rotation="49.38">
@@ -218,9 +213,9 @@
     <property name="type" type="int" value="0"/>
    </properties>
   </object>
-  <object id="47" type="Objects.ColliderObject" x="2489.31" y="1139.05" width="383.383" height="41.8902">
+  <object id="47" type="Objects.ColliderObject" x="2489.31" y="1139.05" width="905.383" height="41.8902">
    <properties>
-    <property name="type" type="int" value="0"/>
+    <property name="type" type="int" value="1"/>
    </properties>
   </object>
   <object id="48" type="Objects.RadiusDependantCollider" x="2629.31" y="551.055" width="205.383" height="41.8902">
@@ -243,6 +238,21 @@
     <property name="yDelta" type="float" value="400"/>
    </properties>
   </object>
+  <object id="52" type="Objects.ColliderObject" x="2126.39" y="898.963" width="79.3299" height="256.698" rotation="-18.62">
+   <properties>
+    <property name="type" type="int" value="0"/>
+   </properties>
+  </object>
+  <object id="53" type="Objects.ColliderObject" x="2056.3" y="832.818" width="55.7636" height="305.991" rotation="14.38">
+   <properties>
+    <property name="type" type="int" value="0"/>
+   </properties>
+  </object>
+  <object id="55" type="Objects.ColliderObject" x="3636.47" y="1145.26" width="408.037" height="60.9254" rotation="0.376073">
+   <properties>
+    <property name="type" type="int" value="2"/>
+   </properties>
+  </object>
  </objectgroup>
  <layer id="1" name="Tile Layer 1" width="16" height="9" visible="0">
   <data encoding="csv">
@@ -258,7 +268,7 @@
 </data>
  </layer>
  <objectgroup id="2" name="Objects">
-  <object id="2" type="Player" gid="3" x="65.1857" y="918.5" width="159.963" height="135.163">
+  <object id="2" type="Player" gid="3" x="3003.19" y="794.5" width="159.963" height="135.163">
    <properties>
     <property name="Sprite" value="sprites/playerSprite.png"/>
     <property name="columns" type="int" value="12"/>
