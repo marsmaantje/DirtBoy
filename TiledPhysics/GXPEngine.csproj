@@ -63,6 +63,7 @@
     <Compile Include="Objects\ComplexMover.cs" />
     <Compile Include="Objects\Fan.cs" />
     <Compile Include="Objects\HealthEffect.cs" />
+    <Compile Include="Objects\LevelTrigger.cs" />
     <Compile Include="Objects\PhysicalButton.cs" />
     <Compile Include="Objects\PhysicsBall.cs" />
     <Compile Include="Objects\Pickup.cs" />
