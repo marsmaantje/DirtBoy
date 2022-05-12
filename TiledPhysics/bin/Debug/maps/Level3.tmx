@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.8" tiledversion="1.8.4" orientation="orthogonal" renderorder="right-down" width="16" height="9" tilewidth="120" tileheight="120" infinite="0" nextlayerid="4" nextobjectid="8">
+ <tileset firstgid="1" name="mushroom1" tilewidth="221" tileheight="190" tilecount="1" columns="1">
+  <image source="../sprites/mushroom1.png" width="221" height="190"/>
+ </tileset>
+ <tileset firstgid="2" name="playerSprite" tilewidth="645" tileheight="545" tilecount="12" columns="12">
+  <image source="../sprites/playerSprite.png" width="7740" height="545"/>
+ </tileset>
+ <imagelayer id="2" name="Background">
+  <image source="../sprites/altar.png" width="2737" height="1251"/>
+ </imagelayer>
+ <layer id="1" name="Tile Layer 1" width="16" height="9">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <objectgroup id="3" name="objects">
+  <object id="1" type="Player" gid="2" x="220.018" y="893.025" width="159.963" height="135.163">
+   <properties>
+    <property name="Sprite" value="sprites/playerSprite.png"/>
+    <property name="columns" type="int" value="12"/>
+    <property name="maxHealth" type="float" value="10"/>
+    <property name="maxHealthRadius" type="float" value="42"/>
+    <property name="maxJumpHeight" type="float" value="20"/>
+    <property name="maxMass" type="float" value="5"/>
+    <property name="maxSpeed" type="float" value="15"/>
+    <property name="minHealthRadius" type="float" value="32"/>
+    <property name="minJumpHeight" type="float" value="15"/>
+    <property name="minMass" type="float" value="1"/>
+    <property name="minSpeed" type="float" value="5"/>
+    <property name="rows" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="2" type="Objects.ColliderObject" x="-7.015" y="1120.29" width="1030.03" height="115.43">
+   <properties>
+    <property name="type" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="3" type="Objects.ColliderObject" x="519.911" y="1348.19" width="1030.03" height="115.43" rotation="333.966">
+   <properties>
+    <property name="type" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="4" type="Objects.ColliderObject" x="1441.91" y="896.185" width="1348.03" height="115.43">
+   <properties>
+    <property name="type" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="6" type="Objects.ColliderObject" x="2343.91" y="76.1851" width="174.03" height="903.43">
+   <properties>
+    <property name="type" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="7" type="Objects.ColliderObject" x="-130.089" y="-53.8149" width="174.03" height="1237.43">
+   <properties>
+    <property name="type" type="int" value="1"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>
