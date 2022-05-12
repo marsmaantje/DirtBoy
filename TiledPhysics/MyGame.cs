@@ -7,7 +7,7 @@ public class MyGame : Game
 {
     public bool _paused = false;
 
-    Scene currentScene;
+    public Scene currentScene;
     UI ui;
     Cursor cursor;
 

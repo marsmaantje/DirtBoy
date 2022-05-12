@@ -30,6 +30,8 @@ namespace Objects
             {
                 LateDestroy();
             }
+
+            rotation = _mover.Velocity.GetAngleDegrees();
         }
 
         /// <summary>
