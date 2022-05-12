@@ -25,6 +25,8 @@ namespace UIElements
 
         protected override void OnClicked()
         {
+            Sound soundEffect = new Sound("Sound/Menu_Press.mp3");
+            soundEffect.Play();
             ((MyGame)game).loadNewLevel(mapName);
         }
 
