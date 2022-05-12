@@ -17,6 +17,7 @@ namespace Objects
             if(!obj.HasProperty("MapName", "string"))
                 throw new Exception("no map name specified");
             newMap = obj.GetStringProperty("MapName");
+            OnPressed += () => { ((MyGame)game).loadNewLevel(newMap); };
         }
     }
 }
