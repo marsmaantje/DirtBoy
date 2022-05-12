@@ -26,6 +26,13 @@ public class Player : Pivot
     Vec2[] prevVelocities = new Vec2[5];
     int prevVelocityIndex = 0;
     int frameOffset = 0;
+
+    //sounds
+    Sound dirtSFX = new Sound("Sound/Land/dirt.wav");
+    Sound stoneSFX = new Sound("Sound/Land/Stone.wav");
+    Sound woodSFX = new Sound("Sound/Land/Wood.wav");
+    Sound jumpSFX = new Sound("Sound/Jump.wav");
+    
     #endregion
 
     #region Getters/Setters
@@ -235,8 +242,10 @@ public class Player : Pivot
         if (_mover.lastCollision != null)
         {
             _mover.ApplyForce(deltaVelocity * _mover.lastCollision.normal.Normal());
-            if (Input.GetKey(Key.W) && _mover.lastCollision.normal.y < -0.3f)
+            if ((Input.GetKey(Key.W) || Input.GetKey(Key.SPACE)) && _mover.lastCollision.normal.y < -0.3f)
             {
+                //if (Input.GetKeyDown(Key.W) || Input.GetKeyDown(Key.SPACE))
+                    jumpSFX.Play();
                 _mover.Velocity += new Vec2(0,-1) * Mathf.Map(health01, 0, 1, minJumpHeight, maxJumpHeight);
             }
         }
@@ -270,7 +279,7 @@ public class Player : Pivot
     {
         direction.Normalize();
         Vec2 speed = direction * strength;
-        Shot shot = new Shot("sprites/empty.png", 1, 1, 2000);
+        Shot shot = new Shot("sprites/shot.png", 1, 1, 5000);
         parentScene.AddChild(shot);
         shot.position = _mover.position + direction * radius;
         shot.initialize(parentScene);
