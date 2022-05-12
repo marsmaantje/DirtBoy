@@ -12,7 +12,7 @@ namespace Objects
 
         float fallProgress, fallDuration, startX, endX, startY, endY, startRot, endRot;
 
-        public SnappingBranch(string filename, int cols, int rows, TiledObject obj) : base(filename, cols, rows, obj, addCollider: false, pAddToManager:false)
+        public SnappingBranch(string filename, int cols, int rows, TiledObject obj) : base(filename, cols, rows, obj, addCollider: false, pAddToManager:true)
         {
 
         }

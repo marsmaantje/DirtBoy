@@ -53,7 +53,8 @@ namespace Objects
                 _collider = _colliderLoader.GetCollider(obj.GetStringProperty("ColliderName"), this);
                 if (_collider != null && addToManager)
                     _collider.AddToManager(_colliderManager);
-                else
+
+                if(_collider == null)
                     throw new Exception("Collider with name " + obj.GetStringProperty("ColliderName") + " not found");
             }
             else
