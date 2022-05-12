@@ -1,39 +1,30 @@
 ﻿using GXPEngine;
 using GXPEngine.Core;
 using System;
+using TiledMapParser;
 
 namespace Scripts
 {
     public class SFX : GameObject
     {
-        Sound landingSFX, fallDamageSFX;
+        Sound soundEffect;
 
-        public float musicVolume = 5;
-        public float effectVolume = 5;
+        public float effectVolume = 0.5f;
         
-        public Vector2 musicVolumePoz = new Vector2(260, 77.5f);
         public Vector2 effectVolumePoz = new Vector2(260, 169.5f);
-        public SFX()
+        public SFX(string soundEffect)
         {
-            landingSFX = new Sound("OST/Landing.mp3"); //Load sound that plays when you land on the ground
-            fallDamageSFX = new Sound("OST/fallDamage.wav"); //Load sound that plays when you take fallDamage
+            this.soundEffect = new Sound(soundEffect);
         }
 
-        public void changeVolume(string settingName = "", int increasingValue = 0)
+        public void changeVolume(float increasingValue = 0f)
         {
-            if (settingName == "Effect")
-            {
-                effectVolume = Mathf.Clamp(effectVolume += increasingValue, 0, 10);
-            }
+            effectVolume = Mathf.Clamp(effectVolume += increasingValue, 0, 1);
         }
 
-        public void PlayLanding()
+        public void Play()
         {
-            landingSFX.Play(false, 0, effectVolume * 0.1f, 0);
-        }
-        public void PlayFallDamage()
-        {
-            fallDamageSFX.Play(false, 0, effectVolume * 0.1f, 0);
+            soundEffect.Play(false, 0, effectVolume * 0.1f, 0);
         }
     }
 }
