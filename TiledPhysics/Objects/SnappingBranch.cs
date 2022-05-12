@@ -7,10 +7,9 @@ namespace Objects
 {
     public class SnappingBranch : ColliderObject
     {
-        int forceRequired;
         bool falling;
 
-        float fallProgress, fallDuration, startX, endX, startY, endY, startRot, endRot;
+        float fallProgress, fallDuration, startX, endX, startY, endY, startRot, endRot, forceRequired;
 
         public SnappingBranch(string filename, int cols, int rows, TiledObject obj) : base(filename, cols, rows, obj, addCollider: false, pAddToManager:true)
         {
@@ -19,7 +18,10 @@ namespace Objects
         public override void initialize(Scene parentScene)
         {
             base.initialize(parentScene);
-            forceRequired = obj.GetIntProperty("snappingForce", 10);
+            if(obj.HasProperty("snappingForce", "int"))
+                forceRequired = obj.GetIntProperty("snappingForce", 10);
+            else
+                forceRequired = obj.GetFloatProperty("snappingForce", 10);
             startX = x;
             startY = y;
             startRot = rotation;

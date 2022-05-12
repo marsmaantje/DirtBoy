@@ -17,7 +17,7 @@ namespace Objects
         
         public Fan(string filename, int cols, int rows, TiledObject obj) : base(obj, filename, cols, rows, addCollider: false)
         {
-            
+            visible = false;
         }
         public override void initialize(Scene parentScene)
         {
