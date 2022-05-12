@@ -18,6 +18,11 @@ namespace Objects
             OnPressing += PickedUp;
         }
 
+        public void Update()
+        {
+            Animate(1/60f * 12);
+        }
+
         void PickedUp()
         {
             GlobalVariables.soulCounter++;
