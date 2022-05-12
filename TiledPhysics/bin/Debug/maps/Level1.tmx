@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.8" tiledversion="1.8.4" orientation="orthogonal" renderorder="right-down" width="42" height="9" tilewidth="120" tileheight="120" infinite="0" nextlayerid="8" nextobjectid="74">
+<map version="1.8" tiledversion="1.8.4" orientation="orthogonal" renderorder="right-down" width="42" height="9" tilewidth="120" tileheight="120" infinite="0" nextlayerid="8" nextobjectid="78">
  <tileset firstgid="1" name="Back Button" tilewidth="228" tileheight="129" tilecount="2" columns="2">
   <image source="../Main Menu Assets/Back Button.png" width="456" height="139"/>
  </tileset>
@@ -47,6 +47,11 @@
  </objectgroup>
  <objectgroup id="4" name="Colliders">
   <object id="4" type="Objects.ColliderObject" x="6" y="1166.67" width="2194" height="73.3333">
+   <properties>
+    <property name="type" type="int" value="2"/>
+   </properties>
+  </object>
+  <object id="76" type="Objects.ColliderObject" x="2162.09" y="1153" width="351.576" height="73.3333">
    <properties>
     <property name="type" type="int" value="2"/>
    </properties>
@@ -231,6 +236,16 @@
     <property name="type" type="int" value="0"/>
    </properties>
   </object>
+  <object id="74" type="Objects.ColliderObject" x="2949.74" y="73.5128" width="555.256" height="73.4973" rotation="336.341">
+   <properties>
+    <property name="type" type="int" value="0"/>
+   </properties>
+  </object>
+  <object id="75" type="Objects.ColliderObject" x="3323.36" y="-119.25" width="555.256" height="73.4973" rotation="53.0725">
+   <properties>
+    <property name="type" type="int" value="0"/>
+   </properties>
+  </object>
   <object id="44" type="Objects.ColliderObject" x="2209.27" y="274.678" width="127.649" height="30.6195" rotation="0.376073">
    <properties>
     <property name="type" type="int" value="0"/>
@@ -262,7 +277,7 @@
     <property name="type" type="int" value="0"/>
    </properties>
   </object>
-  <object id="51" type="Objects.SnappingBranch" gid="17" x="3641.89" y="751.597" width="164.505" height="81.7923">
+  <object id="51" type="Objects.SnappingBranch" gid="17" x="3628.39" y="753.097" width="164.505" height="81.7923">
    <properties>
     <property name="ColliderName" value="FallingBranch1"/>
     <property name="rotDelta" type="float" value="0"/>
@@ -297,12 +312,12 @@
     <property name="type" type="int" value="2"/>
    </properties>
   </object>
-  <object id="58" type="Objects.ColliderObject" x="2974.64" y="941.722" width="5.38267" height="91.2235">
+  <object id="58" type="Objects.ColliderObject" x="2974.64" y="960.722" width="5.38267" height="72.2235">
    <properties>
     <property name="type" type="int" value="2"/>
    </properties>
   </object>
-  <object id="61" type="Objects.ColliderObject" x="2596.29" y="234.76" width="45.8348" height="213.42" rotation="0.376073">
+  <object id="61" type="Objects.ColliderObject" x="2596.5" y="202.77" width="45.8348" height="245.411" rotation="0.376073">
    <properties>
     <property name="type" type="int" value="0"/>
    </properties>

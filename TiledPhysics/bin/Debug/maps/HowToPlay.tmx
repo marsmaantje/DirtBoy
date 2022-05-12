@@ -17,10 +17,10 @@
 </data>
  </layer>
  <imagelayer id="2" name="Background">
-  <image source="../Main Menu Assets/How to Play Temp.png" width="1920" height="1080"/>
+  <image source="../Main Menu Assets/Infographic.png" width="1920" height="1080"/>
  </imagelayer>
  <objectgroup id="3" name="Object Layer 1">
-  <object id="1" type="UIElements.ExitButton" gid="1" x="60" y="1020" width="228" height="129">
+  <object id="1" type="UIElements.ExitButton" gid="1" x="38" y="930" width="228" height="129">
    <properties>
     <property name="BackToMain" type="bool" value="true"/>
    </properties>
