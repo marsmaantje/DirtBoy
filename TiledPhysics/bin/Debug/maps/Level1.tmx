@@ -332,7 +332,7 @@
   <object id="70" type="Objects.Pickup" gid="19" x="2082.12" y="473.091" width="89.9612" height="108.824"/>
   <object id="71" type="Scripts.Music" x="1800" y="240" width="120" height="120">
    <properties>
-    <property name="songName" value="OST/fallDamage.wav"/>
+    <property name="songName" value="Sound/Forest_ambience_day_loop.mp3"/>
     <property name="volume" type="float" value="0.5"/>
    </properties>
   </object>

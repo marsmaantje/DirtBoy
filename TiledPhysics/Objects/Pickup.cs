@@ -27,6 +27,7 @@ namespace Objects
         void PickedUp()
         {
             GlobalVariables.soulCounter++;
+            Sound soundEffect = new Sound("Sound/Pick_up_Soul.mp3");
             LateDestroy();
         }
     }
