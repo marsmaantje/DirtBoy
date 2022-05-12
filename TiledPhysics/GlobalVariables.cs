@@ -9,6 +9,6 @@ namespace GXPEngine
     static class GlobalVariables
     {
         public static int soulCounter;
-        public static bool shooting = true;
+        public static bool shooting;
     }
 }
