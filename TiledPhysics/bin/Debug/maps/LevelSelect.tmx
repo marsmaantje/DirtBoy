@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.8" tiledversion="1.8.4" orientation="orthogonal" renderorder="right-down" width="16" height="9" tilewidth="120" tileheight="120" infinite="0" nextlayerid="4" nextobjectid="6">
+<map version="1.8" tiledversion="1.8.4" orientation="orthogonal" renderorder="right-down" width="16" height="9" tilewidth="120" tileheight="120" infinite="0" nextlayerid="4" nextobjectid="7">
  <tileset firstgid="1" name="Back Button" tilewidth="228" tileheight="129" tilecount="2" columns="2">
   <image source="../Main Menu Assets/Back Button.png" width="456" height="139"/>
  </tileset>
@@ -44,6 +44,12 @@
   <object id="5" type="UIElements.PlayButton" gid="7" x="1157" y="772.333" width="260" height="258">
    <properties>
     <property name="mapName" value="maps/Level3.tmx"/>
+   </properties>
+  </object>
+  <object id="6" type="Scripts.Music" x="124" y="68" width="120" height="120">
+   <properties>
+    <property name="songName" value="Sound/Music2.ogg"/>
+    <property name="volume" type="float" value="0.5"/>
    </properties>
   </object>
  </objectgroup>
