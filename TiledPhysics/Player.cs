@@ -279,7 +279,8 @@ public class Player : Pivot
     {
         direction.Normalize();
         Vec2 speed = direction * strength;
-        Shot shot = new Shot("sprites/shot.png", 1, 1, 5000);
+        Shot shot = new Shot("sprites/shot.png", 2, 1, 5000);
+        shot.scale = 0.05f;
         parentScene.AddChild(shot);
         shot.position = _mover.position + direction * radius;
         shot.initialize(parentScene);

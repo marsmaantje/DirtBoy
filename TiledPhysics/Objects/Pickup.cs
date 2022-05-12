@@ -27,6 +27,8 @@ namespace Objects
         void PickedUp()
         {
             GlobalVariables.soulCounter++;
+            if (obj.GetBoolProperty("isSpecial", false))
+                GlobalVariables.shooting = true;
             Sound soundEffect = new Sound("Sound/Pick_up_Soul.mp3");
             soundEffect.Play();
             LateDestroy();
